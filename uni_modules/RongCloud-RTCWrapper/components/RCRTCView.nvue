@@ -1,0 +1,29 @@
+<template>
+	<RongCloud-RTC-RCUniRtcView ref="nativeView" :fitType="fitType" :mirror="mirror"></RongCloud-RTC-RCUniRtcView>
+</template>
+
+<script>
+	import {
+		RCRTCViewFitType
+	} from '../lib/RCRTCDefines'
+	export default {
+		props: {
+			fitType: {
+				type: Number,
+				default: RCRTCViewFitType.Fill
+			},
+			mirror: {
+				type: Boolean,
+			}
+		},
+		methods: {
+			getNativeViewRef() {
+				return this.$refs.nativeView.ref;
+			}
+		}
+	}
+</script>
+
+<style>
+
+</style>

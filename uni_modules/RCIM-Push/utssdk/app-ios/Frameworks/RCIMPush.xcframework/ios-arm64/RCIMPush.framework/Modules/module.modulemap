@@ -1,0 +1,6 @@
+framework module RCIMPush {
+  umbrella header "RCIMPush.h"
+  export *
+
+  module * { export * }
+}

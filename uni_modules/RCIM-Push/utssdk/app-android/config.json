@@ -1,0 +1,24 @@
+{
+  "minSdkVersion": "21",
+  "dependencies": [
+    "com.google.code.gson:gson:2.10.1",
+    "com.hihonor.mcs:push:8.0.12.307",
+    "com.huawei.hms:push:6.13.0.300",
+    "commons-codec:commons-codec:1.6",
+    "androidx.annotation:annotation:1.1.0"
+  ],
+  "project": {
+    "plugins": [
+      "com.huawei.agconnect",
+      "com.hihonor.mcs.asplugin"
+    ],
+    "dependencies": [
+      "com.huawei.agconnect:agcp:1.9.1.304",
+      "com.hihonor.mcs:asplugin:2.0.1.300",
+      "com.google.gms:google-services:4.3.15"
+    ],
+    "repositories": [
+      "maven { url 'https://developer.hihonor.com/repo'}"
+    ]
+  }
+}

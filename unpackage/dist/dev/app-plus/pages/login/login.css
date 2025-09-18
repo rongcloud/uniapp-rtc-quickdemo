@@ -1,0 +1,197 @@
+
+.login-container[data-v-e4e4508d] {
+	min-height: 100vh;
+	background: linear-gradient(135deg, #667eea 0%, #0195ff 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1.25rem;
+}
+.login-box[data-v-e4e4508d] {
+	background: white;
+	border-radius: 0.625rem;
+	padding: 1.875rem 1.25rem;
+	width: 100%;
+	max-width: 18.75rem;
+	box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.1);
+}
+.logo-area[data-v-e4e4508d] {
+	text-align: center;
+	margin-bottom: 1.875rem;
+}
+.logo[data-v-e4e4508d] {
+	width: 3.75rem;
+	height: 3.75rem;
+	margin-bottom: 0.625rem;
+}
+.app-title[data-v-e4e4508d] {
+	font-size: 1.125rem;
+	font-weight: bold;
+	color: #333;
+}
+.input-area[data-v-e4e4508d] {
+	margin-bottom: 1.875rem;
+}
+.input-group[data-v-e4e4508d] {
+	margin-bottom: 0.9375rem;
+}
+.label[data-v-e4e4508d] {
+	display: block;
+	font-size: 0.875rem;
+	color: #666;
+	margin-bottom: 0.46875rem;
+}
+.input[data-v-e4e4508d] {
+	width: 100%;
+	height: 2.5rem;
+	border: 0.0625rem solid #e0e0e0;
+	border-radius: 0.3125rem;
+	padding: 0 0.625rem;
+	font-size: 0.875rem;
+	background: #f8f9fa;
+	box-sizing: border-box;
+}
+.input[data-v-e4e4508d]:focus {
+	border-color: #667eea;
+	background: white;
+}
+
+/* 自定义下拉框样式 */
+.custom-select[data-v-e4e4508d] {
+	position: relative;
+	width: 100%;
+}
+.select-display[data-v-e4e4508d] {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 2.5rem;
+	border: 0.0625rem solid #e0e0e0;
+	border-radius: 0.3125rem;
+	background: #f8f9fa;
+	padding: 0 0.625rem;
+	box-sizing: border-box;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.select-display[data-v-e4e4508d]:hover {
+	border-color: #667eea;
+	background: white;
+	box-shadow: 0 0.125rem 0.375rem rgba(102, 126, 234, 0.15);
+}
+.user-info[data-v-e4e4508d] {
+	display: flex;
+	align-items: center;
+	flex: 1;
+}
+.user-avatar[data-v-e4e4508d] {
+	font-size: 1rem;
+	margin-right: 0.5rem;
+}
+.user-details[data-v-e4e4508d] {
+	display: flex;
+	flex-direction: column;
+}
+.user-name[data-v-e4e4508d] {
+	font-size: 0.875rem;
+	color: #333;
+	font-weight: 500;
+	line-height: 1.2;
+}
+.user-id[data-v-e4e4508d] {
+	font-size: 0.6875rem;
+	color: #666;
+	line-height: 1.2;
+	margin-top: 0.125rem;
+}
+.select-arrow[data-v-e4e4508d] {
+	font-size: 0.625rem;
+	color: #999;
+	transition: transform 0.3s ease;
+}
+.select-arrow.rotated[data-v-e4e4508d] {
+	transform: rotate(180deg);
+}
+
+/* 下拉选项样式 */
+.dropdown-options[data-v-e4e4508d] {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background: white;
+	border: 0.0625rem solid #e0e0e0;
+	border-top: none;
+	border-radius: 0 0 0.3125rem 0.3125rem;
+	box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.12);
+	z-index: 1000;
+	max-height: 12.5rem;
+	overflow-y: auto;
+}
+.dropdown-option[data-v-e4e4508d] {
+	display: flex;
+	align-items: center;
+	padding: 0.625rem;
+	border-bottom: 0.03125rem solid #f0f0f0;
+	transition: background-color 0.2s ease;
+	cursor: pointer;
+}
+.dropdown-option[data-v-e4e4508d]:last-child {
+	border-bottom: none;
+}
+.dropdown-option[data-v-e4e4508d]:hover {
+	background-color: #f8f9fa;
+}
+.dropdown-option.active[data-v-e4e4508d] {
+	background-color: #e8f0fe;
+	border-left: 0.125rem solid #667eea;
+}
+.option-avatar[data-v-e4e4508d] {
+	font-size: 0.875rem;
+	margin-right: 0.5rem;
+}
+.option-details[data-v-e4e4508d] {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+.option-name[data-v-e4e4508d] {
+	font-size: 0.8125rem;
+	color: #333;
+	font-weight: 500;
+	line-height: 1.2;
+}
+.option-id[data-v-e4e4508d] {
+	font-size: 0.625rem;
+	color: #666;
+	line-height: 1.2;
+	margin-top: 0.125rem;
+}
+.option-desc[data-v-e4e4508d] {
+	font-size: 0.5625rem;
+	color: #999;
+	line-height: 1.2;
+	margin-top: 0.125rem;
+	font-style: italic;
+}
+.button-area[data-v-e4e4508d] {
+	text-align: center;
+}
+.login-btn[data-v-e4e4508d] {
+	width: 100%;
+	height: 2.5rem;
+	background: linear-gradient(135deg, #667eea 0%, #0195ff 100%);
+	color: white;
+	border: none;
+	border-radius: 0.3125rem;
+	font-size: 1rem;
+	font-weight: bold;
+}
+.login-btn[data-v-e4e4508d]:disabled {
+	background: #ccc;
+	color: #999;
+}
+.login-btn[data-v-e4e4508d]:not(:disabled):active {
+	transform: scale(0.98);
+}

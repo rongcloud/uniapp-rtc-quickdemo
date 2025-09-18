@@ -1,0 +1,194 @@
+import { Result, IPushType, LOG_TAG, PushEventName, NotificationMessageInfo } from '../interface';
+
+import Context from 'android.content.Context';
+import Application from 'android.app.Application';
+import Intent from 'android.content.Intent';
+import { UTSAndroid } from "io.dcloud.uts";
+import RongPushPlugin from 'io.rong.push.RongPushPlugin';
+import RongPushClient from 'io.rong.push.RongPushClient';
+import PushEventListener from 'io.rong.push.PushEventListener';
+import PushType from 'io.rong.push.PushType';
+import PushNotificationMessage from 'io.rong.push.notification.PushNotificationMessage';
+import TokenBean from 'io.rong.push.TokenBean';
+import PushInitConfig from 'io.rong.push.model.PushInitConfig';
+import PushConfig from 'io.rong.push.pushconfig.PushConfig';
+import DeviceUtils from 'io.rong.push.common.DeviceUtils';
+
+// 默认 warn 级别
+let logLevel: number = 3;
+const listenerMap = new Map<string, ((res: any) => void)>();
+let remoteNotificationMessageInfo: UTSJSONObject | null = null;
+let notificationMessageClickedData: any | null = null;
+
+export class AppHookProxy implements UTSAndroidHookProxy {
+  override onCreate(application: Application) {
+    RongPushClient.setPushEventListener(new RCPushEventListener());
+  }
+}
+
+class RCPushEventListener implements PushEventListener {
+  override onWriteLog(level: Int, type: Int, tag: string, timestamp: Long, writeDB: boolean, content: string) {
+    if (level <= logLevel) {
+      console.log(`${LOG_TAG} onWriteLog - level:${level}, tag:${tag}, content:${content}`);
+    }
+  }
+  
+  override onStartRegister(_preferTypes: MutableList<PushType>): void {}
+  
+  override onPushConfigInitFinish(_pushConfig: PushConfig.Builder) {}
+  
+  override onStartTokenReport(_tokenList: MutableList<TokenBean>): MutableList<TokenBean> {
+    return _tokenList;
+  }
+  
+  override onPreferPushType(_preferTypes: MutableList<PushType>): void {}
+  
+  override preNotificationMessageArrived(_context: Context, _pushType: PushType, _notificationMessage: PushNotificationMessage): boolean {
+    return false
+  }
+  
+  override afterNotificationMessageArrived(_context: Context, _pushType: PushType, _notificationMessage: PushNotificationMessage): void {}
+  
+  override onNotificationMessageClicked(_context: Context, _pushType: PushType, _notificationMessage: PushNotificationMessage): boolean {
+    remoteNotificationMessageInfo = { pushType: getIPushType(_pushType), message: getTSRemoteNotification(_notificationMessage) };
+    handleOnNotificationClickedListener();
+    const pandoraEntryClass = Class.forName("io.dcloud.PandoraEntry")
+    // 点击推送，打开启动页
+    const intent = new Intent(_context, pandoraEntryClass);
+    _context.startActivity(intent);
+    return true;
+  }
+  
+  override onThirdPartyPushState(_pushType: PushType, _action: string, _resultCode: Long): void {}
+  
+  override onGetTokenError(_pushType: PushType, _code: Long, _errorMessage: string) {
+    console.log('onGetTokenError', _pushType, _code);
+    handleOnPushTokenReceivedListener(_code, _pushType, null);
+  }
+
+  override onTokenReceived(_pushType: PushType, _token: string): void {
+    handleOnPushTokenReceivedListener(0, _pushType, _token);
+  }
+  
+  override onTokenReportResult(_reportType?: PushType, _code: Int, _finalType?: PushType, _finalToken?: string, _message?: string): void {
+    const listener = listenerMap.get(PushEventName.onTokenReportResult);
+    if (listener != null) {
+      listener({code: _code, message: _message, data: { pushType: getIPushType(_finalType) }});
+    }
+  }
+}
+
+function handleOnPushTokenReceivedListener(_code: any, _pushType: PushType, _token?: string): void {
+  const listener = listenerMap.get(PushEventName.onTokenReceived);
+  if (listener != null) {
+    listener({ code: _code, data: { pushType: getIPushType(_pushType), token: _token } });
+  }
+}
+
+function handleOnNotificationClickedListener() {
+  const listener = listenerMap.get(PushEventName.onClicked);
+  if (listener != null && remoteNotificationMessageInfo != null) {
+    listener({code: 0, data: remoteNotificationMessageInfo });
+    remoteNotificationMessageInfo = null;
+  }
+}
+
+function getTSRemoteNotification(remoteNotification: PushNotificationMessage) {
+  return {
+    pushId: remoteNotification.getPushId(),
+    objectName: remoteNotification.getObjectName(),
+    toId: remoteNotification.getToId(),
+    senderId: remoteNotification.getSenderId(),
+    targetId: remoteNotification.getTargetId(),
+    busChannelId: remoteNotification.getBusChannel(),
+    pushData: remoteNotification.getPushData(),
+    conversationType: remoteNotification.getConversationType().getValue(),
+    extra: remoteNotification.getExtra(),
+  }
+}
+
+function getIPushType(_pushType?: PushType): string {
+  let iPushType = IPushType.UNKNOWN;
+  if (_pushType == null) {
+    return iPushType;
+  }
+  if (_pushType == PushType.HUAWEI) {
+    iPushType = IPushType.HUAWEI;
+  } else if (_pushType == PushType.HONOR) {
+    iPushType = IPushType.HONOR
+  } else if (_pushType == PushType.XIAOMI) {
+    iPushType = IPushType.XIAOMI
+  } else if (_pushType == PushType.MEIZU) {
+    iPushType = IPushType.MEIZU
+  } else if (_pushType == PushType.VIVO) {
+    iPushType = IPushType.VIVO
+  } else if (_pushType == PushType.OPPO) {
+    iPushType = IPushType.OPPO
+  }
+  return iPushType;
+}
+
+function getAppContext() : Context | null {
+  return UTSAndroid.getAppContext();
+}
+
+export function setLogLevel(level: number) {
+  // WebLib 的日志级别比原生值小 1
+  logLevel = level + 1;
+}
+
+export function getDeviceId(): string {
+  return DeviceUtils.getDeviceId(getAppContext());
+}
+
+export function getPackageName(): string {
+  return getAppContext()?.getPackageName() ?? '';
+}
+
+export function registerPush(appKey: string, userToken: string, pushServer: string, statsServer: string): Result {
+  try {
+    RongPushPlugin.init(getAppContext());
+    
+    const builder = PushInitConfig.Builder();
+    builder.setAppKey(appKey);
+    builder.setToken(userToken);
+    builder.setPushServer(pushServer);
+    builder.setStatisticServer(statsServer);
+    const res = RongPushClient.init(getAppContext(), builder.build());
+    return { code: res.code, message: res.msg } as Result;
+  } catch(e) {
+    console.error(`${LOG_TAG} registerPush error: ${e}`);
+    return { code: -1, message: `registerPush error: ${e}`} as Result;
+  }
+}
+
+@UTSJS.keepAlive
+export function setOnPushTokenReceivedListener(listener: (res: any) => void) {
+  listenerMap.set(PushEventName.onTokenReceived, listener);
+}
+
+export function removeOnPushTokenReceivedListener(): void {
+  listenerMap.delete(PushEventName.onTokenReceived);
+}
+
+@UTSJS.keepAlive
+export function setOnNotificationClickedListener(listener: (res: any) => void) {
+  listenerMap.set(PushEventName.onClicked, listener);
+  handleOnNotificationClickedListener();
+}
+
+export function removeOnNotificationClickedListener(): void {
+  listenerMap.delete(PushEventName.onClicked);
+}
+
+@UTSJS.keepAlive
+export function setOnPushTokenReportResultListener(listener: (res: any) => void) {
+  listenerMap.set(PushEventName.onTokenReportResult, listener);
+}
+
+export function removeOnPushTokenReportResultListener(): void {
+  listenerMap.delete(PushEventName.onTokenReportResult);
+}
+
+
+

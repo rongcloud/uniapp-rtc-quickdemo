@@ -1,0 +1,1012 @@
+<template>
+	<view class="rtc-container">
+		<!-- 状态栏占位 -->
+		<view class="status-bar-placeholder"></view>
+
+		<view class="header">
+			<view class="title-row">
+				<text class="nav-title">音视频直播</text>
+			</view>
+		</view>
+		
+		<!-- 返回按钮 - 根据平台显示 -->
+		<view class="back-button-container">
+			<view class="nav-left-btn" @click="goBack" style="background-color: rgba(102, 126, 234, 0.8); padding: 15rpx 25rpx; border-radius: 15rpx; min-width: 120rpx; min-height: 70rpx;">
+				<text class="back-text" style="color: white; font-size: 30rpx;">返回</text>
+			</view>
+		</view>
+
+		<view class="status-bar">
+			<text class="status-text">{{statusText}}</text>
+		</view>
+
+		<view class="video-container">
+			<view class="video-card">
+				<view class="video-card-header">
+					<text class="video-icon">📹</text>
+					<text class="card-title">视图渲染</text>
+				</view>
+				<view class="video-row">
+					<!-- 本地视频 -->
+					<view class="video-item">
+						<view class="video-content">
+							<view class="video-placeholder" v-if="!isLocalVideoReady">
+								<text class="placeholder-text">本地视图</text>
+							</view>
+							<RCRTCView v-else ref="localView" class="video-player" :fitType="0" :mirror="false">
+							</RCRTCView>
+						</view>
+					</view>
+
+					<!-- 远端视频 -->
+					<view class="video-item">
+						<view class="video-content">
+							<view class="video-placeholder" v-if="!isRemoteVideoReady">
+								<text class="placeholder-text">远端视图</text>
+							</view>
+							<RCRTCView v-else ref="remoteView" class="video-player" :fitType="0" :mirror="false">
+							</RCRTCView>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="control-panel">
+			<view class="room-info">
+				<text class="room-label">房间号:</text>
+				<input class="room-input" v-model="roomId" placeholder="请输入房间号" maxlength="10" />
+			</view>
+
+			<!-- 加入/离开房间 -->
+			<view class="button-row">
+				<view class="control-btn join-btn" :class="{ 'disabled': !roomId.trim() || isInRoom }"
+					@click="handleJoinRoom">
+					<text class="btn-text">{{ isJoining ? '加入中...' : '加入房间' }}</text>
+				</view>
+
+				<view class="control-btn leave-btn" :class="{ 'disabled': !isInRoom }" @click="handleLeaveRoom">
+					<text class="btn-text">离开房间</text>
+				</view>
+			</view>
+
+			<!-- 发布资源控制 -->
+			<view class="button-row">
+				<view class="control-btn rtc-btn" @click="publishStreams">
+					<text class="btn-text">发布资源</text>
+				</view>
+
+				<view class="control-btn rtc-btn" @click="unPublishStreams">
+					<text class="btn-text">取消发布资源</text>
+				</view>
+			</view>
+
+			<!-- 订阅资源控制 -->
+			<view class="button-row">
+				<view class="control-btn rtc-btn" @click="subscribeStreams">
+					<text class="btn-text">订阅资源</text>
+				</view>
+
+				<view class="control-btn rtc-btn" @click="unSubscribeStreams">
+					<text class="btn-text">取消订阅资源</text>
+				</view>
+			</view>
+
+			<!-- 摄像头控制 -->
+			<view class="button-row">
+				<view class="control-btn rtc-btn" @click="enableCamera(true)">
+					<text class="btn-text">打开摄像头</text>
+				</view>
+
+				<view class="control-btn rtc-btn" @click="enableCamera(false)">
+					<text class="btn-text">关闭摄像头</text>
+				</view>
+			</view>
+
+			<!-- 麦克风控制 -->
+			<view class="button-row">
+				<view class="control-btn rtc-btn" @click="enableMicrophone(true)">
+					<text class="btn-text">打开麦克风</text>
+				</view>
+
+				<view class="control-btn rtc-btn" @click="enableMicrophone(false)">
+					<text class="btn-text">关闭麦克风</text>
+				</view>
+			</view>
+
+			<!-- 扬声器控制 -->
+			<view class="button-row">
+				<view class="control-btn rtc-btn" @click="enableSpeaker(true)">
+					<text class="btn-text">打开扬声器</text>
+				</view>
+
+				<view class="control-btn rtc-btn" @click="enableSpeaker(false)">
+					<text class="btn-text">关闭扬声器</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	import globalState from '@/utils/IMEngineUtils.js'
+	import RCRTCEngine from '@/uni_modules/RongCloud-RTCWrapper/lib/RCRTCEngine';
+	import {
+		RCRTCCamera,
+		RCRTCMediaType,
+		RCRTCRole,
+		RCRTCViewFitType,
+		RCRTCAudioSource,
+	} from '@/uni_modules/RongCloud-RTCWrapper/lib/RCRTCDefines';
+
+	export default {
+		data() {
+			return {
+				currentUserId: '',
+				roomId: '9991',
+				isInRoom: false,
+				isJoining: false,
+				isLocalVideoReady: false,
+				isRemoteVideoReady: false,
+				isCameraOn: true,
+				isMicrophoneOn: true,
+				isSpeakerOn: true,
+				statusText: '准备就绪',
+				rtcEngine: null,
+				_isDestroyed: false,
+				_isInitialized: false,
+				_isCleaning: false, // 添加清理标志，防止重复清理
+				roomJoinedListener: null,
+				remoteUserId: '',
+				isRemoteStreams: false,
+				_isNavigating: false, // 防止重复导航
+			}
+		},
+
+		onLoad() {
+			console.log('=== Meeting 页面 onLoad 触发 ===');
+			this.initRTCEngine();
+			const loginInfo = uni.getStorageSync('loginInfo')
+			if (loginInfo) {
+				this.currentUserId = loginInfo.userId;
+				console.log(this.currentUserId);
+			}
+		},
+
+		onShow() {
+			console.log('onShow - 页面显示 (重新进入页面)');
+			// 重新初始化RTC引擎，确保监听器正确设置
+			this.initRTCEngine();
+		},
+
+		onHide() {
+			console.log('onHide - 页面隐藏 (iOS侧滑返回会触发)');
+			// iOS侧滑返回时会触发onHide，需要立即清理
+			this.forceCleanup();
+		},
+
+		onUnload() {
+			console.log('onUnload - 页面卸载 (iOS侧滑返回会触发)');
+			this._isDestroyed = true;
+			// 确保在页面卸载时也进行清理
+			this.forceCleanup();
+		},
+
+		onBackPress() {
+			console.log('onBackPress - 拦截返回操作 (Android返回键)');
+			// 拦截系统返回，使用我们的清理逻辑
+			this.forceCleanup();
+			// 延迟导航，确保清理完成
+			setTimeout(() => {
+				uni.navigateBack({
+					delta: 1
+				});
+			}, 100);
+			return false; // 返回 true 阻止默认返回行为
+		},
+
+		methods: {
+			/**
+			 * 初始化RTC引擎  具体参考文档：https://docs.rongcloud.cn/uni-app-rtclib/engine-setup
+			 */
+			initRTCEngine() {
+				try {
+					console.log('=== 开始初始化RTC引擎 ===');
+
+					// 先清理旧的引擎
+					if (this.rtcEngine) {
+						console.log('清理旧的RTC引擎...');
+						try {
+							this.rtcEngine.destroy();
+						} catch (e) {
+							console.log('清理旧引擎时出错:', e);
+						}
+						this.rtcEngine = null;
+					}
+
+					// 创建新的RTC引擎
+					let audioSetup = {};
+					let videoSetup = {
+						enableTinyStream: false
+					};
+					let setup = {
+						audioSetup: audioSetup,
+						videoSetup: videoSetup,
+					};
+
+					this.rtcEngine = RCRTCEngine.create(setup);
+					console.log('RTC引擎创建结果:', !!this.rtcEngine);
+
+					if (this.rtcEngine) {
+						// 设置房间监听器
+						this.setRoomListener();
+
+						// 重置状态标志
+						this._isDestroyed = false;
+						this._isInitialized = true;
+						this.isInRoom = false;
+						this.isJoining = false;
+						this.isLocalVideoReady = false;
+						this.isRemoteVideoReady = false;
+
+						console.log('=== RTC引擎初始化完成 ===');
+					} else {
+						throw new Error('RTC引擎创建失败，返回null');
+					}
+
+				} catch (error) {
+					console.error('RTC引擎创建失败:', error);
+					this.rtcEngine = null;
+					this._isInitialized = false;
+					uni.showToast({
+						title: 'RTC引擎初始化失败',
+						icon: 'error'
+					});
+				}
+			},
+
+			/**
+			 * 房间事件监听    这里只实现一部分状态监听回调，具体可以参考文档：https://docs.rongcloud.cn/uni-app-rtclib/quickstart-meeting
+			 */
+			setRoomListener() {
+				/**
+				 * 房间加入回调
+				 */
+				console.log('设置 setOnRoomJoinedListener...');
+				this.rtcEngine.setOnRoomJoinedListener(({
+					code,
+					message
+				}) => {
+					console.log('=== 房间加入回调触发 ===');
+					console.log('回调参数 - code:', code, 'message:', message);
+
+					if (this._isDestroyed) {
+						console.log('组件已销毁，忽略房间加入回调');
+						return;
+					}
+
+					if (code === 0) {
+						console.log('房间加入成功:', message);
+						this.isInRoom = true;
+						this.statusText = '已加入房间';
+						this.isJoining = false;
+
+						// 启用摄像头
+						this.rtcEngine.enableCamera(true, RCRTCCamera.Front);
+						this.isLocalVideoReady = true;
+
+						// 设置本地视图
+						setTimeout(() => {
+							if (this._isDestroyed) return;
+							if (this.$refs.localView && this.$refs.localView.getNativeViewRef) {
+								this.rtcEngine.setLocalView(this.$refs.localView.getNativeViewRef(), (
+									code) => {
+										console.log('设置本地视图结果:', code);
+										if (code === 0) {
+											console.log('本地视图设置成功');
+										} else {
+											console.error('本地视图设置失败:', code);
+										}
+									});
+							}
+						}, 100);
+
+						uni.showToast({
+							title: '房间加入成功',
+							icon: 'success'
+						});
+					} else {
+						console.error('房间加入失败:', code, message);
+						this.statusText = '房间加入失败';
+						this.isJoining = false;
+						uni.showToast({
+							title: '房间加入失败',
+							icon: 'error'
+						});
+					}
+				});
+
+				/**
+				 * 远端用户加入房间回调
+				 */
+				this.rtcEngine.setOnUserJoinedListener(({
+					userId,
+					roomId
+				}) => {
+					// userId 远端用户 ID
+					// roomId 房间 ID
+					console.log('远端用户加入:', userId, roomId)
+					uni.showToast({
+						title: `${userId}加入房间`,
+						icon: 'none'
+					})
+				});
+
+				/**
+				 * 远端用户发布资源回调
+				 */
+				this.rtcEngine.setOnRemotePublishedListener(({
+					userId,
+					roomId,
+					type
+				}) => {
+					// userId 远端用户 ID
+					// roomId 房间 ID
+					// type 远端用户发布的资源类型 RCRTCMediaType
+					console.log(userId)
+					console.log(roomId)
+					this.isRemoteStreams = true
+					this.remoteUserId = userId
+					uni.showToast({
+						title: `${userId}发布资源`,
+						icon: 'none'
+					})
+				});
+
+				/**
+				 * 远端用户离开房间回调
+				 */
+				this.rtcEngine.setOnUserLeftListener(({
+					userId,
+					roomId
+				}) => {
+					// userId 远端用户 ID
+					// roomId 房间 ID
+					this.isRemoteVideoReady = false
+				});
+
+				console.log('=== 房间监听器设置完成 ===');
+			},
+
+			/**
+			 * 返回上一页
+			 */
+			goBack() {
+				console.log('goBack - 返回上一页');
+				this.forceCleanup();
+				uni.navigateBack({
+					delta: 1
+				});
+			},
+
+			/**
+			 * 加入房间    
+			 * role 身份
+			 * 会议类型身份：
+			 * RCRTCRole.MeetingMember    
+			 * 直播类型身份：
+			 * RCRTCRole.LiveBroadcaster  主播身份
+			 * RCRTCRole.LiveAudience  观众身份
+			 *  
+			 * 
+			 * type：媒体类型
+			 * RCRTCMediaType.AudioVideo  音视频
+			 * RCRTCMediaType.Audio  仅音频
+			 * RCRTCMediaType.Video  仅视频
+			 */
+			async handleJoinRoom() {
+				try {
+					// 检查组件是否已销毁
+					if (this._isDestroyed) {
+						console.log('组件已销毁，取消加入房间');
+						return;
+					}
+
+					// 检查RTC引擎是否可用
+					if (!this.rtcEngine) {
+						console.error('RTC引擎不可用，无法加入房间');
+						// uni.showToast({
+						// 	title: 'RTC引擎不可用',
+						// 	icon: 'error'
+						// });
+						return;
+					}
+
+					this.isJoining = true;
+					this.statusText = '正在加入房间...';
+
+					// 定义加入房间类型
+					let joinType = {
+						type: RCRTCMediaType.AudioVideo,
+						role: RCRTCRole.MeetingMember
+					};
+
+					// 直接使用 RTC 引擎加入房间，监听器已在 setRoomListener 中设置
+					console.log('调用 rtcEngine.joinRoom - roomId:', this.roomId, 'joinType:', joinType);
+					this.rtcEngine.joinRoom(this.roomId, joinType);
+					console.log('joinRoom 调用完成，等待回调...');
+
+				} catch (error) {
+					console.error('加入房间异常:', error);
+					if (!this._isDestroyed) {
+						this.isJoining = false;
+						this.statusText = '加入房间异常';
+					}
+				}
+			},
+
+			/**
+			 * 离开房间
+			 */
+			async handleLeaveRoom() {
+				try {
+					if (this.rtcEngine) {
+						this.rtcEngine.leaveRoom();
+						this.isInRoom = false;
+						this.isLocalVideoReady = false;
+						this.isRemoteVideoReady = false;
+						this.statusText = '已离开房间';
+
+						uni.showToast({
+							title: '已离开房间',
+							icon: 'success'
+						})
+					}
+				} catch (error) {
+					console.error('离开房间失败:', error);
+					uni.showModal({
+						title: '操作失败',
+						content: '离开房间时出现异常，请重试',
+						showCancel: false,
+						confirmText: '确定',
+						confirmColor: '#667eea'
+					});
+				}
+			},
+
+			/**
+			 * 发布资源
+			 */
+			publishStreams() {
+				if (this._isDestroyed || !this.rtcEngine) {
+					console.log('组件已销毁或RTC引擎未初始化，取消发布');
+					return;
+				}
+
+				console.log('开始发布音视频资源...');
+				this.statusText = '正在发布资源...';
+
+				try {
+					this.rtcEngine.setOnPublishedListener(({
+						type,
+						code,
+						message
+					}) => {
+						if (this._isDestroyed) {
+							console.log('组件已销毁，忽略发布回调');
+							return;
+						}
+
+						if (code === 0) {
+							this.statusText = '音视频发布成功';
+							console.log('音视频发布成功');
+						} else {
+							this.statusText = '音视频发布失败';
+							console.error('发布失败:', code, message);
+						}
+					});
+
+					this.rtcEngine.publish(RCRTCMediaType.AudioVideo);
+
+				} catch (error) {
+					console.error('发布资源异常:', error);
+					this.statusText = '发布资源异常';
+				}
+			},
+
+			/**
+			 * 取消发布资源
+			 */
+			unPublishStreams() {
+				if (this._isDestroyed || !this.rtcEngine) {
+					console.log('组件已销毁或RTC引擎未初始化，取消操作');
+					return;
+				}
+
+				console.log('开始取消发布音视频资源...');
+				this.statusText = '正在取消发布...';
+
+				try {
+					this.rtcEngine.setOnUnpublishedListener(({
+						type,
+						code,
+						message
+					}) => {
+						if (this._isDestroyed) {
+							console.log('组件已销毁，忽略取消发布回调');
+							return;
+						}
+
+						if (code === 0) {
+							this.statusText = '取消音视频发布成功';
+							console.log('取消音视频发布成功');
+						} else {
+							this.statusText = '取消音视频发布失败';
+							console.error('取消发布失败:', code, message);
+						}
+					});
+
+					this.rtcEngine.unpublish(RCRTCMediaType.AudioVideo);
+
+				} catch (error) {
+					console.error('取消发布资源异常:', error);
+					this.statusText = '取消发布资源异常';
+				}
+			},
+
+			/**
+			 * 订阅资源
+			 */
+			subscribeStreams() {
+				if (this.remoteUserId) {
+					console.log(this.remoteUserId)
+					this.rtcEngine.subscribe(this.remoteUserId, RCRTCMediaType.AudioVideo);
+					this.rtcEngine.setOnSubscribedListener(({
+						userId,
+						type,
+						code,
+						message
+					}) => {
+						// userId 远端用户 ID
+						// type 订阅资源的类型 RCRTCMediaType
+						if (code === 0) {
+							// 订阅成功
+							console.log('订阅成功')
+							this.isRemoteVideoReady = true
+							setTimeout(() => {
+								this.rtcEngine.setRemoteView(this.remoteUserId, this.$refs.remoteView
+									.getNativeViewRef(), (code) => {
+										if (code === 0) {
+											// 设置成功
+											console.log('设置远端视图成功')
+										} else {
+											// 设置失败
+											console.log('设置远端视图失败')
+										}
+									});
+							}, 100)
+						} else {
+							// 订阅失败
+							console.log('订阅失败')
+						}
+					});
+				} else {
+					uni.showToast({
+						title: '请先发布资源',
+						icon: 'error',
+					})
+				}
+			},
+
+			/**
+			 * 取消订阅资源
+			 */
+			unSubscribeStreams() {
+				this.rtcEngine.unsubscribe(this.remoteUserId, RCRTCMediaType.AudioVideo);
+				this.rtcEngine.setOnUnsubscribedListener(({
+					userId,
+					type,
+					code,
+					message
+				}) => {
+					// userId 远端用户 ID
+					// type 取消订阅资源的类型 RCRTCMediaType
+					if (code === 0) {
+						// 取消订阅成功
+						this.isRemoteVideoReady = false;
+						uni.showToast({
+							title: '取消订阅成功',
+							icon: 'none'
+						})
+					} else {
+						// 取消订阅失败
+						uni.showToast({
+							title: '取消订阅失败',
+							icon: 'none'
+						})
+					}
+				});
+			},
+
+			/**
+			 * 打开/关闭摄像头    摄像头其他设置参考文档：https://docs.rongcloud.cn/uni-app-rtclib/device/camera
+			 */
+			enableCamera(enable) {
+				console.log(enable ? '打开摄像头' : '关闭摄像头');
+				this.rtcEngine.enableCamera(enable);
+				this.isCameraOn = enable;
+				console.log('isSpeakerOn')
+				uni.showToast({
+					title: enable ? '打开摄像头' : '关闭摄像头',
+					icon: 'none'
+				});
+			},
+
+			/**
+			 * 打开/关闭麦克风    麦克风其他操作：https://docs.rongcloud.cn/uni-app-rtclib/device/microphone
+			 */
+			enableMicrophone(enable) {
+				console.log(enable ? '打开麦克风' : '关闭麦克风');
+				this.isMicrophoneOn = enable;
+				this.rtcEngine.enableMicrophone(enable);
+				uni.showToast({
+					title: enable ? '已打开麦克风' : '已关闭麦克风',
+					icon: 'none'
+				});
+			},
+
+			/**
+			 * 打开/关闭扬声器     参考文档：https://docs.rongcloud.cn/uni-app-rtclib/device/speaker
+			 */
+			enableSpeaker(enable) {
+				console.log(enable ? '打开扬声器' : '关闭扬声器');
+				this.isSpeakerOn = true;
+				this.rtcEngine.enableSpeaker(enable);
+				console.log('isSpeakerOn')
+				uni.showToast({
+					title: enable ? '已打开扬声器' : '已关闭扬声器',
+					icon: 'none'
+				});
+			},
+
+			/**
+			 * 强制清理所有资源
+			 */
+			forceCleanup() {
+				console.log('=== 强制清理所有资源开始 ===');
+				console.log('当前页面状态 - isInRoom:', this.isInRoom, 'isJoining:', this.isJoining);
+
+				// 设置销毁标志
+				this._isDestroyed = true;
+
+				// 清理RTC引擎
+				if (this.rtcEngine) {
+					console.log('开始清理RTC引擎...');
+					try {
+						this.enableCamera(false);
+						this.enableMicrophone(false);
+						this.rtcEngine.leaveRoom();
+						this.rtcEngine.destroy();
+						console.log('RTC引擎清理完成');
+					} catch (e) {
+						console.log('清理RTC引擎出现异常:', e);
+					}
+					this.rtcEngine = null;
+				} else {
+					console.log('RTC引擎不存在，跳过清理');
+				}
+
+				// 重置状态
+				this.isInRoom = false;
+				this.isLocalVideoReady = false;
+				this.isRemoteVideoReady = false;
+				this.isJoining = false;
+				this.isCameraOn = false;
+				this.isMicrophoneOn = false;
+				this.isSpeakerOn = false;
+				this.statusText = '已清理';
+				this._isInitialized = false;
+				this.remoteUserId = '';
+				this.isRemoteStreams = false;
+				console.log('=== 强制清理所有资源完成 ===');
+			},
+		}
+	}
+</script>
+
+<style scoped>
+	.rtc-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #f5f7fa;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.status-bar-placeholder {
+		height: 44px;
+		background-color: #667eea;
+	}
+
+	.header {
+		background-color: #667eea;
+		box-shadow: 0 4rpx 12rpx rgba(102, 126, 234, 0.15);
+	}
+
+	.title-row {
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    position: relative;
+	    height: 100rpx;
+	}
+
+	.nav-left {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-right: 30rpx;
+	}
+	
+	.nav-left-btn {
+		background-color: transparent;
+		border: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-right: 30rpx;
+	}
+	
+	.back-button-container {
+		position: absolute;
+		top: 50%;
+		left: 30rpx;
+		transform: translateY(-10%);
+		z-index: 1000;
+	}
+	
+	.back-text {
+		font-size: 28rpx;
+		color: white;
+	}
+
+	.nav-title {
+		position: absolute;
+		left: 0;
+		right: 0;
+		font-size: 36rpx;
+		font-weight: bold;
+		color: white;
+		text-align: center;
+	}
+
+	.room-info-text {
+		font-size: 26rpx;
+		color: rgba(255, 255, 255, 0.9);
+		background-color: rgba(255, 255, 255, 0.1);
+		padding: 8rpx 16rpx;
+		border-radius: 20rpx;
+	}
+
+	.user-info-text {
+		font-size: 26rpx;
+		color: rgba(255, 255, 255, 0.9);
+		background-color: rgba(255, 255, 255, 0.1);
+		padding: 8rpx 16rpx;
+		border-radius: 20rpx;
+	}
+
+	.video-container {
+		padding: 32rpx;
+		padding-bottom: 20rpx;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.video-card {
+		background-color: white;
+		border-radius: 20rpx;
+		padding: 20rpx;
+		margin-bottom: 0;
+		box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+	}
+
+	.video-card-header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-bottom: 20rpx;
+	}
+
+	.card-title {
+		font-size: 32rpx;
+		color: #333;
+		font-weight: bold;
+		margin-left: 12rpx;
+	}
+
+	.video-row {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.video-item {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		margin: 0 10rpx;
+	}
+
+	.video-icon {
+		font-size: 24rpx;
+		margin-right: 12rpx;
+	}
+
+	.video-content {
+		flex: 1;
+	}
+
+	.video-placeholder {
+		height: 200rpx;
+		background-color: #f8f9fa;
+		border-radius: 12rpx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1rpx solid #ddd;
+	}
+
+	.placeholder-text {
+		color: #6c757d;
+		font-size: 24rpx;
+		text-align: center;
+	}
+
+	.video-player {
+		flex: 1;
+		height: 200rpx;
+		border-radius: 12rpx;
+		background-color: #000;
+	}
+
+	.control-panel {
+		background-color: white;
+		padding: 30rpx;
+		margin: 20rpx 32rpx 32rpx 32rpx;
+		border-radius: 25rpx;
+		box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
+		border: 1rpx solid rgba(255, 255, 255, 0.8);
+	}
+
+	.room-info {
+		flex-direction: row;
+		align-items: center;
+		margin-bottom: 30rpx;
+		background-color: #f8f9fa;
+		padding: 20rpx;
+		border-radius: 15rpx;
+		border: 1rpx solid #e9ecef;
+	}
+
+	.room-label {
+		font-size: 28rpx;
+		color: #495057;
+		margin-right: 20rpx;
+		width: 120rpx;
+		font-weight: 500;
+	}
+
+	.room-input {
+		flex: 1;
+		height: 70rpx;
+		border: 0;
+		border-radius: 12rpx;
+		padding: 0 20rpx;
+		font-size: 28rpx;
+		background-color: white;
+		box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+	}
+
+	.button-row {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 24rpx;
+	}
+
+	.control-btn {
+		flex: 1;
+		height: 88rpx;
+		border-radius: 18rpx;
+		border: 0;
+		position: relative;
+		overflow: hidden;
+		margin: 0 8rpx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.btn-text {
+		font-size: 12dp;
+		font-weight: bold;
+		text-align: center;
+		color: white;
+	}
+
+	.control-btn:first-child {
+		margin-left: 0;
+	}
+
+	.control-btn:last-child {
+		margin-right: 0;
+	}
+
+	.join-btn {
+		background-color: #669eea;
+		color: white;
+		box-shadow: 0 4rpx 12rpx rgba(102, 126, 234, 0.3);
+	}
+
+	.join-btn.disabled {
+		background-color: #ccc;
+		box-shadow: none;
+	}
+
+	.join-btn.disabled .btn-text {
+		color: #666;
+	}
+
+	.leave-btn {
+		background-color: #ff6b6b;
+		color: white;
+		box-shadow: 0 4rpx 12rpx rgba(255, 107, 107, 0.3);
+	}
+
+	.leave-btn.disabled {
+		background-color: #ccc;
+		box-shadow: none;
+	}
+
+	.leave-btn.disabled .btn-text {
+		color: #666;
+	}
+
+	.rtc-btn {
+		background-color: #669eea;
+		color: white;
+		box-shadow: 0 4rpx 12rpx rgba(40, 167, 69, 0.3);
+	}
+
+	.debug-btn {
+		background-color: #6c757d;
+		color: white;
+		box-shadow: 0 4rpx 12rpx rgba(108, 117, 125, 0.3);
+	}
+
+	.debug-btn:active {
+		background-color: #003a6c;
+		box-shadow: 0 4rpx 12rpx rgba(73, 80, 87, 0.4);
+	}
+
+	.status-bar {
+		background-color: #343a40;
+		padding: 24rpx 40rpx;
+		margin: 20rpx 32rpx 0 32rpx;
+		border-radius: 15rpx;
+		box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.15);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.status-text {
+		color: white;
+		font-size: 26rpx;
+		text-align: center;
+		font-weight: 500;
+	}
+</style>

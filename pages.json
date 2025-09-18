@@ -1,0 +1,45 @@
+{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^RCRTCView": "@/uni_modules/RongCloud-RTCWrapper/components/RCRTCView.nvue"
+		}
+	},
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "融云RTC演示",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/rtc/meeting",
+			"style": {
+				"navigationBarTitleText": "音视频会议",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/rtc/live",
+			"style": {
+				"navigationBarTitleText": "音视频直播",
+				"navigationStyle": "custom"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "融云RTC演示",
+		"navigationBarBackgroundColor": "#667eea",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}

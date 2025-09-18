@@ -1,0 +1,188 @@
+import { RCIMPushClient, RCIMPushInitConfig, RCIMPushUtils } from "RCIMPush"
+import { IPushType, LOG_TAG, PushEventName, Result } from '../interface'
+
+// 默认 warn 级别
+let logLevel: number = 3;
+let deviceToken: Data | null = null;
+let remoteNotification: any | null = null;
+const listenerMap = new Map<string, ((res: any) => void)>();
+const pushDelegate = new PushDelegateImpl();
+
+export class AppHookProxy implements UTSiOSHookProxy {
+
+  applicationDidFinishLaunchingWithOptions(application: UIApplication | null, launchOptions: Map<UIApplication.LaunchOptionsKey, any> | null = null): boolean {
+    remoteNotification = launchOptions?.get(UIApplication.LaunchOptionsKey.remoteNotification);
+    if (remoteNotification != null) {
+      // 上报推送点击埋点
+      RCIMPushClient.sharedInstance().recordRemoteNotificationEvent(remoteNotification! as Map<AnyHashable, any>);
+      handleOnNotificationClickedListener();
+    }
+    return true;
+  }
+  
+  // 远程通知注册成功时的回调函数。（打自定义基座时需要勾选 push 模块）
+	didRegisterForRemoteNotifications(token: Data | null) {
+    deviceToken = token;
+    // 保存 deviceToken 到全局
+    if (token != null) {
+      RCIMPushClient.sharedInstance().setupPushToken(token!);
+    }
+    handleOnPushTokenReceivedListener();
+	}
+}
+
+class PushDelegateImpl implements RCIMPushClientDelegate {
+  @objc onWriteLog(level: Int, @argumentLabel("") type: Int, @argumentLabel("") tag: string, @argumentLabel("") timestamp: UInt64, @argumentLabel("") writeDB: boolean, @argumentLabel("") content: string): void {
+    if (level <= logLevel) {
+      console.log(`${LOG_TAG} onWriteLog: tag:${tag}, ${content}`);
+    }
+  }
+  
+  onPushTokenReportResult(code: Int, @argumentLabel("") message?: string) {
+    handleOnPushTokenReportResultListener(code, message);
+  }
+}
+
+function handleOnPushTokenReceivedListener(): void {
+  const code = deviceToken != null ? 0 : -1;
+  const listener = listenerMap.get(PushEventName.onTokenReceived);
+  if (listener != null) {
+    listener!({
+      code: code,
+      data: {
+        pushType: IPushType.IOS,
+        token: deviceToken != null ? RCIMPushUtils.getHexString(for=deviceToken!) : '',
+      }
+    });
+  }
+}
+
+function handleOnPushTokenReportResultListener(_code: Int, _message?: string): void {
+  const listener = listenerMap.get(PushEventName.onTokenReportResult);
+  if (listener != null) {
+    listener!({code: _code, message: _message, data: { pushType: IPushType.IOS } });
+  }
+}
+
+function handleOnNotificationClickedListener() {
+  if (remoteNotification != null) {
+    const listener = listenerMap.get(PushEventName.onClicked);
+    if (listener != null) {
+      listener!({data: {pushType: IPushType.IOS, message: getTSRemoteNotification(remoteNotification! as Map<AnyHashable, any>)} });
+      // 消费完成后清除临时缓存
+      remoteNotification = null;
+    }
+  }
+}
+
+function getTSRemoteNotification(remoteNotification: Map<AnyHashable, any>) {
+  let message = {};
+  try {
+    const rcData: Map = remoteNotification.get('rc') as Map;
+    if (rcData != null) {
+      message = {
+        pushId: rcData.get('id'),
+        objectName: rcData.get('oName'),
+        toId: rcData.get('rId'),
+        senderId: rcData.get('fId'),
+        targetId: rcData.get('tId'),
+        busChannelId: rcData.get('bId'),
+        pushData: remoteNotification.get('appData'),
+        conversationType: getConversationType(rcData.get('cType') as string),
+        extra: rcData.get('ext'),
+      }
+    }
+  } catch (error) {
+    console.log('getTSRemoteNotification error', error);
+  }
+  return message;
+}
+
+function getConversationType(type: string): Int {
+  switch (type) {
+    case "PR":
+      return 1;
+    case "DS":
+      return 2;
+    case "GRP":
+      return 3;
+    case "CHR":
+      return 4;
+    case "CS":
+      return 5;
+    case "SYS":
+      return 6;
+    case "MC":
+      return 7;
+    case "MP":
+      return 8;
+    case "PH":
+      return 9;
+    case "UG":
+      return 10;
+    default:
+      return 0;
+  }
+}
+
+export function setLogLevel(level: number) {
+  // WebLib 的日志级别比原生值小 1
+  logLevel = level + 1;
+}
+
+export function registerPush(appKey: string, userToken: string, pushServer: string, statisticServer: string): Result {
+  const pushConfig = new RCIMPushInitConfig();
+  pushConfig.appKey = appKey;
+  pushConfig.userToken = userToken;
+  pushConfig.pushServer = pushServer;
+  pushConfig.statisticServer = statisticServer;
+  pushConfig.statisticServer = 'http://stats-ucqa.rongcloud.net';
+  RCIMPushClient.sharedInstance().delegate = pushDelegate;
+  let code = RCIMPushClient.sharedInstance().registerPush(pushConfig);
+  return {
+    code,
+    message: code == 0 ? null : 'registerPush fail'
+  };
+}
+
+export function getDeviceId(appKey: string): string {
+  let deviceId = RCIMPushUtils.getDeviceId(appKey);
+  if (deviceToken != null) {
+    const _deviceToken = RCIMPushUtils.getHexString(for=deviceToken!)
+    deviceId += `|${_deviceToken}`;
+  }
+  return deviceId;
+}
+
+export function getPackageName(): string {
+  return Bundle.main.bundleIdentifier ?? '';
+}
+
+@UTSJS.keepAlive
+export function setOnNotificationClickedListener(listener: (res: any) => void): void {
+  listenerMap.set(PushEventName.onClicked, listener);
+  handleOnNotificationClickedListener()
+}
+
+export function removeOnNotificationClickedListener(): void {
+  listenerMap.delete(PushEventName.onClicked);
+}
+
+@UTSJS.keepAlive
+export function setOnPushTokenReceivedListener(listener: (res: any) => void): void {
+  listenerMap.set(PushEventName.onTokenReceived, listener);
+  handleOnPushTokenReceivedListener();
+}
+
+export function removeOnPushTokenReceivedListener(): void {
+  listenerMap.delete(PushEventName.onTokenReceived);
+}
+
+@UTSJS.keepAlive
+export function setOnPushTokenReportResultListener(listener: (res: any) => void): void {
+  listenerMap.set(PushEventName.onTokenReportResult, listener);
+}
+
+export function removeOnPushTokenReportResultListener(): void {
+  listenerMap.delete(PushEventName.onTokenReportResult);
+}

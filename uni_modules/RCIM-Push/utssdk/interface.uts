@@ -1,0 +1,75 @@
+export type Result = {
+  code: number;
+  message?: string;
+};
+
+/**
+ * 日志标记
+ */
+export const LOG_TAG = '[RCPush]';
+
+/**
+ * 推送类型
+ */
+export class IPushType {
+  static UNKNOWN = 'unknown';
+  static IOS = 'ios';
+  static HUAWEI = 'huawei';
+  static XIAOMI = 'xiaomi';
+  static MEIZU = 'meizu';
+  static VIVO = 'vivo';
+  static OPPO = 'oppo';
+  static HONOR = 'honor';
+};
+
+export class PushEventName {
+  static onClicked = 'onClicked';
+  static onTokenReceived = 'onTokenReceived';
+  static onTokenReportResult = 'onTokenReportResult';
+}
+
+export type NotificationMessageInfo = {
+  pushType: string;
+  message: any;
+}
+
+interface Push {
+  /**
+   * 注册推送
+   * @param appKey 应用标识
+   * @param userToken 用户 token
+   * @param pushTokenServer 推送服务器地址，从 Web IMLib 获取
+   */
+  registerPush(appKey: string, userToken: string, pushTokenServer: string): Result;
+
+  /**
+   * 设置推送点击事件
+   * @param onClick 点击事件
+   */
+  setOnNotificationClickedListener(listener: (res: any) => void): void;
+  
+  /**
+   * 移除推送点击事件
+   */
+  removeOnNotificationClickedListener(): void;
+
+  /**
+   * 获取推送 token 事件
+   */
+  setOnPushTokenReceivedListener(listener: (res: any) => void): void;
+  
+  /**
+   * 移除获取推送 token 事件
+   */
+  removeOnPushTokenReceivedListener(): void;
+  
+  /**
+   * 推送 token 上报结果事件
+   */
+  setOnPushTokenReportResultListener(listener: (res: any) => void): void;
+  
+  /**
+   * 移除推送 token 上报结果事件
+   */
+  removeOnPushTokenReportResultListener(): void
+}
