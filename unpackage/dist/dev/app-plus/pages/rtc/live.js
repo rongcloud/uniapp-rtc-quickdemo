@@ -1421,28 +1421,31 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
         // 是否显示返回按钮
       };
     },
+    /**
+     * 麦克风，摄像头，扬声器 操作已经 meeting 里面做了演示，这里不再做演示，参考 meeting即可
+     */
     onLoad() {
-      formatAppLog("log", "at pages/rtc/live.nvue:189", "=== Live \u9875\u9762 onLoad \u89E6\u53D1 ===");
+      formatAppLog("log", "at pages/rtc/live.nvue:193", "=== Live \u9875\u9762 onLoad \u89E6\u53D1 ===");
       const platform = uni.getSystemInfoSync().platform;
       this.showBackButton = platform === "android";
-      formatAppLog("log", "at pages/rtc/live.nvue:195", "\u5F53\u524D\u5E73\u53F0:", platform, "\u663E\u793A\u8FD4\u56DE\u6309\u94AE:", this.showBackButton);
+      formatAppLog("log", "at pages/rtc/live.nvue:199", "\u5F53\u524D\u5E73\u53F0:", platform, "\u663E\u793A\u8FD4\u56DE\u6309\u94AE:", this.showBackButton);
       this.initRTCEngine();
       const loginInfo = uni.getStorageSync("loginInfo");
       if (loginInfo) {
         this.currentUserId = loginInfo.userId;
-        formatAppLog("log", "at pages/rtc/live.nvue:207", this.currentUserId);
+        formatAppLog("log", "at pages/rtc/live.nvue:211", this.currentUserId);
       }
     },
     onShow() {
-      formatAppLog("log", "at pages/rtc/live.nvue:212", "onShow - \u9875\u9762\u663E\u793A (\u91CD\u65B0\u8FDB\u5165\u9875\u9762)");
+      formatAppLog("log", "at pages/rtc/live.nvue:216", "onShow - \u9875\u9762\u663E\u793A (\u91CD\u65B0\u8FDB\u5165\u9875\u9762)");
       this.initRTCEngine();
     },
     onHide() {
-      formatAppLog("log", "at pages/rtc/live.nvue:218", "onHide - \u9875\u9762\u9690\u85CF (iOS\u4FA7\u6ED1\u8FD4\u56DE\u4F1A\u89E6\u53D1)");
+      formatAppLog("log", "at pages/rtc/live.nvue:222", "onHide - \u9875\u9762\u9690\u85CF (iOS\u4FA7\u6ED1\u8FD4\u56DE\u4F1A\u89E6\u53D1)");
       this.forceCleanup();
     },
     onBackPress() {
-      formatAppLog("log", "at pages/rtc/live.nvue:224", "onBackPress - \u62E6\u622A\u8FD4\u56DE\u64CD\u4F5C");
+      formatAppLog("log", "at pages/rtc/live.nvue:228", "onBackPress - \u62E6\u622A\u8FD4\u56DE\u64CD\u4F5C");
       this._isDestroyed = true;
       this.forceCleanup();
       return false;
@@ -1453,13 +1456,13 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
        */
       initRTCEngine() {
         try {
-          formatAppLog("log", "at pages/rtc/live.nvue:237", "=== \u5F00\u59CB\u521D\u59CB\u5316RTC\u5F15\u64CE ===");
+          formatAppLog("log", "at pages/rtc/live.nvue:241", "=== \u5F00\u59CB\u521D\u59CB\u5316RTC\u5F15\u64CE ===");
           if (this.rtcEngine) {
-            formatAppLog("log", "at pages/rtc/live.nvue:241", "\u6E05\u7406\u65E7\u7684RTC\u5F15\u64CE...");
+            formatAppLog("log", "at pages/rtc/live.nvue:245", "\u6E05\u7406\u65E7\u7684RTC\u5F15\u64CE...");
             try {
               this.rtcEngine.destroy();
             } catch (e) {
-              formatAppLog("log", "at pages/rtc/live.nvue:245", "\u6E05\u7406\u65E7\u5F15\u64CE\u65F6\u51FA\u9519:", e);
+              formatAppLog("log", "at pages/rtc/live.nvue:249", "\u6E05\u7406\u65E7\u5F15\u64CE\u65F6\u51FA\u9519:", e);
             }
             this.rtcEngine = null;
           }
@@ -1472,20 +1475,20 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
             videoSetup
           };
           this.rtcEngine = RCRTCEngine.create(setup);
-          formatAppLog("log", "at pages/rtc/live.nvue:259", "RTC\u5F15\u64CE\u521B\u5EFA\u7ED3\u679C:", !!this.rtcEngine);
+          formatAppLog("log", "at pages/rtc/live.nvue:263", "RTC\u5F15\u64CE\u521B\u5EFA\u7ED3\u679C:", !!this.rtcEngine);
           if (this.rtcEngine) {
             this.setRoomListener();
             this.setdLiveAudienceRoomListener();
             this.setAudioMix();
             this._isDestroyed = false;
             this._isInitialized = true;
-            formatAppLog("log", "at pages/rtc/live.nvue:268", "=== RTC\u5F15\u64CE\u521D\u59CB\u5316\u5B8C\u6210 ===");
+            formatAppLog("log", "at pages/rtc/live.nvue:272", "=== RTC\u5F15\u64CE\u521D\u59CB\u5316\u5B8C\u6210 ===");
           } else {
             throw new Error("RTC\u5F15\u64CE\u521B\u5EFA\u5931\u8D25\uFF0C\u8FD4\u56DEnull");
           }
         } catch (error) {
-          formatAppLog("error", "at pages/rtc/live.nvue:274", "RTC\u5F15\u64CE\u521B\u5EFA\u5931\u8D25:", error);
-          formatAppLog("error", "at pages/rtc/live.nvue:275", "\u9519\u8BEF\u8BE6\u60C5:", error.message, error.stack);
+          formatAppLog("error", "at pages/rtc/live.nvue:278", "RTC\u5F15\u64CE\u521B\u5EFA\u5931\u8D25:", error);
+          formatAppLog("error", "at pages/rtc/live.nvue:279", "\u9519\u8BEF\u8BE6\u60C5:", error.message, error.stack);
           this.rtcEngine = null;
           this._isInitialized = false;
           this._isDestroyed = true;
@@ -1503,8 +1506,8 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
           userId,
           roomId
         }) => {
-          formatAppLog("log", "at pages/rtc/live.nvue:300", userId);
-          formatAppLog("log", "at pages/rtc/live.nvue:301", roomId);
+          formatAppLog("log", "at pages/rtc/live.nvue:304", userId);
+          formatAppLog("log", "at pages/rtc/live.nvue:305", roomId);
           this.remoteUserId = userId;
           uni.showToast({
             title: `${userId}\u52A0\u5165\u623F\u95F4`,
@@ -1516,8 +1519,8 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
           roomId,
           type
         }) => {
-          formatAppLog("log", "at pages/rtc/live.nvue:321", userId);
-          formatAppLog("log", "at pages/rtc/live.nvue:322", roomId);
+          formatAppLog("log", "at pages/rtc/live.nvue:325", userId);
+          formatAppLog("log", "at pages/rtc/live.nvue:326", roomId);
           this.isRemoteStreams = true;
           uni.showToast({
             title: `${userId}\u53D1\u5E03\u8D44\u6E90`,
@@ -1569,23 +1572,23 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
        */
       setAudioMix() {
         this.rtcEngine.setOnAudioMixingStartedListener(() => {
-          formatAppLog("log", "at pages/rtc/live.nvue:397", "setOnAudioMixingStartedListener");
+          formatAppLog("log", "at pages/rtc/live.nvue:401", "setOnAudioMixingStartedListener");
         });
         this.rtcEngine.setOnAudioMixingPausedListener(() => {
-          formatAppLog("log", "at pages/rtc/live.nvue:403", "setOnAudioMixingPausedListener");
+          formatAppLog("log", "at pages/rtc/live.nvue:407", "setOnAudioMixingPausedListener");
         });
         this.rtcEngine.setOnAudioMixingStoppedListener(() => {
-          formatAppLog("log", "at pages/rtc/live.nvue:409", "setOnAudioMixingStoppedListener");
+          formatAppLog("log", "at pages/rtc/live.nvue:413", "setOnAudioMixingStoppedListener");
         });
         this.rtcEngine.setOnAudioMixingFinishedListener(() => {
-          formatAppLog("log", "at pages/rtc/live.nvue:415", "setOnAudioMixingFinishedListener");
+          formatAppLog("log", "at pages/rtc/live.nvue:419", "setOnAudioMixingFinishedListener");
         });
       },
       /**
        * 返回上一页
        */
       goBack() {
-        formatAppLog("log", "at pages/rtc/live.nvue:423", "goBack - \u8FD4\u56DE\u4E0A\u4E00\u9875");
+        formatAppLog("log", "at pages/rtc/live.nvue:427", "goBack - \u8FD4\u56DE\u4E0A\u4E00\u9875");
         this.forceCleanup();
         uni.navigateBack({
           delta: 1
@@ -1609,10 +1612,10 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
       handleJoinRoom(role) {
         return __async(this, null, function* () {
           try {
-            formatAppLog("log", "at pages/rtc/live.nvue:448", "=== \u5F00\u59CB\u52A0\u5165\u623F\u95F4 ===");
+            formatAppLog("log", "at pages/rtc/live.nvue:452", "=== \u5F00\u59CB\u52A0\u5165\u623F\u95F4 ===");
             this.userRole = role;
             if (this._isDestroyed) {
-              formatAppLog("log", "at pages/rtc/live.nvue:452", "\u7EC4\u4EF6\u5DF2\u9500\u6BC1\uFF0C\u53D6\u6D88\u52A0\u5165\u623F\u95F4");
+              formatAppLog("log", "at pages/rtc/live.nvue:456", "\u7EC4\u4EF6\u5DF2\u9500\u6BC1\uFF0C\u53D6\u6D88\u52A0\u5165\u623F\u95F4");
               return;
             }
             if (role === 1) {
@@ -1634,7 +1637,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
               message
             }) => {
               if (this._isDestroyed) {
-                formatAppLog("log", "at pages/rtc/live.nvue:478", "\u7EC4\u4EF6\u5DF2\u9500\u6BC1\uFF0C\u5FFD\u7565\u56DE\u8C03");
+                formatAppLog("log", "at pages/rtc/live.nvue:482", "\u7EC4\u4EF6\u5DF2\u9500\u6BC1\uFF0C\u5FFD\u7565\u56DE\u8C03");
                 return;
               }
               if (code === 0) {
@@ -1648,21 +1651,21 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
                       return;
                     if (this.$refs.localView && this.$refs.localView.getNativeViewRef) {
                       this.rtcEngine.setLocalView(this.$refs.localView.getNativeViewRef(), (code2) => {
-                        formatAppLog("log", "at pages/rtc/live.nvue:494", "\u8BBE\u7F6E\u672C\u5730\u89C6\u56FE\u7ED3\u679C:", code2);
+                        formatAppLog("log", "at pages/rtc/live.nvue:498", "\u8BBE\u7F6E\u672C\u5730\u89C6\u56FE\u7ED3\u679C:", code2);
                         if (code2 === 0) {
-                          formatAppLog("log", "at pages/rtc/live.nvue:496", "\u672C\u5730\u89C6\u56FE\u8BBE\u7F6E\u6210\u529F");
+                          formatAppLog("log", "at pages/rtc/live.nvue:500", "\u672C\u5730\u89C6\u56FE\u8BBE\u7F6E\u6210\u529F");
                         } else {
-                          formatAppLog("error", "at pages/rtc/live.nvue:498", "\u672C\u5730\u89C6\u56FE\u8BBE\u7F6E\u5931\u8D25:", code2);
+                          formatAppLog("error", "at pages/rtc/live.nvue:502", "\u672C\u5730\u89C6\u56FE\u8BBE\u7F6E\u5931\u8D25:", code2);
                         }
                       });
                     } else {
-                      formatAppLog("error", "at pages/rtc/live.nvue:502", "localView \u5F15\u7528\u4E0D\u5B58\u5728\u6216\u65B9\u6CD5\u4E0D\u53EF\u7528");
+                      formatAppLog("error", "at pages/rtc/live.nvue:506", "localView \u5F15\u7528\u4E0D\u5B58\u5728\u6216\u65B9\u6CD5\u4E0D\u53EF\u7528");
                     }
                   }, 100);
                 }
               } else {
                 this.statusText = "\u52A0\u5165\u623F\u95F4\u5931\u8D25";
-                formatAppLog("error", "at pages/rtc/live.nvue:508", "\u52A0\u5165\u623F\u95F4\u5931\u8D25:", code, message);
+                formatAppLog("error", "at pages/rtc/live.nvue:512", "\u52A0\u5165\u623F\u95F4\u5931\u8D25:", code, message);
                 uni.showToast({
                   title: "\u52A0\u5165\u623F\u95F4\u5931\u8D25",
                   icon: "none"
@@ -1676,7 +1679,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
             this.rtcEngine.setOnRoomJoinedListener(this.roomJoinedListener);
             this.rtcEngine.joinRoom(this.roomId, joinType);
           } catch (error) {
-            formatAppLog("error", "at pages/rtc/live.nvue:528", "\u52A0\u5165\u623F\u95F4\u5F02\u5E38:", error);
+            formatAppLog("error", "at pages/rtc/live.nvue:532", "\u52A0\u5165\u623F\u95F4\u5F02\u5E38:", error);
             if (!this._isDestroyed) {
               this.isJoining = false;
               this.statusText = "\u52A0\u5165\u623F\u95F4\u5F02\u5E38";
@@ -1703,7 +1706,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
               });
             }
           } catch (error) {
-            formatAppLog("error", "at pages/rtc/live.nvue:555", "\u79BB\u5F00\u623F\u95F4\u5931\u8D25:", error);
+            formatAppLog("error", "at pages/rtc/live.nvue:559", "\u79BB\u5F00\u623F\u95F4\u5931\u8D25:", error);
             uni.showModal({
               title: "\u64CD\u4F5C\u5931\u8D25",
               content: "\u79BB\u5F00\u623F\u95F4\u65F6\u51FA\u73B0\u5F02\u5E38\uFF0C\u8BF7\u91CD\u8BD5",
@@ -1719,10 +1722,10 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
        */
       publishStreams() {
         if (this._isDestroyed || !this.rtcEngine) {
-          formatAppLog("log", "at pages/rtc/live.nvue:571", "\u7EC4\u4EF6\u5DF2\u9500\u6BC1\u6216RTC\u5F15\u64CE\u672A\u521D\u59CB\u5316\uFF0C\u53D6\u6D88\u53D1\u5E03");
+          formatAppLog("log", "at pages/rtc/live.nvue:575", "\u7EC4\u4EF6\u5DF2\u9500\u6BC1\u6216RTC\u5F15\u64CE\u672A\u521D\u59CB\u5316\uFF0C\u53D6\u6D88\u53D1\u5E03");
           return;
         }
-        formatAppLog("log", "at pages/rtc/live.nvue:575", "\u5F00\u59CB\u53D1\u5E03\u97F3\u89C6\u9891\u8D44\u6E90...");
+        formatAppLog("log", "at pages/rtc/live.nvue:579", "\u5F00\u59CB\u53D1\u5E03\u97F3\u89C6\u9891\u8D44\u6E90...");
         this.statusText = "\u6B63\u5728\u53D1\u5E03\u8D44\u6E90...";
         try {
           this.rtcEngine.setOnPublishedListener(({
@@ -1731,7 +1734,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
             message
           }) => {
             if (this._isDestroyed) {
-              formatAppLog("log", "at pages/rtc/live.nvue:585", "\u7EC4\u4EF6\u5DF2\u9500\u6BC1\uFF0C\u5FFD\u7565\u53D1\u5E03\u56DE\u8C03");
+              formatAppLog("log", "at pages/rtc/live.nvue:589", "\u7EC4\u4EF6\u5DF2\u9500\u6BC1\uFF0C\u5FFD\u7565\u53D1\u5E03\u56DE\u8C03");
               return;
             }
             if (code === 0) {
@@ -1740,15 +1743,15 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
               this.rtcEngine.setLiveMixVideoFps(RCRTCVideoFps.Fps15);
               this.rtcEngine.setLiveMixLayoutMode(RCRTCLiveMixLayoutMode.Adaptive);
               this.statusText = "\u97F3\u89C6\u9891\u53D1\u5E03\u6210\u529F";
-              formatAppLog("log", "at pages/rtc/live.nvue:596", "\u97F3\u89C6\u9891\u53D1\u5E03\u6210\u529F");
+              formatAppLog("log", "at pages/rtc/live.nvue:600", "\u97F3\u89C6\u9891\u53D1\u5E03\u6210\u529F");
             } else {
               this.statusText = "\u97F3\u89C6\u9891\u53D1\u5E03\u5931\u8D25";
-              formatAppLog("error", "at pages/rtc/live.nvue:599", "\u53D1\u5E03\u5931\u8D25:", code, message);
+              formatAppLog("error", "at pages/rtc/live.nvue:603", "\u53D1\u5E03\u5931\u8D25:", code, message);
             }
           });
           this.rtcEngine.publish(RCRTCMediaType.AudioVideo);
         } catch (error) {
-          formatAppLog("error", "at pages/rtc/live.nvue:606", "\u53D1\u5E03\u8D44\u6E90\u5F02\u5E38:", error);
+          formatAppLog("error", "at pages/rtc/live.nvue:610", "\u53D1\u5E03\u8D44\u6E90\u5F02\u5E38:", error);
           this.statusText = "\u53D1\u5E03\u8D44\u6E90\u5F02\u5E38";
         }
       },
@@ -1757,10 +1760,10 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
        */
       unPublishStreams() {
         if (this._isDestroyed || !this.rtcEngine) {
-          formatAppLog("log", "at pages/rtc/live.nvue:616", "\u7EC4\u4EF6\u5DF2\u9500\u6BC1\u6216RTC\u5F15\u64CE\u672A\u521D\u59CB\u5316\uFF0C\u53D6\u6D88\u64CD\u4F5C");
+          formatAppLog("log", "at pages/rtc/live.nvue:620", "\u7EC4\u4EF6\u5DF2\u9500\u6BC1\u6216RTC\u5F15\u64CE\u672A\u521D\u59CB\u5316\uFF0C\u53D6\u6D88\u64CD\u4F5C");
           return;
         }
-        formatAppLog("log", "at pages/rtc/live.nvue:620", "\u5F00\u59CB\u53D6\u6D88\u53D1\u5E03\u97F3\u89C6\u9891\u8D44\u6E90...");
+        formatAppLog("log", "at pages/rtc/live.nvue:624", "\u5F00\u59CB\u53D6\u6D88\u53D1\u5E03\u97F3\u89C6\u9891\u8D44\u6E90...");
         this.statusText = "\u6B63\u5728\u53D6\u6D88\u53D1\u5E03...";
         try {
           this.rtcEngine.setOnUnpublishedListener(({
@@ -1769,20 +1772,20 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
             message
           }) => {
             if (this._isDestroyed) {
-              formatAppLog("log", "at pages/rtc/live.nvue:630", "\u7EC4\u4EF6\u5DF2\u9500\u6BC1\uFF0C\u5FFD\u7565\u53D6\u6D88\u53D1\u5E03\u56DE\u8C03");
+              formatAppLog("log", "at pages/rtc/live.nvue:634", "\u7EC4\u4EF6\u5DF2\u9500\u6BC1\uFF0C\u5FFD\u7565\u53D6\u6D88\u53D1\u5E03\u56DE\u8C03");
               return;
             }
             if (code === 0) {
               this.statusText = "\u53D6\u6D88\u97F3\u89C6\u9891\u53D1\u5E03\u6210\u529F";
-              formatAppLog("log", "at pages/rtc/live.nvue:636", "\u53D6\u6D88\u97F3\u89C6\u9891\u53D1\u5E03\u6210\u529F");
+              formatAppLog("log", "at pages/rtc/live.nvue:640", "\u53D6\u6D88\u97F3\u89C6\u9891\u53D1\u5E03\u6210\u529F");
             } else {
               this.statusText = "\u53D6\u6D88\u97F3\u89C6\u9891\u53D1\u5E03\u5931\u8D25";
-              formatAppLog("error", "at pages/rtc/live.nvue:639", "\u53D6\u6D88\u53D1\u5E03\u5931\u8D25:", code, message);
+              formatAppLog("error", "at pages/rtc/live.nvue:643", "\u53D6\u6D88\u53D1\u5E03\u5931\u8D25:", code, message);
             }
           });
           this.rtcEngine.unpublish(RCRTCMediaType.AudioVideo);
         } catch (error) {
-          formatAppLog("error", "at pages/rtc/live.nvue:646", "\u53D6\u6D88\u53D1\u5E03\u8D44\u6E90\u5F02\u5E38:", error);
+          formatAppLog("error", "at pages/rtc/live.nvue:650", "\u53D6\u6D88\u53D1\u5E03\u8D44\u6E90\u5F02\u5E38:", error);
           this.statusText = "\u53D6\u6D88\u53D1\u5E03\u8D44\u6E90\u5F02\u5E38";
         }
       },
@@ -1791,7 +1794,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
        */
       subscribeStreams() {
         if (this.remoteUserId && this.userRole === 1) {
-          formatAppLog("log", "at pages/rtc/live.nvue:656", this.remoteUserId);
+          formatAppLog("log", "at pages/rtc/live.nvue:660", this.remoteUserId);
           this.rtcEngine.subscribe(this.remoteUserId, RCRTCMediaType.AudioVideo);
           this.rtcEngine.setOnSubscribedListener(({
             userId,
@@ -1801,23 +1804,23 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
           }) => {
             if (code === 0) {
               this.enableSpeaker(true);
-              formatAppLog("log", "at pages/rtc/live.nvue:669", "\u8BA2\u9605\u6210\u529F");
+              formatAppLog("log", "at pages/rtc/live.nvue:673", "\u8BA2\u9605\u6210\u529F");
               this.isRemoteVideoReady = true;
               setTimeout(() => {
                 if (this.$refs.remoteView && this.$refs.remoteView.getNativeViewRef) {
                   this.rtcEngine.setRemoteView(this.remoteUserId, this.$refs.remoteView.getNativeViewRef(), (code2) => {
                     if (code2 === 0) {
-                      formatAppLog("log", "at pages/rtc/live.nvue:677", "\u8BBE\u7F6E\u8FDC\u7AEF\u89C6\u56FE\u6210\u529F");
+                      formatAppLog("log", "at pages/rtc/live.nvue:681", "\u8BBE\u7F6E\u8FDC\u7AEF\u89C6\u56FE\u6210\u529F");
                     } else {
-                      formatAppLog("log", "at pages/rtc/live.nvue:680", "\u8BBE\u7F6E\u8FDC\u7AEF\u89C6\u56FE\u5931\u8D25");
+                      formatAppLog("log", "at pages/rtc/live.nvue:684", "\u8BBE\u7F6E\u8FDC\u7AEF\u89C6\u56FE\u5931\u8D25");
                     }
                   });
                 } else {
-                  formatAppLog("error", "at pages/rtc/live.nvue:684", "remoteView \u5F15\u7528\u4E0D\u5B58\u5728\u6216\u65B9\u6CD5\u4E0D\u53EF\u7528");
+                  formatAppLog("error", "at pages/rtc/live.nvue:688", "remoteView \u5F15\u7528\u4E0D\u5B58\u5728\u6216\u65B9\u6CD5\u4E0D\u53EF\u7528");
                 }
               }, 100);
             } else {
-              formatAppLog("log", "at pages/rtc/live.nvue:689", "\u8BA2\u9605\u5931\u8D25");
+              formatAppLog("log", "at pages/rtc/live.nvue:693", "\u8BA2\u9605\u5931\u8D25");
             }
           });
         } else {
@@ -1831,11 +1834,11 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
        * 观众订阅合流资源
        */
       subscribeLiveMixStream() {
-        formatAppLog("log", "at pages/rtc/live.nvue:707", this.isMixStreams);
+        formatAppLog("log", "at pages/rtc/live.nvue:711", this.isMixStreams);
         if (this.isMixStreams) {
           this.rtcEngine.subscribeLiveMix(RCRTCMediaType.AudioVideo);
           this.rtcEngine.setOnLiveMixSubscribedListener((result) => {
-            formatAppLog("log", "at pages/rtc/live.nvue:712", result);
+            formatAppLog("log", "at pages/rtc/live.nvue:716", result);
             if (result.code === 0) {
               this.enableSpeaker(true);
               this.isMixRemoteVideoReady = true;
@@ -1845,14 +1848,14 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
                     this.$refs.mixRemoteView.getNativeViewRef(),
                     (code) => {
                       if (code === 0) {
-                        formatAppLog("log", "at pages/rtc/live.nvue:723", "\u8BBE\u7F6E\u5408\u6D41view\u6210\u529F");
+                        formatAppLog("log", "at pages/rtc/live.nvue:727", "\u8BBE\u7F6E\u5408\u6D41view\u6210\u529F");
                       } else {
-                        formatAppLog("log", "at pages/rtc/live.nvue:726", "\u8BBE\u7F6E\u5408\u6D41view\u5931\u8D25" + code);
+                        formatAppLog("log", "at pages/rtc/live.nvue:730", "\u8BBE\u7F6E\u5408\u6D41view\u5931\u8D25" + code);
                       }
                     }
                   );
                 } else {
-                  formatAppLog("error", "at pages/rtc/live.nvue:730", "mixRemoteView \u5F15\u7528\u4E0D\u5B58\u5728\u6216\u65B9\u6CD5\u4E0D\u53EF\u7528");
+                  formatAppLog("error", "at pages/rtc/live.nvue:734", "mixRemoteView \u5F15\u7528\u4E0D\u5B58\u5728\u6216\u65B9\u6CD5\u4E0D\u53EF\u7528");
                 }
               }, 100);
             } else {
@@ -1918,19 +1921,19 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
        * 上下麦   参考文档：https://docs.rongcloud.cn/uni-app-rtclib/cohost/oneroom
        */
       switchLiveRole(userRole) {
-        formatAppLog("log", "at pages/rtc/live.nvue:810", userRole);
+        formatAppLog("log", "at pages/rtc/live.nvue:814", userRole);
         this.rtcEngine.setOnLiveRoleSwitchedListener(({
           role,
           code,
           errMsg
         }) => {
           if (code == 0) {
-            formatAppLog("log", "at pages/rtc/live.nvue:819", userRole);
+            formatAppLog("log", "at pages/rtc/live.nvue:823", userRole);
             if (userRole === 2) {
               this.isRemoteVideoReady = false;
               this.isLocalVideoReady = false;
             } else if (userRole === 1) {
-              formatAppLog("log", "at pages/rtc/live.nvue:824", role);
+              formatAppLog("log", "at pages/rtc/live.nvue:828", role);
               this.rtcEngine.enableCamera(true, RCRTCCamera.Front);
               this.isLocalVideoReady = true;
               this.isMixRemoteVideoReady = false;
@@ -1940,15 +1943,15 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
                   return;
                 if (this.$refs.localView && this.$refs.localView.getNativeViewRef) {
                   this.rtcEngine.setLocalView(this.$refs.localView.getNativeViewRef(), (code2) => {
-                    formatAppLog("log", "at pages/rtc/live.nvue:834", "\u8BBE\u7F6E\u672C\u5730\u89C6\u56FE\u7ED3\u679C:", code2);
+                    formatAppLog("log", "at pages/rtc/live.nvue:838", "\u8BBE\u7F6E\u672C\u5730\u89C6\u56FE\u7ED3\u679C:", code2);
                     if (code2 === 0) {
-                      formatAppLog("log", "at pages/rtc/live.nvue:836", "\u672C\u5730\u89C6\u56FE\u8BBE\u7F6E\u6210\u529F");
+                      formatAppLog("log", "at pages/rtc/live.nvue:840", "\u672C\u5730\u89C6\u56FE\u8BBE\u7F6E\u6210\u529F");
                     } else {
-                      formatAppLog("error", "at pages/rtc/live.nvue:838", "\u672C\u5730\u89C6\u56FE\u8BBE\u7F6E\u5931\u8D25:", code2);
+                      formatAppLog("error", "at pages/rtc/live.nvue:842", "\u672C\u5730\u89C6\u56FE\u8BBE\u7F6E\u5931\u8D25:", code2);
                     }
                   });
                 } else {
-                  formatAppLog("error", "at pages/rtc/live.nvue:842", "localView \u5F15\u7528\u4E0D\u5B58\u5728\u6216\u65B9\u6CD5\u4E0D\u53EF\u7528");
+                  formatAppLog("error", "at pages/rtc/live.nvue:846", "localView \u5F15\u7528\u4E0D\u5B58\u5728\u6216\u65B9\u6CD5\u4E0D\u53EF\u7528");
                 }
               }, 100);
             }
@@ -1969,7 +1972,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
        * 播放混音    注意：支持 播放线上音频文件，也支持本地音频文件，这里以线上音频文件演示
        */
       startAudioMixing() {
-        formatAppLog("log", "at pages/rtc/live.nvue:866", "startAudioMixing");
+        formatAppLog("log", "at pages/rtc/live.nvue:870", "startAudioMixing");
         this.statusText = "\u64AD\u653E\u6DF7\u97F3";
         let path = "http://music.163.com/song/media/outer/url?id=1306417064.mp3";
         this.rtcEngine.startAudioMixing(path, RCRTCAudioMixingMode.Mixing, true, -1);
@@ -1979,17 +1982,17 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
        */
       stopAudioMixing() {
         this.statusText = "\u505C\u6B62\u64AD\u653E\u6DF7\u97F3";
-        formatAppLog("log", "at pages/rtc/live.nvue:877", "stopAudioMixing");
+        formatAppLog("log", "at pages/rtc/live.nvue:881", "stopAudioMixing");
         this.rtcEngine.stopAudioMixing();
       },
       /**
        * 打开/关闭摄像头    摄像头其他设置参考文档：https://docs.rongcloud.cn/uni-app-rtclib/device/camera
        */
       enableCamera(enable) {
-        formatAppLog("log", "at pages/rtc/live.nvue:886", enable ? "\u6253\u5F00\u6444\u50CF\u5934" : "\u5173\u95ED\u6444\u50CF\u5934");
+        formatAppLog("log", "at pages/rtc/live.nvue:890", enable ? "\u6253\u5F00\u6444\u50CF\u5934" : "\u5173\u95ED\u6444\u50CF\u5934");
         this.rtcEngine.enableCamera(enable);
         this.isCameraOn = enable;
-        formatAppLog("log", "at pages/rtc/live.nvue:889", "isSpeakerOn");
+        formatAppLog("log", "at pages/rtc/live.nvue:893", "isSpeakerOn");
         uni.showToast({
           title: enable ? "\u6253\u5F00\u6444\u50CF\u5934" : "\u5173\u95ED\u6444\u50CF\u5934",
           icon: "none"
@@ -1999,7 +2002,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
        * 打开/关闭麦克风    麦克风其他操作：https://docs.rongcloud.cn/uni-app-rtclib/device/microphone
        */
       enableMicrophone(enable) {
-        formatAppLog("log", "at pages/rtc/live.nvue:900", enable ? "\u6253\u5F00\u9EA6\u514B\u98CE" : "\u5173\u95ED\u9EA6\u514B\u98CE");
+        formatAppLog("log", "at pages/rtc/live.nvue:904", enable ? "\u6253\u5F00\u9EA6\u514B\u98CE" : "\u5173\u95ED\u9EA6\u514B\u98CE");
         this.isMicrophoneOn = enable;
         this.rtcEngine.enableMicrophone(enable);
         uni.showToast({
@@ -2011,10 +2014,10 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
        * 打开/关闭扬声器     参考文档：https://docs.rongcloud.cn/uni-app-rtclib/device/speaker
        */
       enableSpeaker(enable) {
-        formatAppLog("log", "at pages/rtc/live.nvue:913", enable ? "\u6253\u5F00\u626C\u58F0\u5668" : "\u5173\u95ED\u626C\u58F0\u5668");
+        formatAppLog("log", "at pages/rtc/live.nvue:917", enable ? "\u6253\u5F00\u626C\u58F0\u5668" : "\u5173\u95ED\u626C\u58F0\u5668");
         this.isSpeakerOn = true;
         this.rtcEngine.enableSpeaker(enable);
-        formatAppLog("log", "at pages/rtc/live.nvue:916", "isSpeakerOn");
+        formatAppLog("log", "at pages/rtc/live.nvue:920", "isSpeakerOn");
         uni.showToast({
           title: enable ? "\u5DF2\u6253\u5F00\u626C\u58F0\u5668" : "\u5DF2\u5173\u95ED\u626C\u58F0\u5668",
           icon: "none"
@@ -2024,11 +2027,11 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
        * 强制清理所有资源
        */
       forceCleanup() {
-        formatAppLog("log", "at pages/rtc/live.nvue:929", "\u5F3A\u5236\u6E05\u7406\u6240\u6709\u8D44\u6E90\u5F00\u59CB...");
+        formatAppLog("log", "at pages/rtc/live.nvue:933", "\u5F3A\u5236\u6E05\u7406\u6240\u6709\u8D44\u6E90\u5F00\u59CB...");
         this._isDestroyed = true;
         if (this.roomJoinedListener) {
           this.roomJoinedListener = null;
-          formatAppLog("log", "at pages/rtc/live.nvue:937", "\u76D1\u542C\u5668\u5F15\u7528\u5DF2\u6E05\u7406");
+          formatAppLog("log", "at pages/rtc/live.nvue:941", "\u76D1\u542C\u5668\u5F15\u7528\u5DF2\u6E05\u7406");
         }
         if (this.rtcEngine) {
           try {
@@ -2040,7 +2043,7 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
             this.rtcEngine.destroy();
             this.rtcEngine = null;
           } catch (e) {
-            formatAppLog("log", "at pages/rtc/live.nvue:951", "\u79FB\u9664\u76D1\u542C\u5668\u65F6\u51FA\u73B0\u5F02\u5E38:", e);
+            formatAppLog("log", "at pages/rtc/live.nvue:955", "\u79FB\u9664\u76D1\u542C\u5668\u65F6\u51FA\u73B0\u5F02\u5E38:", e);
             this.rtcEngine.destroy();
             this.rtcEngine = null;
           }
@@ -2060,9 +2063,9 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
           this.remoteUserId = "";
           this.isRemoteStreams = false;
         } catch (e) {
-          formatAppLog("log", "at pages/rtc/live.nvue:973", "\u91CD\u7F6E\u72B6\u6001\u65F6\u51FA\u73B0\u5F02\u5E38:", e);
+          formatAppLog("log", "at pages/rtc/live.nvue:977", "\u91CD\u7F6E\u72B6\u6001\u65F6\u51FA\u73B0\u5F02\u5E38:", e);
         }
-        formatAppLog("log", "at pages/rtc/live.nvue:976", "\u5F3A\u5236\u6E05\u7406\u6240\u6709\u8D44\u6E90\u5B8C\u6210");
+        formatAppLog("log", "at pages/rtc/live.nvue:980", "\u5F3A\u5236\u6E05\u7406\u6240\u6709\u8D44\u6E90\u5B8C\u6210");
       }
     }
   };

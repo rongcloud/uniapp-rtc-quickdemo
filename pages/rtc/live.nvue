@@ -184,6 +184,10 @@
 				showBackButton: false // 是否显示返回按钮
 			}
 		},
+		
+		/**
+		 * 麦克风，摄像头，扬声器 操作已经 meeting 里面做了演示，这里不再做演示，参考 meeting即可
+		 */
 
 		onLoad() {
 			console.log('=== Live 页面 onLoad 触发 ===');

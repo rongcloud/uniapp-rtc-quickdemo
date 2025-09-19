@@ -30,28 +30,31 @@ const _sfc_main = {
       // 是否显示返回按钮
     };
   },
+  /**
+   * 麦克风，摄像头，扬声器 操作已经 meeting 里面做了演示，这里不再做演示，参考 meeting即可
+   */
   onLoad() {
-    formatAppLog("log", "at pages/rtc/live.nvue:189", "=== Live 页面 onLoad 触发 ===");
+    formatAppLog("log", "at pages/rtc/live.nvue:193", "=== Live 页面 onLoad 触发 ===");
     const platform = uni.getSystemInfoSync().platform;
     this.showBackButton = platform === "android";
-    formatAppLog("log", "at pages/rtc/live.nvue:195", "当前平台:", platform, "显示返回按钮:", this.showBackButton);
+    formatAppLog("log", "at pages/rtc/live.nvue:199", "当前平台:", platform, "显示返回按钮:", this.showBackButton);
     this.initRTCEngine();
     const loginInfo = uni.getStorageSync("loginInfo");
     if (loginInfo) {
       this.currentUserId = loginInfo.userId;
-      formatAppLog("log", "at pages/rtc/live.nvue:207", this.currentUserId);
+      formatAppLog("log", "at pages/rtc/live.nvue:211", this.currentUserId);
     }
   },
   onShow() {
-    formatAppLog("log", "at pages/rtc/live.nvue:212", "onShow - 页面显示 (重新进入页面)");
+    formatAppLog("log", "at pages/rtc/live.nvue:216", "onShow - 页面显示 (重新进入页面)");
     this.initRTCEngine();
   },
   onHide() {
-    formatAppLog("log", "at pages/rtc/live.nvue:218", "onHide - 页面隐藏 (iOS侧滑返回会触发)");
+    formatAppLog("log", "at pages/rtc/live.nvue:222", "onHide - 页面隐藏 (iOS侧滑返回会触发)");
     this.forceCleanup();
   },
   onBackPress() {
-    formatAppLog("log", "at pages/rtc/live.nvue:224", "onBackPress - 拦截返回操作");
+    formatAppLog("log", "at pages/rtc/live.nvue:228", "onBackPress - 拦截返回操作");
     this._isDestroyed = true;
     this.forceCleanup();
     return false;
@@ -62,13 +65,13 @@ const _sfc_main = {
      */
     initRTCEngine() {
       try {
-        formatAppLog("log", "at pages/rtc/live.nvue:237", "=== 开始初始化RTC引擎 ===");
+        formatAppLog("log", "at pages/rtc/live.nvue:241", "=== 开始初始化RTC引擎 ===");
         if (this.rtcEngine) {
-          formatAppLog("log", "at pages/rtc/live.nvue:241", "清理旧的RTC引擎...");
+          formatAppLog("log", "at pages/rtc/live.nvue:245", "清理旧的RTC引擎...");
           try {
             this.rtcEngine.destroy();
           } catch (e) {
-            formatAppLog("log", "at pages/rtc/live.nvue:245", "清理旧引擎时出错:", e);
+            formatAppLog("log", "at pages/rtc/live.nvue:249", "清理旧引擎时出错:", e);
           }
           this.rtcEngine = null;
         }
@@ -81,20 +84,20 @@ const _sfc_main = {
           videoSetup
         };
         this.rtcEngine = RCRTCEngine.create(setup);
-        formatAppLog("log", "at pages/rtc/live.nvue:259", "RTC引擎创建结果:", !!this.rtcEngine);
+        formatAppLog("log", "at pages/rtc/live.nvue:263", "RTC引擎创建结果:", !!this.rtcEngine);
         if (this.rtcEngine) {
           this.setRoomListener();
           this.setdLiveAudienceRoomListener();
           this.setAudioMix();
           this._isDestroyed = false;
           this._isInitialized = true;
-          formatAppLog("log", "at pages/rtc/live.nvue:268", "=== RTC引擎初始化完成 ===");
+          formatAppLog("log", "at pages/rtc/live.nvue:272", "=== RTC引擎初始化完成 ===");
         } else {
           throw new Error("RTC引擎创建失败，返回null");
         }
       } catch (error) {
-        formatAppLog("error", "at pages/rtc/live.nvue:274", "RTC引擎创建失败:", error);
-        formatAppLog("error", "at pages/rtc/live.nvue:275", "错误详情:", error.message, error.stack);
+        formatAppLog("error", "at pages/rtc/live.nvue:278", "RTC引擎创建失败:", error);
+        formatAppLog("error", "at pages/rtc/live.nvue:279", "错误详情:", error.message, error.stack);
         this.rtcEngine = null;
         this._isInitialized = false;
         this._isDestroyed = true;
@@ -112,8 +115,8 @@ const _sfc_main = {
         userId,
         roomId
       }) => {
-        formatAppLog("log", "at pages/rtc/live.nvue:300", userId);
-        formatAppLog("log", "at pages/rtc/live.nvue:301", roomId);
+        formatAppLog("log", "at pages/rtc/live.nvue:304", userId);
+        formatAppLog("log", "at pages/rtc/live.nvue:305", roomId);
         this.remoteUserId = userId;
         uni.showToast({
           title: `${userId}加入房间`,
@@ -125,8 +128,8 @@ const _sfc_main = {
         roomId,
         type
       }) => {
-        formatAppLog("log", "at pages/rtc/live.nvue:321", userId);
-        formatAppLog("log", "at pages/rtc/live.nvue:322", roomId);
+        formatAppLog("log", "at pages/rtc/live.nvue:325", userId);
+        formatAppLog("log", "at pages/rtc/live.nvue:326", roomId);
         this.isRemoteStreams = true;
         uni.showToast({
           title: `${userId}发布资源`,
@@ -178,23 +181,23 @@ const _sfc_main = {
      */
     setAudioMix() {
       this.rtcEngine.setOnAudioMixingStartedListener(() => {
-        formatAppLog("log", "at pages/rtc/live.nvue:397", "setOnAudioMixingStartedListener");
+        formatAppLog("log", "at pages/rtc/live.nvue:401", "setOnAudioMixingStartedListener");
       });
       this.rtcEngine.setOnAudioMixingPausedListener(() => {
-        formatAppLog("log", "at pages/rtc/live.nvue:403", "setOnAudioMixingPausedListener");
+        formatAppLog("log", "at pages/rtc/live.nvue:407", "setOnAudioMixingPausedListener");
       });
       this.rtcEngine.setOnAudioMixingStoppedListener(() => {
-        formatAppLog("log", "at pages/rtc/live.nvue:409", "setOnAudioMixingStoppedListener");
+        formatAppLog("log", "at pages/rtc/live.nvue:413", "setOnAudioMixingStoppedListener");
       });
       this.rtcEngine.setOnAudioMixingFinishedListener(() => {
-        formatAppLog("log", "at pages/rtc/live.nvue:415", "setOnAudioMixingFinishedListener");
+        formatAppLog("log", "at pages/rtc/live.nvue:419", "setOnAudioMixingFinishedListener");
       });
     },
     /**
      * 返回上一页
      */
     goBack() {
-      formatAppLog("log", "at pages/rtc/live.nvue:423", "goBack - 返回上一页");
+      formatAppLog("log", "at pages/rtc/live.nvue:427", "goBack - 返回上一页");
       this.forceCleanup();
       uni.navigateBack({
         delta: 1
@@ -217,10 +220,10 @@ const _sfc_main = {
      */
     async handleJoinRoom(role) {
       try {
-        formatAppLog("log", "at pages/rtc/live.nvue:448", "=== 开始加入房间 ===");
+        formatAppLog("log", "at pages/rtc/live.nvue:452", "=== 开始加入房间 ===");
         this.userRole = role;
         if (this._isDestroyed) {
-          formatAppLog("log", "at pages/rtc/live.nvue:452", "组件已销毁，取消加入房间");
+          formatAppLog("log", "at pages/rtc/live.nvue:456", "组件已销毁，取消加入房间");
           return;
         }
         if (role === 1) {
@@ -242,7 +245,7 @@ const _sfc_main = {
           message
         }) => {
           if (this._isDestroyed) {
-            formatAppLog("log", "at pages/rtc/live.nvue:478", "组件已销毁，忽略回调");
+            formatAppLog("log", "at pages/rtc/live.nvue:482", "组件已销毁，忽略回调");
             return;
           }
           if (code === 0) {
@@ -256,21 +259,21 @@ const _sfc_main = {
                   return;
                 if (this.$refs.localView && this.$refs.localView.getNativeViewRef) {
                   this.rtcEngine.setLocalView(this.$refs.localView.getNativeViewRef(), (code2) => {
-                    formatAppLog("log", "at pages/rtc/live.nvue:494", "设置本地视图结果:", code2);
+                    formatAppLog("log", "at pages/rtc/live.nvue:498", "设置本地视图结果:", code2);
                     if (code2 === 0) {
-                      formatAppLog("log", "at pages/rtc/live.nvue:496", "本地视图设置成功");
+                      formatAppLog("log", "at pages/rtc/live.nvue:500", "本地视图设置成功");
                     } else {
-                      formatAppLog("error", "at pages/rtc/live.nvue:498", "本地视图设置失败:", code2);
+                      formatAppLog("error", "at pages/rtc/live.nvue:502", "本地视图设置失败:", code2);
                     }
                   });
                 } else {
-                  formatAppLog("error", "at pages/rtc/live.nvue:502", "localView 引用不存在或方法不可用");
+                  formatAppLog("error", "at pages/rtc/live.nvue:506", "localView 引用不存在或方法不可用");
                 }
               }, 100);
             }
           } else {
             this.statusText = "加入房间失败";
-            formatAppLog("error", "at pages/rtc/live.nvue:508", "加入房间失败:", code, message);
+            formatAppLog("error", "at pages/rtc/live.nvue:512", "加入房间失败:", code, message);
             uni.showToast({
               title: "加入房间失败",
               icon: "none"
@@ -284,7 +287,7 @@ const _sfc_main = {
         this.rtcEngine.setOnRoomJoinedListener(this.roomJoinedListener);
         this.rtcEngine.joinRoom(this.roomId, joinType);
       } catch (error) {
-        formatAppLog("error", "at pages/rtc/live.nvue:528", "加入房间异常:", error);
+        formatAppLog("error", "at pages/rtc/live.nvue:532", "加入房间异常:", error);
         if (!this._isDestroyed) {
           this.isJoining = false;
           this.statusText = "加入房间异常";
@@ -309,7 +312,7 @@ const _sfc_main = {
           });
         }
       } catch (error) {
-        formatAppLog("error", "at pages/rtc/live.nvue:555", "离开房间失败:", error);
+        formatAppLog("error", "at pages/rtc/live.nvue:559", "离开房间失败:", error);
         uni.showModal({
           title: "操作失败",
           content: "离开房间时出现异常，请重试",
@@ -324,10 +327,10 @@ const _sfc_main = {
      */
     publishStreams() {
       if (this._isDestroyed || !this.rtcEngine) {
-        formatAppLog("log", "at pages/rtc/live.nvue:571", "组件已销毁或RTC引擎未初始化，取消发布");
+        formatAppLog("log", "at pages/rtc/live.nvue:575", "组件已销毁或RTC引擎未初始化，取消发布");
         return;
       }
-      formatAppLog("log", "at pages/rtc/live.nvue:575", "开始发布音视频资源...");
+      formatAppLog("log", "at pages/rtc/live.nvue:579", "开始发布音视频资源...");
       this.statusText = "正在发布资源...";
       try {
         this.rtcEngine.setOnPublishedListener(({
@@ -336,7 +339,7 @@ const _sfc_main = {
           message
         }) => {
           if (this._isDestroyed) {
-            formatAppLog("log", "at pages/rtc/live.nvue:585", "组件已销毁，忽略发布回调");
+            formatAppLog("log", "at pages/rtc/live.nvue:589", "组件已销毁，忽略发布回调");
             return;
           }
           if (code === 0) {
@@ -345,15 +348,15 @@ const _sfc_main = {
             this.rtcEngine.setLiveMixVideoFps(RCRTCVideoFps.Fps15);
             this.rtcEngine.setLiveMixLayoutMode(RCRTCLiveMixLayoutMode.Adaptive);
             this.statusText = "音视频发布成功";
-            formatAppLog("log", "at pages/rtc/live.nvue:596", "音视频发布成功");
+            formatAppLog("log", "at pages/rtc/live.nvue:600", "音视频发布成功");
           } else {
             this.statusText = "音视频发布失败";
-            formatAppLog("error", "at pages/rtc/live.nvue:599", "发布失败:", code, message);
+            formatAppLog("error", "at pages/rtc/live.nvue:603", "发布失败:", code, message);
           }
         });
         this.rtcEngine.publish(RCRTCMediaType.AudioVideo);
       } catch (error) {
-        formatAppLog("error", "at pages/rtc/live.nvue:606", "发布资源异常:", error);
+        formatAppLog("error", "at pages/rtc/live.nvue:610", "发布资源异常:", error);
         this.statusText = "发布资源异常";
       }
     },
@@ -362,10 +365,10 @@ const _sfc_main = {
      */
     unPublishStreams() {
       if (this._isDestroyed || !this.rtcEngine) {
-        formatAppLog("log", "at pages/rtc/live.nvue:616", "组件已销毁或RTC引擎未初始化，取消操作");
+        formatAppLog("log", "at pages/rtc/live.nvue:620", "组件已销毁或RTC引擎未初始化，取消操作");
         return;
       }
-      formatAppLog("log", "at pages/rtc/live.nvue:620", "开始取消发布音视频资源...");
+      formatAppLog("log", "at pages/rtc/live.nvue:624", "开始取消发布音视频资源...");
       this.statusText = "正在取消发布...";
       try {
         this.rtcEngine.setOnUnpublishedListener(({
@@ -374,20 +377,20 @@ const _sfc_main = {
           message
         }) => {
           if (this._isDestroyed) {
-            formatAppLog("log", "at pages/rtc/live.nvue:630", "组件已销毁，忽略取消发布回调");
+            formatAppLog("log", "at pages/rtc/live.nvue:634", "组件已销毁，忽略取消发布回调");
             return;
           }
           if (code === 0) {
             this.statusText = "取消音视频发布成功";
-            formatAppLog("log", "at pages/rtc/live.nvue:636", "取消音视频发布成功");
+            formatAppLog("log", "at pages/rtc/live.nvue:640", "取消音视频发布成功");
           } else {
             this.statusText = "取消音视频发布失败";
-            formatAppLog("error", "at pages/rtc/live.nvue:639", "取消发布失败:", code, message);
+            formatAppLog("error", "at pages/rtc/live.nvue:643", "取消发布失败:", code, message);
           }
         });
         this.rtcEngine.unpublish(RCRTCMediaType.AudioVideo);
       } catch (error) {
-        formatAppLog("error", "at pages/rtc/live.nvue:646", "取消发布资源异常:", error);
+        formatAppLog("error", "at pages/rtc/live.nvue:650", "取消发布资源异常:", error);
         this.statusText = "取消发布资源异常";
       }
     },
@@ -396,7 +399,7 @@ const _sfc_main = {
      */
     subscribeStreams() {
       if (this.remoteUserId && this.userRole === 1) {
-        formatAppLog("log", "at pages/rtc/live.nvue:656", this.remoteUserId);
+        formatAppLog("log", "at pages/rtc/live.nvue:660", this.remoteUserId);
         this.rtcEngine.subscribe(this.remoteUserId, RCRTCMediaType.AudioVideo);
         this.rtcEngine.setOnSubscribedListener(({
           userId,
@@ -406,23 +409,23 @@ const _sfc_main = {
         }) => {
           if (code === 0) {
             this.enableSpeaker(true);
-            formatAppLog("log", "at pages/rtc/live.nvue:669", "订阅成功");
+            formatAppLog("log", "at pages/rtc/live.nvue:673", "订阅成功");
             this.isRemoteVideoReady = true;
             setTimeout(() => {
               if (this.$refs.remoteView && this.$refs.remoteView.getNativeViewRef) {
                 this.rtcEngine.setRemoteView(this.remoteUserId, this.$refs.remoteView.getNativeViewRef(), (code2) => {
                   if (code2 === 0) {
-                    formatAppLog("log", "at pages/rtc/live.nvue:677", "设置远端视图成功");
+                    formatAppLog("log", "at pages/rtc/live.nvue:681", "设置远端视图成功");
                   } else {
-                    formatAppLog("log", "at pages/rtc/live.nvue:680", "设置远端视图失败");
+                    formatAppLog("log", "at pages/rtc/live.nvue:684", "设置远端视图失败");
                   }
                 });
               } else {
-                formatAppLog("error", "at pages/rtc/live.nvue:684", "remoteView 引用不存在或方法不可用");
+                formatAppLog("error", "at pages/rtc/live.nvue:688", "remoteView 引用不存在或方法不可用");
               }
             }, 100);
           } else {
-            formatAppLog("log", "at pages/rtc/live.nvue:689", "订阅失败");
+            formatAppLog("log", "at pages/rtc/live.nvue:693", "订阅失败");
           }
         });
       } else {
@@ -436,11 +439,11 @@ const _sfc_main = {
      * 观众订阅合流资源
      */
     subscribeLiveMixStream() {
-      formatAppLog("log", "at pages/rtc/live.nvue:707", this.isMixStreams);
+      formatAppLog("log", "at pages/rtc/live.nvue:711", this.isMixStreams);
       if (this.isMixStreams) {
         this.rtcEngine.subscribeLiveMix(RCRTCMediaType.AudioVideo);
         this.rtcEngine.setOnLiveMixSubscribedListener((result) => {
-          formatAppLog("log", "at pages/rtc/live.nvue:712", result);
+          formatAppLog("log", "at pages/rtc/live.nvue:716", result);
           if (result.code === 0) {
             this.enableSpeaker(true);
             this.isMixRemoteVideoReady = true;
@@ -450,14 +453,14 @@ const _sfc_main = {
                   this.$refs.mixRemoteView.getNativeViewRef(),
                   (code) => {
                     if (code === 0) {
-                      formatAppLog("log", "at pages/rtc/live.nvue:723", "设置合流view成功");
+                      formatAppLog("log", "at pages/rtc/live.nvue:727", "设置合流view成功");
                     } else {
-                      formatAppLog("log", "at pages/rtc/live.nvue:726", "设置合流view失败" + code);
+                      formatAppLog("log", "at pages/rtc/live.nvue:730", "设置合流view失败" + code);
                     }
                   }
                 );
               } else {
-                formatAppLog("error", "at pages/rtc/live.nvue:730", "mixRemoteView 引用不存在或方法不可用");
+                formatAppLog("error", "at pages/rtc/live.nvue:734", "mixRemoteView 引用不存在或方法不可用");
               }
             }, 100);
           } else {
@@ -523,19 +526,19 @@ const _sfc_main = {
      * 上下麦   参考文档：https://docs.rongcloud.cn/uni-app-rtclib/cohost/oneroom
      */
     switchLiveRole(userRole) {
-      formatAppLog("log", "at pages/rtc/live.nvue:810", userRole);
+      formatAppLog("log", "at pages/rtc/live.nvue:814", userRole);
       this.rtcEngine.setOnLiveRoleSwitchedListener(({
         role,
         code,
         errMsg
       }) => {
         if (code == 0) {
-          formatAppLog("log", "at pages/rtc/live.nvue:819", userRole);
+          formatAppLog("log", "at pages/rtc/live.nvue:823", userRole);
           if (userRole === 2) {
             this.isRemoteVideoReady = false;
             this.isLocalVideoReady = false;
           } else if (userRole === 1) {
-            formatAppLog("log", "at pages/rtc/live.nvue:824", role);
+            formatAppLog("log", "at pages/rtc/live.nvue:828", role);
             this.rtcEngine.enableCamera(true, RCRTCCamera.Front);
             this.isLocalVideoReady = true;
             this.isMixRemoteVideoReady = false;
@@ -545,15 +548,15 @@ const _sfc_main = {
                 return;
               if (this.$refs.localView && this.$refs.localView.getNativeViewRef) {
                 this.rtcEngine.setLocalView(this.$refs.localView.getNativeViewRef(), (code2) => {
-                  formatAppLog("log", "at pages/rtc/live.nvue:834", "设置本地视图结果:", code2);
+                  formatAppLog("log", "at pages/rtc/live.nvue:838", "设置本地视图结果:", code2);
                   if (code2 === 0) {
-                    formatAppLog("log", "at pages/rtc/live.nvue:836", "本地视图设置成功");
+                    formatAppLog("log", "at pages/rtc/live.nvue:840", "本地视图设置成功");
                   } else {
-                    formatAppLog("error", "at pages/rtc/live.nvue:838", "本地视图设置失败:", code2);
+                    formatAppLog("error", "at pages/rtc/live.nvue:842", "本地视图设置失败:", code2);
                   }
                 });
               } else {
-                formatAppLog("error", "at pages/rtc/live.nvue:842", "localView 引用不存在或方法不可用");
+                formatAppLog("error", "at pages/rtc/live.nvue:846", "localView 引用不存在或方法不可用");
               }
             }, 100);
           }
@@ -574,7 +577,7 @@ const _sfc_main = {
      * 播放混音    注意：支持 播放线上音频文件，也支持本地音频文件，这里以线上音频文件演示
      */
     startAudioMixing() {
-      formatAppLog("log", "at pages/rtc/live.nvue:866", "startAudioMixing");
+      formatAppLog("log", "at pages/rtc/live.nvue:870", "startAudioMixing");
       this.statusText = "播放混音";
       let path = "http://music.163.com/song/media/outer/url?id=1306417064.mp3";
       this.rtcEngine.startAudioMixing(path, RCRTCAudioMixingMode.Mixing, true, -1);
@@ -584,17 +587,17 @@ const _sfc_main = {
      */
     stopAudioMixing() {
       this.statusText = "停止播放混音";
-      formatAppLog("log", "at pages/rtc/live.nvue:877", "stopAudioMixing");
+      formatAppLog("log", "at pages/rtc/live.nvue:881", "stopAudioMixing");
       this.rtcEngine.stopAudioMixing();
     },
     /**
      * 打开/关闭摄像头    摄像头其他设置参考文档：https://docs.rongcloud.cn/uni-app-rtclib/device/camera
      */
     enableCamera(enable) {
-      formatAppLog("log", "at pages/rtc/live.nvue:886", enable ? "打开摄像头" : "关闭摄像头");
+      formatAppLog("log", "at pages/rtc/live.nvue:890", enable ? "打开摄像头" : "关闭摄像头");
       this.rtcEngine.enableCamera(enable);
       this.isCameraOn = enable;
-      formatAppLog("log", "at pages/rtc/live.nvue:889", "isSpeakerOn");
+      formatAppLog("log", "at pages/rtc/live.nvue:893", "isSpeakerOn");
       uni.showToast({
         title: enable ? "打开摄像头" : "关闭摄像头",
         icon: "none"
@@ -604,7 +607,7 @@ const _sfc_main = {
      * 打开/关闭麦克风    麦克风其他操作：https://docs.rongcloud.cn/uni-app-rtclib/device/microphone
      */
     enableMicrophone(enable) {
-      formatAppLog("log", "at pages/rtc/live.nvue:900", enable ? "打开麦克风" : "关闭麦克风");
+      formatAppLog("log", "at pages/rtc/live.nvue:904", enable ? "打开麦克风" : "关闭麦克风");
       this.isMicrophoneOn = enable;
       this.rtcEngine.enableMicrophone(enable);
       uni.showToast({
@@ -616,10 +619,10 @@ const _sfc_main = {
      * 打开/关闭扬声器     参考文档：https://docs.rongcloud.cn/uni-app-rtclib/device/speaker
      */
     enableSpeaker(enable) {
-      formatAppLog("log", "at pages/rtc/live.nvue:913", enable ? "打开扬声器" : "关闭扬声器");
+      formatAppLog("log", "at pages/rtc/live.nvue:917", enable ? "打开扬声器" : "关闭扬声器");
       this.isSpeakerOn = true;
       this.rtcEngine.enableSpeaker(enable);
-      formatAppLog("log", "at pages/rtc/live.nvue:916", "isSpeakerOn");
+      formatAppLog("log", "at pages/rtc/live.nvue:920", "isSpeakerOn");
       uni.showToast({
         title: enable ? "已打开扬声器" : "已关闭扬声器",
         icon: "none"
@@ -629,11 +632,11 @@ const _sfc_main = {
      * 强制清理所有资源
      */
     forceCleanup() {
-      formatAppLog("log", "at pages/rtc/live.nvue:929", "强制清理所有资源开始...");
+      formatAppLog("log", "at pages/rtc/live.nvue:933", "强制清理所有资源开始...");
       this._isDestroyed = true;
       if (this.roomJoinedListener) {
         this.roomJoinedListener = null;
-        formatAppLog("log", "at pages/rtc/live.nvue:937", "监听器引用已清理");
+        formatAppLog("log", "at pages/rtc/live.nvue:941", "监听器引用已清理");
       }
       if (this.rtcEngine) {
         try {
@@ -645,7 +648,7 @@ const _sfc_main = {
           this.rtcEngine.destroy();
           this.rtcEngine = null;
         } catch (e) {
-          formatAppLog("log", "at pages/rtc/live.nvue:951", "移除监听器时出现异常:", e);
+          formatAppLog("log", "at pages/rtc/live.nvue:955", "移除监听器时出现异常:", e);
           this.rtcEngine.destroy();
           this.rtcEngine = null;
         }
@@ -665,9 +668,9 @@ const _sfc_main = {
         this.remoteUserId = "";
         this.isRemoteStreams = false;
       } catch (e) {
-        formatAppLog("log", "at pages/rtc/live.nvue:973", "重置状态时出现异常:", e);
+        formatAppLog("log", "at pages/rtc/live.nvue:977", "重置状态时出现异常:", e);
       }
-      formatAppLog("log", "at pages/rtc/live.nvue:976", "强制清理所有资源完成");
+      formatAppLog("log", "at pages/rtc/live.nvue:980", "强制清理所有资源完成");
     }
   }
 };
