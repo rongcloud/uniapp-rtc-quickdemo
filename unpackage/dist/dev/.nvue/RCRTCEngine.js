@@ -263,7 +263,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     mirror: $props.mirror
   }, null, 8, ["fitType", "mirror"]);
 }
-const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/Users/yongqiming/developer/UAT/uniapp-rtc-quickdemo/uni_modules/RongCloud-RTCWrapper/components/RCRTCView.nvue"]]);
+const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/Users/yongqiming/developer/android/project/rongcloud/uniapp-rtc-quickdemo/uni_modules/RongCloud-RTCWrapper/components/RCRTCView.nvue"]]);
 var RCIMIWPushType;
 (function(RCIMIWPushType2) {
   RCIMIWPushType2[RCIMIWPushType2["iOS"] = 0] = "iOS";

@@ -928,7 +928,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     ])
   ]);
 }
-const live = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["styles", [_style_0]], ["__file", "/Users/yongqiming/developer/UAT/uniapp-rtc-quickdemo/pages/rtc/live.nvue"]]);
+const live = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["styles", [_style_0]], ["__file", "/Users/yongqiming/developer/android/project/rongcloud/uniapp-rtc-quickdemo/pages/rtc/live.nvue"]]);
 export {
   live as default
 };

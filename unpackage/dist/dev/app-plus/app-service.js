@@ -4808,7 +4808,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__file", "/Users/yongqiming/developer/UAT/uniapp-rtc-quickdemo/pages/index/index.vue"]]);
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__file", "/Users/yongqiming/developer/android/project/rongcloud/uniapp-rtc-quickdemo/pages/index/index.vue"]]);
   const _sfc_main$1 = {
     data() {
       return {
@@ -4987,7 +4987,7 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__scopeId", "data-v-e4e4508d"], ["__file", "/Users/yongqiming/developer/UAT/uniapp-rtc-quickdemo/pages/login/login.vue"]]);
+  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__scopeId", "data-v-e4e4508d"], ["__file", "/Users/yongqiming/developer/android/project/rongcloud/uniapp-rtc-quickdemo/pages/login/login.vue"]]);
   __definePage("pages/index/index", PagesIndexIndex);
   __definePage("pages/login/login", PagesLoginLogin);
   const _sfc_main = {
@@ -5006,7 +5006,7 @@ if (uni.restoreGlobal) {
       formatAppLog("log", "at App.vue:15", "App Hide");
     }
   };
-  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/yongqiming/developer/UAT/uniapp-rtc-quickdemo/App.vue"]]);
+  const App = /* @__PURE__ */ _export_sfc(_sfc_main, [["__file", "/Users/yongqiming/developer/android/project/rongcloud/uniapp-rtc-quickdemo/App.vue"]]);
   function createApp() {
     const app = vue.createVueApp(App);
     return {

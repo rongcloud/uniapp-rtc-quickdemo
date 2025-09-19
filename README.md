@@ -16,13 +16,14 @@
 ```
 uniapp-rtc-quickdemo/
 ├── pages/
-│   ├── login/          # 登录页面
-│   ├── index/          # 首页
-│   └── rtc/            # RTC音视频页面
+│   ├── login/login          # 登录页面
+│   ├── index/index          # 首页
+│   └── rtc/metting            # 会议
+│   └── rtc/live/            # 直播
 ├── utils/
-│   └── rongcloud.js    # 融云SDK工具类
+│   └── IMEngineUtils.js    # 融云SDK工具类
 ├── config/
-│   └── rongcloud.js    # 融云配置文件
+│   └── RCConfig.js    # 融云配置文件
 ├── static/             # 静态资源
 ├── manifest.json       # 应用配置
 └── pages.json          # 页面路由配置
@@ -32,13 +33,16 @@ uniapp-rtc-quickdemo/
 
 ### 1. 配置融云AppKey
 
-编辑 `config/rongcloud.js` 文件，将您的融云AppKey替换配置：
+编辑 `config/RCConfig.js` 文件，将您的融云AppKey替换配置：
 
 ```javascript
-export default {
-    appKey: 'your_actual_rongcloud_app_key_here', // 替换为您的实际AppKey
-    // ... 其他配置
-}
+{
+	id: '',
+	name: '测试用户1',
+	token: '',
+	avatar: '👤',
+	description: '主要测试账户'
+},
 ```
 
 ### 2. 安装依赖
@@ -46,19 +50,6 @@ export default {
 确保已安装融云原生插件：
 - RongCloud-IM-V2（融云即时通讯SDK）
 - RongCloud-RTC（融云RTC SDK）
-
-### 3. 运行项目
-
-```bash
-# 运行到H5
-npm run dev:h5
-
-# 运行到微信小程序
-npm run dev:mp-weixin
-
-# 运行到App
-npm run dev:app
-```
 
 ## 使用说明
 
@@ -70,19 +61,25 @@ npm run dev:app
 4. 系统会自动初始化融云SDK
 5. 登录成功后跳转到首页
 
-### 音视频通话
-
-1. 在首页点击"开始音视频通话"
-2. 进入RTC页面
-3. 输入房间号
-4. 点击"加入房间"
-5. 使用摄像头和麦克风控制按钮
-
 ### 自动登录
 
 - 登录信息会保存在本地存储中
 - 下次进入应用会自动检查登录状态
 - 如果已登录，直接跳转到首页
+
+### Demo 效果
+
+#### 会议功能
+![会议功能](static/meeting.png)
+*支持多人音视频会议，实时音视频通话*
+
+#### 直播功能
+![直播观众端](static/live_audience.png)
+*观众端界面，支持观看直播*
+
+![直播主播端](static/live_broadcaster.png)
+*主播端界面，支持开启直播*
+
 
 ## 技术栈
 
@@ -103,7 +100,7 @@ npm run dev:app
 
 ### 添加新功能
 
-1. 在 `utils/rongcloud.js` 中添加新的SDK方法
+1. 在 `utils/IMEngineUtils.js` 中添加新的SDK方法
 2. 在对应页面中调用SDK方法
 3. 更新UI界面
 
@@ -124,7 +121,7 @@ npm run dev:app
 ## 常见问题
 
 ### Q: 登录时提示"请先配置融云AppKey"
-A: 请检查 `config/rongcloud.js` 文件中的AppKey配置
+A: 请检查 `config/RCConfig.js` 文件中的AppKey配置
 
 ### Q: 无法加入房间
 A: 检查网络连接和SDK初始化状态
