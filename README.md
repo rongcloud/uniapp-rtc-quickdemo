@@ -92,7 +92,7 @@ export default {
 ### Demo 效果
 
 #### 会议功能
-![会议功能](static/meeting.png)
+<img src="static/meeting.png" alt="会议功能" width="250" height="150" />
 *支持多人音视频会议，实时音视频通话*
 
 #### 直播功能
