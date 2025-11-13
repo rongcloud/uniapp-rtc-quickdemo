@@ -96,10 +96,10 @@ export default {
 *支持多人音视频会议，实时音视频通话*
 
 #### 直播功能
-<img src="static/live_audience" alt="直播功能" width="300" height="1000" />
+<img src="static/live_audience.png" alt="直播功能" width="300" height="1000" />
 *观众端界面，支持观看直播*
 
-<img src="static/live_broadcaster" alt="直播功能" width="300" height="1000" />
+<img src="static/live_broadcaster.png" alt="直播功能" width="300" height="1000" />
 *主播端界面，支持开启直播*
 
 
