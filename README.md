@@ -92,14 +92,14 @@ export default {
 ### Demo 效果
 
 #### 会议功能
-<img src="static/meeting.png" alt="会议功能" width="250" height="150" />
+<img src="static/meeting.png" alt="会议功能" width="300" height="1000" />
 *支持多人音视频会议，实时音视频通话*
 
 #### 直播功能
-![直播观众端](static/live_audience.png)
+<img src="static/live_audience" alt="直播功能" width="300" height="1000" />
 *观众端界面，支持观看直播*
 
-![直播主播端](static/live_broadcaster.png)
+<img src="static/live_broadcaster" alt="直播功能" width="300" height="1000" />
 *主播端界面，支持开启直播*
 
 
