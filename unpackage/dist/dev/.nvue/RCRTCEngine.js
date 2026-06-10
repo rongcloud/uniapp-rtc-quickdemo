@@ -278,6 +278,14 @@ var RCIMIWPushType;
   RCIMIWPushType2[RCIMIWPushType2["oppo"] = 9] = "oppo";
   RCIMIWPushType2[RCIMIWPushType2["honor"] = 10] = "honor";
 })(RCIMIWPushType || (RCIMIWPushType = {}));
+var RCIMIWGroupReadReceiptVersion;
+(function(RCIMIWGroupReadReceiptVersion2) {
+  RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["unknown"] = 0] = "unknown";
+  RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["version1"] = 1] = "version1";
+  RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["version2"] = 2] = "version2";
+  RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["version4"] = 3] = "version4";
+  RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["version5"] = 4] = "version5";
+})(RCIMIWGroupReadReceiptVersion || (RCIMIWGroupReadReceiptVersion = {}));
 var RCIMIWImportanceHW;
 (function(RCIMIWImportanceHW2) {
   RCIMIWImportanceHW2[RCIMIWImportanceHW2["normal"] = 0] = "normal";
@@ -346,6 +354,11 @@ var RCIMIWPushNotificationLevel;
   RCIMIWPushNotificationLevel2[RCIMIWPushNotificationLevel2["mentionAll"] = 4] = "mentionAll";
   RCIMIWPushNotificationLevel2[RCIMIWPushNotificationLevel2["blocked"] = 5] = "blocked";
 })(RCIMIWPushNotificationLevel || (RCIMIWPushNotificationLevel = {}));
+var RCIMIWReadReceiptStatus;
+(function(RCIMIWReadReceiptStatus2) {
+  RCIMIWReadReceiptStatus2[RCIMIWReadReceiptStatus2["read"] = 0] = "read";
+  RCIMIWReadReceiptStatus2[RCIMIWReadReceiptStatus2["unread"] = 1] = "unread";
+})(RCIMIWReadReceiptStatus || (RCIMIWReadReceiptStatus = {}));
 var RCIMIWMessageType;
 (function(RCIMIWMessageType2) {
   RCIMIWMessageType2[RCIMIWMessageType2["unknown"] = 0] = "unknown";
@@ -363,7 +376,10 @@ var RCIMIWMessageType;
   RCIMIWMessageType2[RCIMIWMessageType2["location"] = 12] = "location";
   RCIMIWMessageType2[RCIMIWMessageType2["userCustom"] = 13] = "userCustom";
   RCIMIWMessageType2[RCIMIWMessageType2["nativeCustom"] = 14] = "nativeCustom";
-  RCIMIWMessageType2[RCIMIWMessageType2["nativeCustomMedia"] = 15] = "nativeCustomMedia";
+  RCIMIWMessageType2[RCIMIWMessageType2["stream"] = 15] = "stream";
+  RCIMIWMessageType2[RCIMIWMessageType2["nativeCustomMedia"] = 16] = "nativeCustomMedia";
+  RCIMIWMessageType2[RCIMIWMessageType2["groupNotification"] = 17] = "groupNotification";
+  RCIMIWMessageType2[RCIMIWMessageType2["combineV2"] = 18] = "combineV2";
 })(RCIMIWMessageType || (RCIMIWMessageType = {}));
 var RCIMIWMessageBlockType;
 (function(RCIMIWMessageBlockType2) {
@@ -372,6 +388,16 @@ var RCIMIWMessageBlockType;
   RCIMIWMessageBlockType2[RCIMIWMessageBlockType2["custom"] = 2] = "custom";
   RCIMIWMessageBlockType2[RCIMIWMessageBlockType2["thirdParty"] = 3] = "thirdParty";
 })(RCIMIWMessageBlockType || (RCIMIWMessageBlockType = {}));
+var RCIMIWMessageAuditType;
+(function(RCIMIWMessageAuditType2) {
+  RCIMIWMessageAuditType2[RCIMIWMessageAuditType2["disallow"] = 0] = "disallow";
+  RCIMIWMessageAuditType2[RCIMIWMessageAuditType2["allow"] = 1] = "allow";
+})(RCIMIWMessageAuditType || (RCIMIWMessageAuditType = {}));
+var RCIMIWReadReceiptOrder;
+(function(RCIMIWReadReceiptOrder2) {
+  RCIMIWReadReceiptOrder2[RCIMIWReadReceiptOrder2["descending"] = 0] = "descending";
+  RCIMIWReadReceiptOrder2[RCIMIWReadReceiptOrder2["ascending"] = 1] = "ascending";
+})(RCIMIWReadReceiptOrder || (RCIMIWReadReceiptOrder = {}));
 var RCIMIWTimeOrder;
 (function(RCIMIWTimeOrder2) {
   RCIMIWTimeOrder2[RCIMIWTimeOrder2["before"] = 0] = "before";

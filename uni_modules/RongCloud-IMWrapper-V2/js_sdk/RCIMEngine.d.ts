@@ -1,5 +1,5 @@
 import { RCIMIWPushType, RCIMIWEngineOptions } from './RCIMDefines';
-import { IRCIMIWAddChatRoomEntriesCallback, IRCIMIWAddChatRoomEntryCallback, IRCIMIWAddToBlacklistCallback, IRCIMIWCancelDownloadingMediaMessageCallback, IRCIMIWCancelSendingMediaMessageCallback, IRCIMIWChangeConversationNotificationLevelCallback, IRCIMIWChangeConversationTopStatusCallback, IRCIMIWChangeConversationTypeNotificationLevelCallback, IRCIMIWChangeMessageReceivedStatusCallback, IRCIMIWChangeMessageSentStatusCallback, IRCIMIWChangeNotificationQuietHoursCallback, IRCIMIWChangePushContentShowStatusCallback, IRCIMIWChangePushLanguageCallback, IRCIMIWChangePushReceiveStatusCallback, IRCIMIWChangeUltraGroupChannelDefaultNotificationLevelCallback, IRCIMIWChangeUltraGroupDefaultNotificationLevelCallback, IRCIMIWClearDraftMessageCallback, IRCIMIWClearMessagesCallback, IRCIMIWClearUltraGroupMessagesCallback, IRCIMIWClearUltraGroupMessagesForAllChannelCallback, IRCIMIWClearUnreadCountCallback, IRCIMIWDeleteLocalMessagesCallback, IRCIMIWDeleteMessagesCallback, IRCIMIWGetBatchRemoteUltraGroupMessagesCallback, IRCIMIWGetBlacklistCallback, IRCIMIWGetBlacklistStatusCallback, IRCIMIWGetBlockedConversationsCallback, IRCIMIWGetChatRoomAllEntriesCallback, IRCIMIWGetChatRoomEntryCallback, IRCIMIWGetChatRoomMessagesCallback, IRCIMIWGetConversationCallback, IRCIMIWGetConversationNotificationLevelCallback, IRCIMIWGetConversationTopStatusCallback, IRCIMIWGetConversationTypeNotificationLevelCallback, IRCIMIWGetConversationsCallback, IRCIMIWGetConversationsForAllChannelCallback, IRCIMIWGetDraftMessageCallback, IRCIMIWGetFirstUnreadMessageCallback, IRCIMIWGetMessageCallback, IRCIMIWGetMessageCountCallback, IRCIMIWGetMessagesCallback, IRCIMIWGetNotificationQuietHoursCallback, IRCIMIWGetTopConversationsCallback, IRCIMIWGetTotalUnreadCountCallback, IRCIMIWGetUltraGroupAllUnreadCountCallback, IRCIMIWGetUltraGroupAllUnreadMentionedCountCallback, IRCIMIWGetUltraGroupChannelDefaultNotificationLevelCallback, IRCIMIWGetUltraGroupDefaultNotificationLevelCallback, IRCIMIWGetUltraGroupUnreadCountCallback, IRCIMIWGetUltraGroupUnreadMentionedCountCallback, IRCIMIWGetUnreadConversationsCallback, IRCIMIWGetUnreadCountByConversationTypesCallback, IRCIMIWGetUnreadCountCallback, IRCIMIWGetUnreadMentionedCountCallback, IRCIMIWGetUnreadMentionedMessagesCallback, IRCIMIWInsertMessageCallback, IRCIMIWInsertMessagesCallback, IRCIMIWJoinChatRoomCallback, IRCIMIWLeaveChatRoomCallback, IRCIMIWModifyUltraGroupMessageCallback, IRCIMIWRecallMessageCallback, IRCIMIWRecallUltraGroupMessageCallback, IRCIMIWRemoveChatRoomEntriesCallback, IRCIMIWRemoveChatRoomEntryCallback, IRCIMIWRemoveConversationCallback, IRCIMIWRemoveConversationsCallback, IRCIMIWRemoveFromBlacklistCallback, IRCIMIWRemoveMessageExpansionForKeysCallback, IRCIMIWRemoveNotificationQuietHoursCallback, IRCIMIWRemoveUltraGroupMessageExpansionForKeysCallback, IRCIMIWSaveDraftMessageCallback, IRCIMIWSearchConversationsCallback, IRCIMIWSearchMessagesByTimeRangeCallback, IRCIMIWSearchMessagesByUserIdCallback, IRCIMIWSearchMessagesCallback, IRCIMIWSendGroupReadReceiptRequestCallback, IRCIMIWSendGroupReadReceiptResponseCallback, IRCIMIWSendPrivateReadReceiptMessageCallback, IRCIMIWSendUltraGroupTypingStatusCallback, IRCIMIWSyncConversationReadStatusCallback, IRCIMIWSyncUltraGroupReadStatusCallback, IRCIMIWUpdateMessageExpansionCallback, IRCIMIWUpdateUltraGroupMessageExpansionCallback, OnBatchRemoteUltraGroupMessagesLoadedResult, OnBlacklistAddedResult, OnBlacklistLoadedResult, OnBlacklistRemovedResult, OnBlacklistStatusLoadedResult, OnBlockedConversationsLoadedResult, OnChatRoomAllEntriesLoadedResult, OnChatRoomEntriesAddedResult, OnChatRoomEntriesChangedResult, OnChatRoomEntriesRemovedResult, OnChatRoomEntriesSyncedResult, OnChatRoomEntryAddedResult, OnChatRoomEntryLoadedResult, OnChatRoomEntryRemovedResult, OnChatRoomJoinedResult, OnChatRoomJoiningResult, OnChatRoomLeftResult, OnChatRoomMemberChangedResult, OnChatRoomMessagesLoadedResult, OnChatRoomStatusChangedResult, OnConnectedResult, OnConnectionStatusChangedResult, OnConversationLoadedResult, OnConversationNotificationLevelChangedResult, OnConversationNotificationLevelLoadedResult, OnConversationNotificationLevelSyncedResult, OnConversationReadStatusSyncMessageReceivedResult, OnConversationReadStatusSyncedResult, OnConversationRemovedResult, OnConversationTopStatusChangedResult, OnConversationTopStatusLoadedResult, OnConversationTopStatusSyncedResult, OnConversationTypeNotificationLevelChangedResult, OnConversationTypeNotificationLevelLoadedResult, OnConversationsLoadedForAllChannelResult, OnConversationsLoadedResult, OnConversationsRemovedResult, OnConversationsSearchedResult, OnDatabaseOpenedResult, OnDownloadingMediaMessageCanceledResult, OnDraftMessageClearedResult, OnDraftMessageLoadedResult, OnDraftMessageSavedResult, OnFirstUnreadMessageLoadedResult, OnGroupMessageReadReceiptRequestReceivedResult, OnGroupMessageReadReceiptResponseReceivedResult, OnGroupMessageToDesignatedUsersAttachedResult, OnGroupMessageToDesignatedUsersSentResult, OnGroupReadReceiptRequestSentResult, OnGroupReadReceiptResponseSentResult, OnLocalMessagesDeletedResult, OnMediaMessageAttachedResult, OnMediaMessageDownloadedResult, OnMediaMessageDownloadingResult, OnMediaMessageSendingResult, OnMediaMessageSentResult, OnMessageAttachedResult, OnMessageBlockedResult, OnMessageCountLoadedResult, OnMessageExpansionForKeysRemovedResult, OnMessageExpansionUpdatedResult, OnMessageInsertedResult, OnMessageRecalledResult, OnMessageReceiveStatusChangedResult, OnMessageReceivedResult, OnMessageSentResult, OnMessageSentStatusChangedResult, OnMessagesClearedResult, OnMessagesDeletedResult, OnMessagesInsertedResult, OnMessagesLoadedResult, OnMessagesSearchedByTimeRangeResult, OnMessagesSearchedByUserIdResult, OnMessagesSearchedResult, OnNotificationQuietHoursChangedResult, OnNotificationQuietHoursLoadedResult, OnNotificationQuietHoursRemovedResult, OnPrivateReadReceiptMessageSentResult, OnPrivateReadReceiptReceivedResult, OnPushContentShowStatusChangedResult, OnPushLanguageChangedResult, OnPushReceiveStatusChangedResult, OnRemoteMessageExpansionForKeyRemovedResult, OnRemoteMessageExpansionUpdatedResult, OnRemoteMessageRecalledResult, OnRemoteUltraGroupMessageExpansionUpdatedResult, OnRemoteUltraGroupMessageModifiedResult, OnRemoteUltraGroupMessageRecalledResult, OnSendingMediaMessageCanceledResult, OnTopConversationsLoadedResult, OnTotalUnreadCountLoadedResult, OnTypingStatusChangedResult, OnUltraGroupAllUnreadCountLoadedResult, OnUltraGroupAllUnreadMentionedCountLoadedResult, OnUltraGroupChannelDefaultNotificationLevelChangedResult, OnUltraGroupChannelDefaultNotificationLevelLoadedResult, OnUltraGroupConversationsSyncedResult, OnUltraGroupDefaultNotificationLevelChangedResult, OnUltraGroupDefaultNotificationLevelLoadedResult, OnUltraGroupMessageExpansionForKeysRemovedResult, OnUltraGroupMessageExpansionUpdatedResult, OnUltraGroupMessageModifiedResult, OnUltraGroupMessageRecalledResult, OnUltraGroupMessagesClearedForAllChannelResult, OnUltraGroupMessagesClearedResult, OnUltraGroupReadStatusSyncedResult, OnUltraGroupReadTimeReceivedResult, OnUltraGroupTypingStatusChangedResult, OnUltraGroupTypingStatusSentResult, OnUltraGroupUnreadCountLoadedResult, OnUltraGroupUnreadMentionedCountLoadedResult, OnUnreadCountByConversationTypesLoadedResult, OnUnreadCountClearedResult, OnUnreadCountLoadedResult, OnUnreadMentionedCountLoadedResult, OnUnreadMentionedMessagesLoadedResult, RCIMIWConnectCallback, RCIMIWConversationType, RCIMIWCustomMessage, RCIMIWCustomMessagePolicy, RCIMIWDownloadMediaMessageListener, RCIMIWFileMessage, RCIMIWGIFMessage, RCIMIWImageMessage, RCIMIWLocationMessage, RCIMIWLogLevel, RCIMIWMediaMessage, RCIMIWMessage, RCIMIWMessageOperationPolicy, RCIMIWMessageType, RCIMIWNativeCustomMediaMessage, RCIMIWNativeCustomMessage, RCIMIWNativeCustomMessagePersistentFlag, RCIMIWPushNotificationLevel, RCIMIWPushNotificationQuietHoursLevel, RCIMIWReceivedStatus, RCIMIWReferenceMessage, RCIMIWSendGroupMessageToDesignatedUsersCallback, RCIMIWSendMediaMessageListener, RCIMIWSendMessageCallback, RCIMIWSentStatus, RCIMIWSightMessage, RCIMIWTextMessage, RCIMIWTimeOrder, RCIMIWUltraGroupTypingStatus, RCIMIWVoiceMessage } from './RCIMDefines';
+import { IRCIMIWAddChatRoomEntriesCallback, IRCIMIWAddChatRoomEntryCallback, IRCIMIWAddToBlacklistCallback, IRCIMIWCancelDownloadingMediaMessageCallback, IRCIMIWCancelSendingMediaMessageCallback, IRCIMIWChangeConversationNotificationLevelCallback, IRCIMIWChangeConversationTopStatusCallback, IRCIMIWChangeConversationTypeNotificationLevelCallback, IRCIMIWChangeMessageReceivedStatusCallback, IRCIMIWChangeMessageSentStatusCallback, IRCIMIWChangeNotificationQuietHoursCallback, IRCIMIWChangePushContentShowStatusCallback, IRCIMIWChangePushLanguageCallback, IRCIMIWChangePushReceiveStatusCallback, IRCIMIWChangeUltraGroupChannelDefaultNotificationLevelCallback, IRCIMIWChangeUltraGroupDefaultNotificationLevelCallback, IRCIMIWClearDraftMessageCallback, IRCIMIWClearMessagesCallback, IRCIMIWClearUltraGroupMessagesCallback, IRCIMIWClearUltraGroupMessagesForAllChannelCallback, IRCIMIWClearUnreadCountCallback, IRCIMIWDeleteLocalMessagesCallback, IRCIMIWDeleteMessagesCallback, IRCIMIWGetBatchRemoteUltraGroupMessagesCallback, IRCIMIWGetBlacklistCallback, IRCIMIWGetBlacklistStatusCallback, IRCIMIWGetBlockedConversationsCallback, IRCIMIWGetChatRoomAllEntriesCallback, IRCIMIWGetChatRoomEntryCallback, IRCIMIWGetChatRoomMessagesCallback, IRCIMIWGetConversationCallback, IRCIMIWGetConversationNotificationLevelCallback, IRCIMIWGetConversationTopStatusCallback, IRCIMIWGetConversationTypeNotificationLevelCallback, IRCIMIWGetConversationsCallback, IRCIMIWGetConversationsForAllChannelCallback, IRCIMIWGetDraftMessageCallback, IRCIMIWGetFirstUnreadMessageCallback, IRCIMIWGetMessageCallback, IRCIMIWGetMessageCountCallback, IRCIMIWGetMessageReadReceiptInfoV5Callback, IRCIMIWGetMessagesCallback, IRCIMIWGetMessagesReadReceiptByUsersV5Callback, IRCIMIWGetMessagesReadReceiptUsersByPageV5Callback, IRCIMIWGetNotificationQuietHoursCallback, IRCIMIWGetTopConversationsCallback, IRCIMIWGetTotalUnreadCountCallback, IRCIMIWGetUltraGroupAllUnreadCountCallback, IRCIMIWGetUltraGroupAllUnreadMentionedCountCallback, IRCIMIWGetUltraGroupChannelDefaultNotificationLevelCallback, IRCIMIWGetUltraGroupDefaultNotificationLevelCallback, IRCIMIWGetUltraGroupUnreadCountCallback, IRCIMIWGetUltraGroupUnreadMentionedCountCallback, IRCIMIWGetUnreadConversationsCallback, IRCIMIWGetUnreadCountByConversationTypesCallback, IRCIMIWGetUnreadCountCallback, IRCIMIWGetUnreadMentionedCountCallback, IRCIMIWGetUnreadMentionedMessagesCallback, IRCIMIWInsertMessageCallback, IRCIMIWInsertMessagesCallback, IRCIMIWJoinChatRoomCallback, IRCIMIWLeaveChatRoomCallback, IRCIMIWModifyUltraGroupMessageCallback, IRCIMIWOperationCallback, IRCIMIWRecallMessageCallback, IRCIMIWRecallUltraGroupMessageCallback, IRCIMIWRemoveChatRoomEntriesCallback, IRCIMIWRemoveChatRoomEntryCallback, IRCIMIWRemoveConversationCallback, IRCIMIWRemoveConversationsCallback, IRCIMIWRemoveFromBlacklistCallback, IRCIMIWRemoveMessageExpansionForKeysCallback, IRCIMIWRemoveNotificationQuietHoursCallback, IRCIMIWRemoveUltraGroupMessageExpansionForKeysCallback, IRCIMIWSaveDraftMessageCallback, IRCIMIWSearchConversationsCallback, IRCIMIWSearchMessagesByMessageTypesCallback, IRCIMIWSearchMessagesByTimeRangeCallback, IRCIMIWSearchMessagesByUserIdCallback, IRCIMIWSearchMessagesCallback, IRCIMIWSendGroupReadReceiptRequestCallback, IRCIMIWSendGroupReadReceiptResponseCallback, IRCIMIWSendPrivateReadReceiptMessageCallback, IRCIMIWSendReadReceiptResponseV5Callback, IRCIMIWSendUltraGroupTypingStatusCallback, IRCIMIWSyncConversationReadStatusCallback, IRCIMIWSyncUltraGroupReadStatusCallback, IRCIMIWUpdateMessageExpansionCallback, IRCIMIWUpdateUltraGroupMessageExpansionCallback, OnBatchRemoteUltraGroupMessagesLoadedResult, OnBlacklistAddedResult, OnBlacklistLoadedResult, OnBlacklistRemovedResult, OnBlacklistStatusLoadedResult, OnBlockedConversationsLoadedResult, OnChatRoomAllEntriesLoadedResult, OnChatRoomEntriesAddedResult, OnChatRoomEntriesChangedResult, OnChatRoomEntriesRemovedResult, OnChatRoomEntriesSyncedResult, OnChatRoomEntryAddedResult, OnChatRoomEntryLoadedResult, OnChatRoomEntryRemovedResult, OnChatRoomJoinedResult, OnChatRoomJoiningResult, OnChatRoomLeftResult, OnChatRoomMemberChangedResult, OnChatRoomMessagesLoadedResult, OnChatRoomStatusChangedResult, OnConnectedResult, OnConnectionStatusChangedResult, OnConversationLoadedResult, OnConversationNotificationLevelChangedResult, OnConversationNotificationLevelLoadedResult, OnConversationNotificationLevelSyncedResult, OnConversationReadStatusSyncMessageReceivedResult, OnConversationReadStatusSyncedResult, OnConversationRemovedResult, OnConversationTopStatusChangedResult, OnConversationTopStatusLoadedResult, OnConversationTopStatusSyncedResult, OnConversationTypeNotificationLevelChangedResult, OnConversationTypeNotificationLevelLoadedResult, OnConversationsLoadedForAllChannelResult, OnConversationsLoadedResult, OnConversationsRemovedResult, OnConversationsSearchedResult, OnDatabaseOpenedResult, OnDownloadingMediaMessageCanceledResult, OnDraftMessageClearedResult, OnDraftMessageLoadedResult, OnDraftMessageSavedResult, OnFirstUnreadMessageLoadedResult, OnGroupMessageReadReceiptRequestReceivedResult, OnGroupMessageReadReceiptResponseReceivedResult, OnGroupMessageToDesignatedUsersAttachedResult, OnGroupMessageToDesignatedUsersSentResult, OnGroupReadReceiptRequestSentResult, OnGroupReadReceiptResponseSentResult, OnLocalMessagesDeletedResult, OnMediaMessageAttachedResult, OnMediaMessageDownloadedResult, OnMediaMessageDownloadingResult, OnMediaMessageSendingResult, OnMediaMessageSentResult, OnMessageAttachedResult, OnMessageBlockedResult, OnMessageCountLoadedResult, OnMessageExpansionForKeysRemovedResult, OnMessageExpansionUpdatedResult, OnMessageInsertedResult, OnMessageReadReceiptV5ReceivedResult, OnMessageRecalledResult, OnMessageReceiveStatusChangedResult, OnMessageReceivedResult, OnMessageSentResult, OnMessageSentStatusChangedResult, OnMessagesClearedResult, OnMessagesDeletedResult, OnMessagesInsertedResult, OnMessagesLoadedResult, OnMessagesSearchedByTimeRangeResult, OnMessagesSearchedByUserIdResult, OnMessagesSearchedResult, OnNotificationQuietHoursChangedResult, OnNotificationQuietHoursLoadedResult, OnNotificationQuietHoursRemovedResult, OnPrivateReadReceiptMessageSentResult, OnPrivateReadReceiptReceivedResult, OnPushContentShowStatusChangedResult, OnPushLanguageChangedResult, OnPushReceiveStatusChangedResult, OnRemoteMessageExpansionForKeyRemovedResult, OnRemoteMessageExpansionUpdatedResult, OnRemoteMessageRecalledResult, OnRemoteUltraGroupMessageExpansionUpdatedResult, OnRemoteUltraGroupMessageModifiedResult, OnRemoteUltraGroupMessageRecalledResult, OnSendingMediaMessageCanceledResult, OnStreamMessageRequestCompleteResult, OnStreamMessageRequestDataResult, OnStreamMessageRequestInitResult, OnTopConversationsLoadedResult, OnTotalUnreadCountLoadedResult, OnTypingStatusChangedResult, OnUltraGroupAllUnreadCountLoadedResult, OnUltraGroupAllUnreadMentionedCountLoadedResult, OnUltraGroupChannelDefaultNotificationLevelChangedResult, OnUltraGroupChannelDefaultNotificationLevelLoadedResult, OnUltraGroupConversationsSyncedResult, OnUltraGroupDefaultNotificationLevelChangedResult, OnUltraGroupDefaultNotificationLevelLoadedResult, OnUltraGroupMessageExpansionForKeysRemovedResult, OnUltraGroupMessageExpansionUpdatedResult, OnUltraGroupMessageModifiedResult, OnUltraGroupMessageRecalledResult, OnUltraGroupMessagesClearedForAllChannelResult, OnUltraGroupMessagesClearedResult, OnUltraGroupReadStatusSyncedResult, OnUltraGroupReadTimeReceivedResult, OnUltraGroupTypingStatusChangedResult, OnUltraGroupTypingStatusSentResult, OnUltraGroupUnreadCountLoadedResult, OnUltraGroupUnreadMentionedCountLoadedResult, OnUnreadCountByConversationTypesLoadedResult, OnUnreadCountClearedResult, OnUnreadCountLoadedResult, OnUnreadMentionedCountLoadedResult, OnUnreadMentionedMessagesLoadedResult, RCIMIWAppSettings, RCIMIWConnectCallback, RCIMIWConversationType, RCIMIWCustomMessage, RCIMIWCustomMessagePolicy, RCIMIWDownloadMediaMessageListener, RCIMIWFileMessage, RCIMIWGIFMessage, RCIMIWImageMessage, RCIMIWLocationMessage, RCIMIWLogLevel, RCIMIWMediaMessage, RCIMIWMessage, RCIMIWMessageIdentifier, RCIMIWMessageOperationPolicy, RCIMIWMessageType, RCIMIWNativeCustomMediaMessage, RCIMIWNativeCustomMessage, RCIMIWNativeCustomMessagePersistentFlag, RCIMIWPushNotificationLevel, RCIMIWPushNotificationQuietHoursLevel, RCIMIWReadReceiptUsersOption, RCIMIWReceivedStatus, RCIMIWReferenceMessage, RCIMIWSendGroupMessageToDesignatedUsersCallback, RCIMIWSendMediaMessageListener, RCIMIWSendMessageCallback, RCIMIWSentStatus, RCIMIWSightMessage, RCIMIWStreamMessageRequestParams, RCIMIWTextMessage, RCIMIWTimeOrder, RCIMIWUltraGroupTypingStatus, RCIMIWVoiceMessage } from './RCIMDefines';
 export default class RCIMIWEngine {
     static _invokeMethod(name: string, params?: object): any;
     _invokeMethod(name: string, callback: any, params?: object): any;
@@ -25,27 +25,37 @@ export default class RCIMIWEngine {
      */
     registerPushToken(pushType: RCIMIWPushType, pushToken: string): Promise<number>;
     /**
+     * 将 SDK 返回的本地文件拷贝到 uni _doc 目录下。一般 iOS 平台下需要调用此方法，Android 平台下不需要调用。
+     * @param filePath 文件本地路径
+     * @returns
+     */
+    copyFileToUniDocPath(filePath: string): Promise<string>;
+    /**
      * 注册原生自定义普通消息
      * @param messageIdentifier 消息的唯一标识
-     * @param persistentFlag 消息的存储策略
+     * @param persistentFlag    消息的存储策略
      * @return 当次接口操作的状态码。0 代表调用成功，非 0 代表当前接口调用操作失败，详细错误参考错误码
      */
     registerNativeCustomMessage(messageIdentifier: string, persistentFlag: RCIMIWNativeCustomMessagePersistentFlag): Promise<number>;
     /**
      * 注册原生自定义媒体消息
      * @param messageIdentifier 消息的唯一标识
-     * @param persistentFlag 消息的存储策略
+     * @param persistentFlag    消息的存储策略
      * @return 当次接口操作的状态码。0 代表调用成功，非 0 代表当前接口调用操作失败，详细错误参考错误码
      */
     registerNativeCustomMediaMessage(messageIdentifier: string, persistentFlag: RCIMIWNativeCustomMessagePersistentFlag): Promise<number>;
     /**
-     * 连接融云服务器，在整个应用程序全局，只需要调用一次。调用此接口返回非业务错误码时，SDK 会启动重连机制进行重连；如果仍没有连接成功，会在设备网络状态变化时再次进行重连。
+     * 连接融云服务器，在整个应用程序全局，只需要调用一次。调用此接口返回非业务错误码时，SDK
+     * 会启动重连机制进行重连；如果仍没有连接成功，会在设备网络状态变化时再次进行重连。
      * @param token    调用 server api 获取到的 token
      * @param timeout  连接超时时间，单位：秒。
-     * timeLimit <= 0，则 IM 将一直连接，直到连接成功或者无法连接（如 token 非法）
-     * timeLimit > 0，则 IM 将最多连接 timeLimit 秒
-     * 如果在 timeLimit 秒内连接成功，后面再发生了网络变化或前后台切换，SDK 会自动重连； 如果在 timeLimit 秒无法连接成功则不再进行重连，通过 listener 告知连接超时，您需要再自行调用 connect 接口
-     * @param callback 链接事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * timeout ≤ 0，则 IM 将一直连接，直到连接成功或者无法连接（如 token 非法）
+     * timeout > 0，则 IM 将最多连接 timeout 秒
+     * 如果在 timeout 秒内连接成功，后面再发生了网络变化或前后台切换，SDK 会自动重连； 如果在 timeout
+     * 秒无法连接成功则不再进行重连，通过 listener 告知连接超时，您需要再自行调用 connect 接口
+     * @param callback 链接事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener 接口回调可以监听 [onConnected]
      */
@@ -133,9 +143,7 @@ export default class RCIMIWEngine {
      * @param fields            消息的内容键值对
      * @return 自定义消息实体
      */
-    createCustomMessage(type: RCIMIWConversationType, targetId: string, channelId: string, policy: RCIMIWCustomMessagePolicy, messageIdentifier: string, fields: {
-        [propName: string]: string;
-    }): Promise<RCIMIWCustomMessage | number>;
+    createCustomMessage(type: RCIMIWConversationType, targetId: string, channelId: string, policy: RCIMIWCustomMessagePolicy, messageIdentifier: string, fields: Record<string, string>): Promise<RCIMIWCustomMessage | number>;
     /**
      * 构建位置消息
      * @param type          会话类型
@@ -150,33 +158,31 @@ export default class RCIMIWEngine {
     createLocationMessage(type: RCIMIWConversationType, targetId: string, channelId: string, longitude: number, latitude: number, poiName: string, thumbnailPath: string): Promise<RCIMIWLocationMessage | number>;
     /**
      * 构建原生自定义普通消息
-     * @param type 会话类型
-     * @param targetId 会话 ID
-     * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
+     * @param type              会话类型
+     * @param targetId          会话 ID
+     * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param messageIdentifier 消息的标识符，需唯一
-     * @param fields 消息的内容键值对
+     * @param fields            消息的内容键值对
      * @return 原生自定义普通消息
      */
-    createNativeCustomMessage(type: RCIMIWConversationType, targetId: string, channelId: string, messageIdentifier: string, fields: {
-        [propName: string]: Object;
-    }): Promise<RCIMIWNativeCustomMessage | number>;
+    createNativeCustomMessage(type: RCIMIWConversationType, targetId: string, channelId: string, messageIdentifier: string, fields: Record<string, Object>): Promise<RCIMIWNativeCustomMessage | number>;
     /**
      * 构建原生自定义媒体消息
-     * @param type 会话类型
-     * @param targetId 会话 ID
-     * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
+     * @param type              会话类型
+     * @param targetId          会话 ID
+     * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param messageIdentifier 消息的标识符，需唯一
-     * @param path 媒体文件的本地路径，必须为有效路径
-     * @param fields 消息的内容键值对
+     * @param path              媒体文件的本地路径，必须为有效路径
+     * @param fields            消息的内容键值对
      * @return 原生自定义媒体消息
      */
-    createNativeCustomMediaMessage(type: RCIMIWConversationType, targetId: string, channelId: string, messageIdentifier: string, path: string, fields: {
-        [propName: string]: Object;
-    }): Promise<RCIMIWNativeCustomMediaMessage | number>;
+    createNativeCustomMediaMessage(type: RCIMIWConversationType, targetId: string, channelId: string, messageIdentifier: string, path: string, fields: Record<string, Object>): Promise<RCIMIWNativeCustomMediaMessage | number>;
     /**
      * 发送普通消息
      * @param message  发送的消息实体
-     * @param callback 发送消息的事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 发送消息的事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener 接口回调可以监听 [onMessageAttached],[onMessageSent]
      */
@@ -186,13 +192,16 @@ export default class RCIMIWEngine {
      * @param message  发送的媒体消息实体
      * @param listener 发送媒体消息的事件监听
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener 接口回调可以监听 [onMediaMessageSending],[onMediaMessageAttached],[onMediaMessageSent]
+     * @listener 接口回调可以监听
+     * [onMediaMessageSending],[onMediaMessageAttached],[onMediaMessageSent]
      */
     sendMediaMessage(message: RCIMIWMediaMessage, listener: RCIMIWSendMediaMessageListener): Promise<number>;
     /**
      * 取消发送媒体消息
      * @param message  需要取消发送的媒体消息实体
-     * @param callback 取消发送媒体消息的事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 取消发送媒体消息的事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener 接口回调可以监听 [onSendingMediaMessageCanceled]
      */
@@ -208,7 +217,9 @@ export default class RCIMIWEngine {
     /**
      * 取消下载媒体消息
      * @param message  需要取消下载的媒体消息实体
-     * @param callback 取消下载媒体消息的事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 取消下载媒体消息的事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onDownloadingMediaMessageCanceled]
      */
@@ -220,7 +231,9 @@ export default class RCIMIWEngine {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationLoaded]
-     * @deprecated 用 {@link #getConversation(RCIMIWConversationType, String, String, IRCIMIWGetConversationCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getConversation(RCIMIWConversationType, String, String, IRCIMIWGetConversationCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadConversation(type: RCIMIWConversationType, targetId: string, channelId: string): Promise<number>;
     /**
@@ -228,9 +241,8 @@ export default class RCIMIWEngine {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可
-     * @param callback  获取会话事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  获取会话事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onConversationLoaded]
      */
     getConversation(type: RCIMIWConversationType, targetId: string, channelId: string, callback: IRCIMIWGetConversationCallback): Promise<number>;
     /**
@@ -238,36 +250,39 @@ export default class RCIMIWEngine {
      * @param conversationTypes 会话类型
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可
      * @param startTime         时间戳（毫秒），获取小于此时间戳的会话，传 0 为查询最新数据
-     * @param count             查询的数量， 0 < count <= 50
+     * @param count             查询的数量， 0 < count ≤ 50
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationsLoaded]
-     * @deprecated 用 {@link #getConversations(List, String, long, int, IRCIMIWGetConversationsCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getConversations(List, String, long, int, IRCIMIWGetConversationsCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
-    loadConversations(conversationTypes: Array<RCIMIWConversationType>, channelId: string, startTime: number, count: number): Promise<number>;
+    loadConversations(conversationTypes: RCIMIWConversationType[], channelId: string, startTime: number, count: number): Promise<number>;
     /**
      * 获取某些会话
      * @param conversationTypes 会话类型
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可
      * @param startTime         时间戳（毫秒），获取小于此时间戳的会话，传 0 为查询最新数据
-     * @param count             查询的数量， 0 < count <= 50
-     * @param callback          获取会话列表事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param count             查询的数量， 0 < count ≤ 50
+     * @param callback          获取会话列表事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onConversationsLoaded]
      */
-    getConversations(conversationTypes: Array<RCIMIWConversationType>, channelId: string, startTime: number, count: number, callback: IRCIMIWGetConversationsCallback): Promise<number>;
+    getConversations(conversationTypes: RCIMIWConversationType[], channelId: string, startTime: number, count: number, callback: IRCIMIWGetConversationsCallback): Promise<number>;
     /**
      * 获取指定类型的含有未读消息的会话列表
      * @param conversationTypes 支持单聊、群聊、系统会话
-     * @param callback 获取会话列表事件回调。
+     * @param callback          获取会话列表事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      */
-    getUnreadConversations(conversationTypes: Array<RCIMIWConversationType>, callback: IRCIMIWGetUnreadConversationsCallback): Promise<number>;
+    getUnreadConversations(conversationTypes: RCIMIWConversationType[], callback: IRCIMIWGetUnreadConversationsCallback): Promise<number>;
     /**
      * 移除某个会话
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可
-     * @param callback  移除会话事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  移除会话事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationRemoved]
      */
@@ -276,11 +291,13 @@ export default class RCIMIWEngine {
      * 根据会话类型移除会话
      * @param conversationTypes 会话类型集合
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback          移除会话列表事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback          移除会话列表事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback
+     * 参数，仅触发 callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationsRemoved]
      */
-    removeConversations(conversationTypes: Array<RCIMIWConversationType>, channelId: string, callback: IRCIMIWRemoveConversationsCallback): Promise<number>;
+    removeConversations(conversationTypes: RCIMIWConversationType[], channelId: string, callback: IRCIMIWRemoveConversationsCallback): Promise<number>;
     /**
      * 加载某个会话的未读数
      * 注：不支持聊天室！
@@ -289,7 +306,9 @@ export default class RCIMIWEngine {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUnreadCountLoaded]
-     * @deprecated 用 {@link #getUnreadCount(RCIMIWConversationType, String, String, IRCIMIWGetUnreadCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUnreadCount(RCIMIWConversationType, String, String, IRCIMIWGetUnreadCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUnreadCount(type: RCIMIWConversationType, targetId: string, channelId: string): Promise<number>;
     /**
@@ -298,9 +317,8 @@ export default class RCIMIWEngine {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  获取会话未读数事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  获取会话未读数事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUnreadCountLoaded]
      */
     getUnreadCount(type: RCIMIWConversationType, targetId: string, channelId: string, callback: IRCIMIWGetUnreadCountCallback): Promise<number>;
     /**
@@ -308,15 +326,16 @@ export default class RCIMIWEngine {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onTotalUnreadCountLoaded]
-     * @deprecated 用 {@link #getTotalUnreadCount(String, IRCIMIWGetTotalUnreadCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getTotalUnreadCount(String, IRCIMIWGetTotalUnreadCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadTotalUnreadCount(channelId: string): Promise<number>;
     /**
      * 获取所有未读数
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  获取所有未读数事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  获取所有未读数事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onTotalUnreadCountLoaded]
      */
     getTotalUnreadCount(channelId: string, callback: IRCIMIWGetTotalUnreadCountCallback): Promise<number>;
     /**
@@ -327,7 +346,9 @@ export default class RCIMIWEngine {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUnreadMentionedCountLoaded]
-     * @deprecated 用 {@link #getUnreadMentionedCount(RCIMIWConversationType, String, String, IRCIMIWGetUnreadMentionedCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUnreadMentionedCount(RCIMIWConversationType, String, String, IRCIMIWGetUnreadMentionedCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUnreadMentionedCount(type: RCIMIWConversationType, targetId: string, channelId: string): Promise<number>;
     /**
@@ -336,37 +357,38 @@ export default class RCIMIWEngine {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  获取会话中未读的 @ 消息数量事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  获取会话中未读的 @ 消息数量事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUnreadMentionedCountLoaded]
      */
     getUnreadMentionedCount(type: RCIMIWConversationType, targetId: string, channelId: string, callback: IRCIMIWGetUnreadMentionedCountCallback): Promise<number>;
     /**
      * 加载当前用户加入的所有超级群会话的未读消息数的总和。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupAllUnreadCountLoaded]
-     * @deprecated 用 {@link #getUltraGroupAllUnreadCount(IRCIMIWGetUltraGroupAllUnreadCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUltraGroupAllUnreadCount(IRCIMIWGetUltraGroupAllUnreadCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUltraGroupAllUnreadCount(): Promise<number>;
     /**
      * 获取当前用户加入的所有超级群会话的未读消息数的总和。
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUltraGroupAllUnreadCountLoaded]
      */
     getUltraGroupAllUnreadCount(callback: IRCIMIWGetUltraGroupAllUnreadCountCallback): Promise<number>;
     /**
      * 加载当前用户加入的所有超级群会话中的未读 @ 消息数的总和。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupAllUnreadMentionedCountLoaded]
-     * @deprecated 用 {@link #getUltraGroupAllUnreadMentionedCount(IRCIMIWGetUltraGroupAllUnreadMentionedCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUltraGroupAllUnreadMentionedCount(IRCIMIWGetUltraGroupAllUnreadMentionedCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUltraGroupAllUnreadMentionedCount(): Promise<number>;
     /**
      * 获取当前用户加入的所有超级群会话中的未读 @ 消息数的总和。
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUltraGroupAllUnreadMentionedCountLoaded]
      */
     getUltraGroupAllUnreadMentionedCount(callback: IRCIMIWGetUltraGroupAllUnreadMentionedCountCallback): Promise<number>;
     /**
@@ -374,15 +396,16 @@ export default class RCIMIWEngine {
      * @param targetId 会话 ID
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupUnreadCountLoaded]
-     * @deprecated 用 {@link #getUltraGroupUnreadCount(String, IRCIMIWGetUltraGroupUnreadCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUltraGroupUnreadCount(String, IRCIMIWGetUltraGroupUnreadCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUltraGroupUnreadCount(targetId: string): Promise<number>;
     /**
      * 获取指定会话的未读消息数
      * @param targetId 会话 ID
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUltraGroupUnreadCountLoaded]
      */
     getUltraGroupUnreadCount(targetId: string, callback: IRCIMIWGetUltraGroupUnreadCountCallback): Promise<number>;
     /**
@@ -390,15 +413,16 @@ export default class RCIMIWEngine {
      * @param targetId 会话 ID
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupUnreadMentionedCountLoaded]
-     * @deprecated 用 {@link #getUltraGroupUnreadMentionedCount(String, IRCIMIWGetUltraGroupUnreadMentionedCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUltraGroupUnreadMentionedCount(String, IRCIMIWGetUltraGroupUnreadMentionedCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUltraGroupUnreadMentionedCount(targetId: string): Promise<number>;
     /**
      * 获取超级群会话中被 @ 的消息数
      * @param targetId 会话 ID
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUltraGroupUnreadMentionedCountLoaded]
      */
     getUltraGroupUnreadMentionedCount(targetId: string, callback: IRCIMIWGetUltraGroupUnreadMentionedCountCallback): Promise<number>;
     /**
@@ -409,20 +433,21 @@ export default class RCIMIWEngine {
      * @param contain           是否包含免打扰消息的未读消息数。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUnreadCountByConversationTypesLoaded]
-     * @deprecated 用 {@link #getUnreadCountByConversationTypes(List, String, boolean, IRCIMIWGetUnreadCountByConversationTypesCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUnreadCountByConversationTypes(List, String, boolean, IRCIMIWGetUnreadCountByConversationTypesCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
-    loadUnreadCountByConversationTypes(conversationTypes: Array<RCIMIWConversationType>, channelId: string, contain: boolean): Promise<number>;
+    loadUnreadCountByConversationTypes(conversationTypes: RCIMIWConversationType[], channelId: string, contain: boolean): Promise<number>;
     /**
      * 根据会话类型加载未读数
      * 注：不支持聊天室！
      * @param conversationTypes 会话类型集合
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param contain           是否包含免打扰消息的未读消息数。
-     * @param callback          事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback          事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUnreadCountByConversationTypesLoaded]
      */
-    getUnreadCountByConversationTypes(conversationTypes: Array<RCIMIWConversationType>, channelId: string, contain: boolean, callback: IRCIMIWGetUnreadCountByConversationTypesCallback): Promise<number>;
+    getUnreadCountByConversationTypes(conversationTypes: RCIMIWConversationType[], channelId: string, contain: boolean, callback: IRCIMIWGetUnreadCountByConversationTypesCallback): Promise<number>;
     /**
      * 清除某个会话中的未读消息数。
      * 注：不支持聊天室！
@@ -430,7 +455,9 @@ export default class RCIMIWEngine {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param timestamp 该会话已阅读的最后一条消息的发送时间戳，清除所有传入当前最新时间戳
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUnreadCountCleared]
      */
@@ -441,7 +468,9 @@ export default class RCIMIWEngine {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param draft     草稿的文字内容。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onDraftMessageSaved]
      */
@@ -453,7 +482,9 @@ export default class RCIMIWEngine {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onDraftMessageLoaded]
-     * @deprecated 用 {@link #getDraftMessage(RCIMIWConversationType, String, String, IRCIMIWGetDraftMessageCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getDraftMessage(RCIMIWConversationType, String, String, IRCIMIWGetDraftMessageCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadDraftMessage(type: RCIMIWConversationType, targetId: string, channelId: string): Promise<number>;
     /**
@@ -461,9 +492,8 @@ export default class RCIMIWEngine {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onDraftMessageLoaded]
      */
     getDraftMessage(type: RCIMIWConversationType, targetId: string, channelId: string, callback: IRCIMIWGetDraftMessageCallback): Promise<number>;
     /**
@@ -471,7 +501,9 @@ export default class RCIMIWEngine {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onDraftMessageCleared]
      */
@@ -482,25 +514,28 @@ export default class RCIMIWEngine {
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onBlockedConversationsLoaded]
-     * @deprecated 用 {@link #getBlockedConversations(List, String, IRCIMIWGetBlockedConversationsCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getBlockedConversations(List, String, IRCIMIWGetBlockedConversationsCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
-    loadBlockedConversations(conversationTypes: Array<RCIMIWConversationType>, channelId: string): Promise<number>;
+    loadBlockedConversations(conversationTypes: RCIMIWConversationType[], channelId: string): Promise<number>;
     /**
      * 获取免打扰的会话列表。
      * @param conversationTypes 会话类型集合
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback          事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback          事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onBlockedConversationsLoaded]
      */
-    getBlockedConversations(conversationTypes: Array<RCIMIWConversationType>, channelId: string, callback: IRCIMIWGetBlockedConversationsCallback): Promise<number>;
+    getBlockedConversations(conversationTypes: RCIMIWConversationType[], channelId: string, callback: IRCIMIWGetBlockedConversationsCallback): Promise<number>;
     /**
      * 设置会话的置顶状态。若会话不存在，调用此方法 SDK 自动创建会话并置顶。
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param top       是否置顶
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationTopStatusChanged]
      */
@@ -512,7 +547,9 @@ export default class RCIMIWEngine {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationTopStatusLoaded]
-     * @deprecated 用 {@link #getConversationTopStatus(RCIMIWConversationType, String, String, IRCIMIWGetConversationTopStatusCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getConversationTopStatus(RCIMIWConversationType, String, String, IRCIMIWGetConversationTopStatusCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadConversationTopStatus(type: RCIMIWConversationType, targetId: string, channelId: string): Promise<number>;
     /**
@@ -520,9 +557,8 @@ export default class RCIMIWEngine {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onConversationTopStatusLoaded]
      */
     getConversationTopStatus(type: RCIMIWConversationType, targetId: string, channelId: string, callback: IRCIMIWGetConversationTopStatusCallback): Promise<number>;
     /**
@@ -531,7 +567,9 @@ export default class RCIMIWEngine {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param timestamp 会话中已读的最后一条消息的发送时间戳
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationReadStatusSynced]
      */
@@ -551,12 +589,15 @@ export default class RCIMIWEngine {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param sentTime  当前消息时间戳
-     * @param order     获取消息的方向。BEFORE：获取 sentTime 之前的消息 （时间递减），AFTER：获取 sentTime 之后的消息 （时间递增）
+     * @param order     获取消息的方向。BEFORE：获取 sentTime 之前的消息 （时间递减），AFTER：获取 sentTime
+     * 之后的消息 （时间递增）
      * @param policy    消息的加载策略。LOCAL：只加载本地，REMOTE：只加载远端，LOCAL_REMOTE：本地远端都加载
-     * @param count     获取的消息数量，0 < count <= 20
+     * @param count     获取的消息数量，0 < count ≤ 20
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessagesLoaded]
-     * @deprecated 用 {@link #getMessages(RCIMIWConversationType, String, String, long, RCIMIWTimeOrder, RCIMIWMessageOperationPolicy, int, IRCIMIWGetMessagesCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getMessages(RCIMIWConversationType, String, String, long, RCIMIWTimeOrder, RCIMIWMessageOperationPolicy, int, IRCIMIWGetMessagesCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadMessages(type: RCIMIWConversationType, targetId: string, channelId: string, sentTime: number, order: RCIMIWTimeOrder, policy: RCIMIWMessageOperationPolicy, count: number): Promise<number>;
     /**
@@ -565,28 +606,47 @@ export default class RCIMIWEngine {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param sentTime  当前消息时间戳
-     * @param order     获取消息的方向。BEFORE：获取 sentTime 之前的消息 （时间递减），AFTER：获取 sentTime 之后的消息 （时间递增）
+     * @param order     获取消息的方向。BEFORE：获取 sentTime 之前的消息 （时间递减），AFTER：获取 sentTime
+     * 之后的消息 （时间递增）
      * @param policy    消息的加载策略。LOCAL：只加载本地，REMOTE：只加载远端，LOCAL_REMOTE：本地远端都加载
-     * @param count     获取的消息数量，0 < count <= 20
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param count     获取的消息数量，0 < count ≤ 20
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onMessagesLoaded]
      */
     getMessages(type: RCIMIWConversationType, targetId: string, channelId: string, sentTime: number, order: RCIMIWTimeOrder, policy: RCIMIWMessageOperationPolicy, count: number, callback: IRCIMIWGetMessagesCallback): Promise<number>;
     /**
      * 根据消息 id 获取消息体（本地数据库索引唯一值）。
      * @param messageId 消息的 messageId，可在消息对象中获取
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      */
     getMessageById(messageId: number, callback: IRCIMIWGetMessageCallback): Promise<number>;
     /**
      * 通过全局唯一 id 获取消息实体。
      * @param messageUId 消息的 messageUid，可在消息对象中获取，且只有发送成功的消息才会有值。
-     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      */
     getMessageByUId(messageUId: string, callback: IRCIMIWGetMessageCallback): Promise<number>;
+    /**
+     * 获取会话中指定类型的消息。
+     * @param type         会话类型。
+     * @param targetId     会话 ID。
+     * @param channelId    消息所属会话的业务标识。
+     * @param messageTypes 消息类型列表。
+     * @param sentTime     消息发送时间戳，0 表示最新的消息
+     * @param order        获取消息的方向。BEFORE：获取 sentTime 之前的消息 （时间递减），AFTER：获取 sentTime
+     * 之后的消息 （时间递增）
+     * @param count        获取的消息数量
+     * @param callback     获取结果回调。
+     * @return 当次接口操作的状态码。0 代表调用成功 具体结果通过接口 callback 回调，非 0
+     * 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
+     */
+    getLocalMessagesByMessageTypes(type: RCIMIWConversationType, targetId: string, channelId: string, messageTypes: RCIMIWMessageType[], sentTime: number, order: RCIMIWTimeOrder, count: number, callback: IRCIMIWGetMessagesCallback): Promise<number>;
     /**
      * 加载第一条未读消息。
      * @param type      会话类型
@@ -594,7 +654,9 @@ export default class RCIMIWEngine {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onFirstUnreadMessageLoaded]
-     * @deprecated 用 {@link #getFirstUnreadMessage(RCIMIWConversationType, String, String, IRCIMIWGetFirstUnreadMessageCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getFirstUnreadMessage(RCIMIWConversationType, String, String, IRCIMIWGetFirstUnreadMessageCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadFirstUnreadMessage(type: RCIMIWConversationType, targetId: string, channelId: string): Promise<number>;
     /**
@@ -602,9 +664,8 @@ export default class RCIMIWEngine {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onFirstUnreadMessageLoaded]
      */
     getFirstUnreadMessage(type: RCIMIWConversationType, targetId: string, channelId: string, callback: IRCIMIWGetFirstUnreadMessageCallback): Promise<number>;
     /**
@@ -614,7 +675,9 @@ export default class RCIMIWEngine {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUnreadMentionedMessagesLoaded]
-     * @deprecated 用 {@link #getUnreadMentionedMessages(RCIMIWConversationType, String, String, IRCIMIWGetUnreadMentionedMessagesCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUnreadMentionedMessages(RCIMIWConversationType, String, String, IRCIMIWGetUnreadMentionedMessagesCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUnreadMentionedMessages(type: RCIMIWConversationType, targetId: string, channelId: string): Promise<number>;
     /**
@@ -622,15 +685,16 @@ export default class RCIMIWEngine {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUnreadMentionedMessagesLoaded]
      */
     getUnreadMentionedMessages(type: RCIMIWConversationType, targetId: string, channelId: string, callback: IRCIMIWGetUnreadMentionedMessagesCallback): Promise<number>;
     /**
      * 插入一条消息
      * @param message  插入的消息
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessageInserted]
      */
@@ -638,19 +702,24 @@ export default class RCIMIWEngine {
     /**
      * 插入多条消息，不支持超级群
      * @param messages 插入的消息集合
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessagesInserted]
      */
-    insertMessages(messages: Array<RCIMIWMessage>, callback: IRCIMIWInsertMessagesCallback): Promise<number>;
+    insertMessages(messages: RCIMIWMessage[], callback: IRCIMIWInsertMessagesCallback): Promise<number>;
     /**
      * 清除消息
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param timestamp 清除消息截止时间戳，0 <= recordTime <= 当前会话最后一条消息的 sentTime, 0 清除所有消息，其他值清除小于等于 recordTime 的消息
+     * @param timestamp 清除消息截止时间戳，0 ≤ timestamp ≤ 当前会话最后一条消息的 sentTime, 0
+     * 清除所有消息，其他值清除小于等于 timestamp 的消息
      * @param policy    清除的策略
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessagesCleared]
      */
@@ -658,26 +727,32 @@ export default class RCIMIWEngine {
     /**
      * 删除本地消息
      * @param messages 消息集合
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onLocalMessagesDeleted]
      */
-    deleteLocalMessages(messages: Array<RCIMIWMessage>, callback: IRCIMIWDeleteLocalMessagesCallback): Promise<number>;
+    deleteLocalMessages(messages: RCIMIWMessage[], callback: IRCIMIWDeleteLocalMessagesCallback): Promise<number>;
     /**
      * 删除消息
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param messages  消息集合
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessagesDeleted]
      */
-    deleteMessages(type: RCIMIWConversationType, targetId: string, channelId: string, messages: Array<RCIMIWMessage>, callback: IRCIMIWDeleteMessagesCallback): Promise<number>;
+    deleteMessages(type: RCIMIWConversationType, targetId: string, channelId: string, messages: RCIMIWMessage[], callback: IRCIMIWDeleteMessagesCallback): Promise<number>;
     /**
      * 撤回消息
      * @param message  需要被撤回的消息
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessageRecalled]
      */
@@ -687,7 +762,9 @@ export default class RCIMIWEngine {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param timestamp 该会话中已读的最后一条消息的发送时间戳
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onPrivateReadReceiptMessageSent]
      */
@@ -695,7 +772,9 @@ export default class RCIMIWEngine {
     /**
      * 发起群聊消息已读回执请求
      * @param message  需要请求已读回执的消息
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onGroupReadReceiptRequestSent]
      */
@@ -705,37 +784,44 @@ export default class RCIMIWEngine {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param messages  会话中需要发送已读回执的消息列表
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onGroupReadReceiptResponseSent]
      */
-    sendGroupReadReceiptResponse(targetId: string, channelId: string, messages: Array<RCIMIWMessage>, callback: IRCIMIWSendGroupReadReceiptResponseCallback): Promise<number>;
+    sendGroupReadReceiptResponse(targetId: string, channelId: string, messages: RCIMIWMessage[], callback: IRCIMIWSendGroupReadReceiptResponseCallback): Promise<number>;
     /**
      * 更新消息扩展信息
      * 每条消息携带扩展信息键值对最大值 300个，单次设置扩展信息键值对最大值 20个
      * @param messageUId 消息的 messageUid，可在消息对象中获取，且只有发送成功的消息才会有值
-     * @param expansion  要更新的消息扩展信息键值对，类型是 HashMap；Key 支持大小写英文字母、数字、部分特殊符号 + = - _ 的组合方式，不支持汉字。Value 可以输入空格
-     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param expansion  要更新的消息扩展信息键值对，类型是 HashMap；Key 支持大小写英文字母、数字、部分特殊符号 + = - _
+     * 的组合方式，不支持汉字。Value 可以输入空格
+     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessageExpansionUpdated]
      */
-    updateMessageExpansion(messageUId: string, expansion: {
-        [propName: string]: string;
-    }, callback: IRCIMIWUpdateMessageExpansionCallback): Promise<number>;
+    updateMessageExpansion(messageUId: string, expansion: Record<string, string>, callback: IRCIMIWUpdateMessageExpansionCallback): Promise<number>;
     /**
      * 删除消息扩展信息中特定的键值对
      * @param messageUId 消息的 messageUid，可在消息对象中获取，且只有发送成功的消息才会有值
      * @param keys       消息扩展信息中待删除的 key 的列表，类型是 ArrayList
-     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessageExpansionForKeysRemoved]
      */
-    removeMessageExpansionForKeys(messageUId: string, keys: Array<string>, callback: IRCIMIWRemoveMessageExpansionForKeysCallback): Promise<number>;
+    removeMessageExpansionForKeys(messageUId: string, keys: string[], callback: IRCIMIWRemoveMessageExpansionForKeysCallback): Promise<number>;
     /**
      * 设置消息发送状态。
      * @param messageId  消息的 messageId，可在消息对象中获取
      * @param sentStatus 要修改的状态
-     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessageSentStatusChanged]
      */
@@ -744,7 +830,9 @@ export default class RCIMIWEngine {
      * 设置消息接收状态。
      * @param messageId      消息的 messageId，可在消息对象中获取
      * @param receivedStatus 要修改的状态
-     * @param callback       事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback       事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback
+     * 参数，仅触发 callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessageReceiveStatusChanged]
      */
@@ -754,7 +842,9 @@ export default class RCIMIWEngine {
      * @param targetId     聊天室会话 ID
      * @param messageCount 进入聊天室拉取消息数目，-1 时不拉取任何消息，0 时拉取 10 条消息，最多只能拉取 50
      * @param autoCreate   是否创建聊天室，TRUE 如果聊天室不存在，sdk 会创建聊天室并加入，如果已存在，则直接加入
-     * @param callback     事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback     事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomJoined]
      */
@@ -762,7 +852,9 @@ export default class RCIMIWEngine {
     /**
      * 退出聊天室。
      * @param targetId 聊天室会话 ID
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomLeft]
      */
@@ -773,10 +865,12 @@ export default class RCIMIWEngine {
      * @param targetId  聊天室会话 ID
      * @param timestamp 起始的消息发送时间戳
      * @param order     拉取顺序 0:倒序，1:正序
-     * @param count     要获取的消息数量，0 < count <= 50。
+     * @param count     要获取的消息数量，0 < count ≤ 50。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomMessagesLoaded]
-     * @deprecated 用 {@link #getChatRoomMessages(String, long, RCIMIWTimeOrder, int, IRCIMIWGetChatRoomMessagesCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getChatRoomMessages(String, long, RCIMIWTimeOrder, int, IRCIMIWGetChatRoomMessagesCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadChatRoomMessages(targetId: string, timestamp: number, order: RCIMIWTimeOrder, count: number): Promise<number>;
     /**
@@ -785,20 +879,22 @@ export default class RCIMIWEngine {
      * @param targetId  聊天室会话 ID
      * @param timestamp 起始的消息发送时间戳
      * @param order     拉取顺序 0:倒序，1:正序
-     * @param count     要获取的消息数量，0 < count <= 50。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param count     要获取的消息数量，0 < count ≤ 50。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onChatRoomMessagesLoaded]
      */
     getChatRoomMessages(targetId: string, timestamp: number, order: RCIMIWTimeOrder, count: number, callback: IRCIMIWGetChatRoomMessagesCallback): Promise<number>;
     /**
      * 设置聊天室自定义属性。
      * @param targetId       聊天室会话 ID
-     * @param key            聊天室属性名称，Key 支持大小写英文字母、数字、部分特殊符号 + = - _ 的组合方式，最大长度 128 个字符
+     * @param key            聊天室属性名称，Key 支持大小写英文字母、数字、部分特殊符号 + = - _ 的组合方式，最大长度 128
+     * 个字符
      * @param value          聊天室属性对应的值，最大长度 4096 个字符
      * @param deleteWhenLeft 用户掉线或退出时，是否自动删除该 Key、Value 值
      * @param overwrite      如果当前 key 存在，是否进行覆盖
-     * @param callback       事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback       事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback
+     * 参数，仅触发 callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomEntryAdded]
      */
@@ -809,29 +905,30 @@ export default class RCIMIWEngine {
      * @param entries        聊天室属性
      * @param deleteWhenLeft 用户掉线或退出时，是否自动删除该 Key、Value 值
      * @param overwrite      是否强制覆盖
-     * @param callback       事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback       事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback
+     * 参数，仅触发 callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomEntriesAdded]
      */
-    addChatRoomEntries(targetId: string, entries: {
-        [propName: string]: string;
-    }, deleteWhenLeft: boolean, overwrite: boolean, callback: IRCIMIWAddChatRoomEntriesCallback): Promise<number>;
+    addChatRoomEntries(targetId: string, entries: Record<string, string>, deleteWhenLeft: boolean, overwrite: boolean, callback: IRCIMIWAddChatRoomEntriesCallback): Promise<number>;
     /**
      * 加载聊天室单个属性。
      * @param targetId 聊天室会话 ID
      * @param key      聊天室属性键值
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomEntryLoaded]
-     * @deprecated 用 {@link #getChatRoomEntry(String, String, IRCIMIWGetChatRoomEntryCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getChatRoomEntry(String, String, IRCIMIWGetChatRoomEntryCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadChatRoomEntry(targetId: string, key: string): Promise<number>;
     /**
      * 获取聊天室单个属性。
      * @param targetId 聊天室会话 ID
      * @param key      聊天室属性键值
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onChatRoomEntryLoaded]
      */
     getChatRoomEntry(targetId: string, key: string, callback: IRCIMIWGetChatRoomEntryCallback): Promise<number>;
     /**
@@ -839,15 +936,16 @@ export default class RCIMIWEngine {
      * @param targetId 聊天室会话 ID
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomAllEntriesLoaded]
-     * @deprecated 用 {@link #getChatRoomAllEntries(String, IRCIMIWGetChatRoomAllEntriesCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getChatRoomAllEntries(String, IRCIMIWGetChatRoomAllEntriesCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadChatRoomAllEntries(targetId: string): Promise<number>;
     /**
      * 获取聊天室所有属性。
      * @param targetId 聊天室会话 ID
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onChatRoomAllEntriesLoaded]
      */
     getChatRoomAllEntries(targetId: string, callback: IRCIMIWGetChatRoomAllEntriesCallback): Promise<number>;
     /**
@@ -855,7 +953,9 @@ export default class RCIMIWEngine {
      * @param targetId 聊天室会话 ID
      * @param key      聊天室属性键值
      * @param force    是否强制删除
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomEntryRemoved]
      */
@@ -865,16 +965,20 @@ export default class RCIMIWEngine {
      * @param targetId 聊天室会话 ID
      * @param keys     聊天室属性
      * @param force    是否强制覆盖
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomEntriesRemoved]
      */
-    removeChatRoomEntries(targetId: string, keys: Array<string>, force: boolean, callback: IRCIMIWRemoveChatRoomEntriesCallback): Promise<number>;
+    removeChatRoomEntries(targetId: string, keys: string[], force: boolean, callback: IRCIMIWRemoveChatRoomEntriesCallback): Promise<number>;
     /**
      * 将某个用户加入黑名单。
      * 当你把对方加入黑名单后，对方再发消息时，就会提示“已被加入黑名单，消息发送失败”。 但你依然可以发消息个对方。
      * @param userId   用户 Id
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onBlacklistAdded]
      */
@@ -882,7 +986,9 @@ export default class RCIMIWEngine {
     /**
      * 将某个用户从黑名单中移出。
      * @param userId   用户 Id
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onBlacklistRemoved]
      */
@@ -892,29 +998,30 @@ export default class RCIMIWEngine {
      * @param userId 用户 Id
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onBlacklistStatusLoaded]
-     * @deprecated 用 {@link #getBlacklistStatus(String, IRCIMIWGetBlacklistStatusCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getBlacklistStatus(String, IRCIMIWGetBlacklistStatusCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadBlacklistStatus(userId: string): Promise<number>;
     /**
      * 获取某用户是否在黑名单中。
      * @param userId   用户 Id
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onBlacklistStatusLoaded]
      */
     getBlacklistStatus(userId: string, callback: IRCIMIWGetBlacklistStatusCallback): Promise<number>;
     /**
      * 加载当前用户设置的黑名单列表。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onBlacklistLoaded]
-     * @deprecated 用 {@link #getBlacklist(IRCIMIWGetBlacklistCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用 {@link #getBlacklist(IRCIMIWGetBlacklistCallback)} 代替， 预计将在 6.x
+     * 版本删除此接口。
      */
     loadBlacklist(): Promise<number>;
     /**
      * 获取当前用户设置的黑名单列表。
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onBlacklistLoaded]
      */
     getBlacklist(callback: IRCIMIWGetBlacklistCallback): Promise<number>;
     /**
@@ -924,8 +1031,10 @@ export default class RCIMIWEngine {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param keyword   搜索的关键字
      * @param startTime 查询 beginTime 之前的消息， 传 0 时从最新消息开始搜索，从该时间往前搜索。
-     * @param count     查询的数量，0 < count <= 50。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param count     查询的数量，0 < count ≤ 50。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessagesSearched]
      */
@@ -939,8 +1048,10 @@ export default class RCIMIWEngine {
      * @param startTime 开始时间
      * @param endTime   结束时间
      * @param offset    偏移量
-     * @param count     返回的搜索结果数量，0 < count <= 50。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param count     返回的搜索结果数量，0 < count ≤ 50。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessagesSearchedByTimeRange]
      */
@@ -952,36 +1063,60 @@ export default class RCIMIWEngine {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param startTime 查询记录的起始时间， 传 0 时从最新消息开始搜索，从该时间往前搜索。
-     * @param count     返回的搜索结果数量 0 < count <= 50。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param count     返回的搜索结果数量 0 < count ≤ 50。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessagesSearchedByUserId]
      */
     searchMessagesByUserId(userId: string, type: RCIMIWConversationType, targetId: string, channelId: string, startTime: number, count: number, callback: IRCIMIWSearchMessagesByUserIdCallback): Promise<number>;
+    /**
+     * 根据关键字搜索指定会话中，指定消息类型的本地历史消息。
+     * @param type         会话类型。
+     * @param targetId     会话 ID。
+     * @param channelId    消息所属的会话标识。
+     * @param messageTypes 消息类型集合。
+     * @param keyword      搜索的关键字，非空。
+     * @param startTime    查询 startTime 之前的消息（传 0 表示从最新消息开始搜索），单位：毫秒
+     * @param count        最大的查询数量，最大 100。
+     * @param callback     搜索结果的回调接口
+     * @return 当次接口操作的状态码。0 代表调用成功 具体结果通过接口 callback 回调，非 0
+     * 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
+     */
+    searchMessagesByMessageTypes(type: RCIMIWConversationType, targetId: string, channelId: string, messageTypes: RCIMIWMessageType[], keyword: string, startTime: number, count: number, callback: IRCIMIWSearchMessagesByMessageTypesCallback): Promise<number>;
     /**
      * 根据关键字搜索会话。
      * @param conversationTypes 会话类型集合
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param messageTypes      搜索的消息类型
      * @param keyword           搜索的关键字。
-     * @param callback          事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback          事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback
+     * 参数，仅触发 callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationsSearched]
      */
-    searchConversations(conversationTypes: Array<RCIMIWConversationType>, channelId: string, messageTypes: Array<RCIMIWMessageType>, keyword: string, callback: IRCIMIWSearchConversationsCallback): Promise<number>;
+    searchConversations(conversationTypes: RCIMIWConversationType[], channelId: string, messageTypes: RCIMIWMessageType[], keyword: string, callback: IRCIMIWSearchConversationsCallback): Promise<number>;
     /**
      * 屏蔽某个时间段的消息提醒
      * @param startTime   开始消息免打扰时间，格式为 HH:MM:SS
-     * @param spanMinutes 需要消息免打扰分钟数，0 < spanMinutes < 1440（ 比如，您设置的起始时间是 00：00， 结束时间为 01:00，则 spanMinutes 为 60 分钟。设置为 1439 代表全天免打扰 （23  60 + 59 = 1439 ））
+     * @param spanMinutes 需要消息免打扰分钟数，0 < spanMinutes < 1440（ 比如，您设置的起始时间是 00：00，
+     * 结束时间为 01:00，则 spanMinutes 为 60 分钟。设置为 1439 代表全天免打扰 （23
+     * 60 + 59 = 1439 ））
      * @param level       消息通知级别
-     * @param callback    事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback    事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onNotificationQuietHoursChanged]
      */
     changeNotificationQuietHours(startTime: string, spanMinutes: number, level: RCIMIWPushNotificationQuietHoursLevel, callback: IRCIMIWChangeNotificationQuietHoursCallback): Promise<number>;
     /**
      * 删除已设置的全局时间段消息提醒屏蔽
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onNotificationQuietHoursRemoved]
      */
@@ -990,24 +1125,32 @@ export default class RCIMIWEngine {
      * 加载已设置的时间段消息提醒屏蔽
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onNotificationQuietHoursLoaded]
-     * @deprecated 用 {@link #getNotificationQuietHours(IRCIMIWGetNotificationQuietHoursCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getNotificationQuietHours(IRCIMIWGetNotificationQuietHoursCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadNotificationQuietHours(): Promise<number>;
     /**
      * 获取已设置的时间段消息提醒屏蔽
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onNotificationQuietHoursLoaded]
      */
     getNotificationQuietHours(callback: IRCIMIWGetNotificationQuietHoursCallback): Promise<number>;
     /**
      * 设置会话的消息提醒状态
      * 注：超级群调用该接口，channelId 为空时，相当于设置了 channelId 为空的频道的免打扰，不会屏蔽整个超级群会话下所有频道的免打扰
-     * @param type      会话类型。请注意以下限制：<ul><li>*超级群会话类型*：如在 2022.09.01 之前开通超级群业务，默认不支持为单个超级群会话*所有消息*设置免打扰级别（“所有消息”指所有频道中的消息和不属于任何频道的消息）。该接口仅设置指定超级群会话（`targetId`）中*不属于任何频道的消息*的免打扰状态级别。如需修改请提交工单。</li><li>*聊天室会话类型*：不支持，因为聊天室消息默认不支持消息推送提醒。</li></ul>
+     * @param type      会话类型。请注意以下限制：*超级群会话类型*：如在 2022.09.01
+     * 之前开通超级群业务，默认不支持为单个超级群会话*所有消息*设置免打扰级别（“所有消息”指所有频道中的消息和不属于任何频道的消息）。该接口仅设置指定超级群会话（`targetId`）中*不属于任何频道的消息*的免打扰状态级别。如需修改请提交工单。*聊天室会话类型*：不支持，因为聊天室消息默认不支持消息推送提醒。
      * @param targetId  会话 ID
-     * @param channelId 超级群的会话频道 ID。其他类型传 null 即可。<ul><li>如果传入频道 ID，则针对该指定频道设置消息免打扰级别。如果不指定频道 ID，则对所有超级群消息生效。</li><li>*注意*：2022.09.01 之前开通超级群业务的客户，如果不指定频道 ID，则默认传 "" 空字符串，即仅针对指定超级群会话（`targetId`）中*不属于任何频道的消息*设置免打扰状态级别。如需修改请提交工单。</p></li></ul>
+     * @param channelId 超级群的会话频道 ID。其他类型传 null 即可。如果传入频道
+     * ID，则针对该指定频道设置消息免打扰级别。如果不指定频道
+     * ID，则对所有超级群消息生效。*注意*：2022.09.01 之前开通超级群业务的客户，如果不指定频道
+     * ID，则默认传 ""
+     * 空字符串，即仅针对指定超级群会话（`targetId`）中*不属于任何频道的消息*设置免打扰状态级别。如需修改请提交工单。
      * @param level     消息通知级别
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationNotificationLevelChanged]
      */
@@ -1019,17 +1162,23 @@ export default class RCIMIWEngine {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationNotificationLevelLoaded]
-     * @deprecated 用 {@link #getConversationNotificationLevel(RCIMIWConversationType, String, String, IRCIMIWGetConversationNotificationLevelCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getConversationNotificationLevel(RCIMIWConversationType, String, String, IRCIMIWGetConversationNotificationLevelCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadConversationNotificationLevel(type: RCIMIWConversationType, targetId: string, channelId: string): Promise<number>;
     /**
      * 获取会话的消息提醒状态
-     * @param type      会话类型。请注意以下限制：<ul><li>*超级群会话类型*：如在 2022.09.01 之前开通超级群业务，默认不支持为单个超级群会话*所有消息*设置免打扰级别（“所有消息”指所有频道中的消息和不属于任何频道的消息）。该接口仅设置指定超级群会话（`targetId`）中*不属于任何频道的消息*的免打扰状态级别。如需修改请提交工单。</li><li>*聊天室会话类型*：不支持，因为聊天室消息默认不支持消息推送提醒。</li></ul>
+     * @param type      会话类型。请注意以下限制：*超级群会话类型*：如在 2022.09.01
+     * 之前开通超级群业务，默认不支持为单个超级群会话*所有消息*设置免打扰级别（“所有消息”指所有频道中的消息和不属于任何频道的消息）。该接口仅设置指定超级群会话（`targetId`）中*不属于任何频道的消息*的免打扰状态级别。如需修改请提交工单。*聊天室会话类型*：不支持，因为聊天室消息默认不支持消息推送提醒。
      * @param targetId  会话 ID
-     * @param channelId 超级群的会话频道 ID。其他类型传 null 即可。<ul><li>如果传入频道 ID，则针对该指定频道设置消息免打扰级别。如果不指定频道 ID，则对所有超级群消息生效。</li><li>*注意*：2022.09.01 之前开通超级群业务的客户，如果不指定频道 ID，则默认传 "" 空字符串，即仅针对指定超级群会话（`targetId`）中*不属于任何频道的消息*设置免打扰状态级别。如需修改请提交工单。</p></li></ul>
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param channelId 超级群的会话频道 ID。其他类型传 null 即可。如果传入频道
+     * ID，则针对该指定频道设置消息免打扰级别。如果不指定频道
+     * ID，则对所有超级群消息生效。*注意*：2022.09.01 之前开通超级群业务的客户，如果不指定频道
+     * ID，则默认传 ""
+     * 空字符串，即仅针对指定超级群会话（`targetId`）中*不属于任何频道的消息*设置免打扰状态级别。如需修改请提交工单。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onConversationNotificationLevelLoaded]
      */
     getConversationNotificationLevel(type: RCIMIWConversationType, targetId: string, channelId: string, callback: IRCIMIWGetConversationNotificationLevelCallback): Promise<number>;
     /**
@@ -1037,7 +1186,9 @@ export default class RCIMIWEngine {
      * 注：如要移除消息提醒状态，设置level为RCIMIWPushNotificationLevelDefault
      * @param type     会话类型
      * @param level    消息通知级别
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationTypeNotificationLevelChanged]
      */
@@ -1046,14 +1197,18 @@ export default class RCIMIWEngine {
      * 获取会话类型的消息提醒状态
      * @param type 会话类型
      * @return [onConversationTypeNotificationLevelLoaded]
-     * @deprecated 用 {@link #getConversationTypeNotificationLevel(RCIMIWConversationType, IRCIMIWGetConversationTypeNotificationLevelCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getConversationTypeNotificationLevel(RCIMIWConversationType, IRCIMIWGetConversationTypeNotificationLevelCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadConversationTypeNotificationLevel(type: RCIMIWConversationType): Promise<number>;
     /**
      * 获取会话类型的消息提醒状态
      * @param type     会话类型
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
-     * @return [onConversationTypeNotificationLevelLoaded]
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
+     * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      */
     getConversationTypeNotificationLevel(type: RCIMIWConversationType, callback: IRCIMIWGetConversationTypeNotificationLevelCallback): Promise<number>;
     /**
@@ -1061,7 +1216,9 @@ export default class RCIMIWEngine {
      * 一般由管理员设置的接口，针对超级群的所有群成员生效，针对超级群下所有频道生效，优先级较低。如果群成员自己超级群的免打扰级别，那么以群成员自己设置的为准。
      * @param targetId 会话 ID
      * @param level    消息通知级别
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupDefaultNotificationLevelChanged]
      */
@@ -1071,15 +1228,16 @@ export default class RCIMIWEngine {
      * @param targetId 会话 ID
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupDefaultNotificationLevelLoaded]
-     * @deprecated 用 {@link #getUltraGroupDefaultNotificationLevel(String, IRCIMIWGetUltraGroupDefaultNotificationLevelCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUltraGroupDefaultNotificationLevel(String, IRCIMIWGetUltraGroupDefaultNotificationLevelCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUltraGroupDefaultNotificationLevel(targetId: string): Promise<number>;
     /**
      * 获取超级群的默认消息状态
      * @param targetId 会话 ID
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUltraGroupDefaultNotificationLevelLoaded]
      */
     getUltraGroupDefaultNotificationLevel(targetId: string, callback: IRCIMIWGetUltraGroupDefaultNotificationLevelCallback): Promise<number>;
     /**
@@ -1087,7 +1245,9 @@ export default class RCIMIWEngine {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用。
      * @param level     消息通知级别
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupChannelDefaultNotificationLevelChanged]
      */
@@ -1098,22 +1258,25 @@ export default class RCIMIWEngine {
      * @param channelId 频道 ID，仅支持超级群使用。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupChannelDefaultNotificationLevelLoaded]
-     * @deprecated 用 {@link #getUltraGroupChannelDefaultNotificationLevel(String, String, IRCIMIWGetUltraGroupChannelDefaultNotificationLevelCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUltraGroupChannelDefaultNotificationLevel(String, String, IRCIMIWGetUltraGroupChannelDefaultNotificationLevelCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUltraGroupChannelDefaultNotificationLevel(targetId: string, channelId: string): Promise<number>;
     /**
      * 获取超级群频道的默认消息状态
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUltraGroupChannelDefaultNotificationLevelLoaded]
      */
     getUltraGroupChannelDefaultNotificationLevel(targetId: string, channelId: string, callback: IRCIMIWGetUltraGroupChannelDefaultNotificationLevelCallback): Promise<number>;
     /**
      * 设置是否显示远程推送内容详情，此功能需要从服务端开启用户设置功能。
      * @param showContent 是否显示远程推送内容
-     * @param callback    事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback    事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onPushContentShowStatusChanged]
      */
@@ -1121,7 +1284,9 @@ export default class RCIMIWEngine {
     /**
      * 设置推送语言
      * @param language 推送语言， 目前仅支持 en_us、zh_cn、ar_sa
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onPushLanguageChanged]
      */
@@ -1131,7 +1296,9 @@ export default class RCIMIWEngine {
      * 前提：移动端未在线，Web 、MAC/PC 终端在线，移动端是否接收远程推送。
      * 此功能需要从服务端开启用户设置功能。
      * @param receive  是否接收
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onPushReceiveStatusChanged]
      */
@@ -1140,11 +1307,14 @@ export default class RCIMIWEngine {
      * 给指定的群成员发送消息
      * @param message  要发送的消息
      * @param userIds  群成员集合
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onGroupMessageToDesignatedUsersAttached], [onGroupMessageToDesignatedUsersSent]
+     * @listener [onGroupMessageToDesignatedUsersAttached],
+     * [onGroupMessageToDesignatedUsersSent]
      */
-    sendGroupMessageToDesignatedUsers(message: RCIMIWMessage, userIds: Array<string>, callback: RCIMIWSendGroupMessageToDesignatedUsersCallback): Promise<number>;
+    sendGroupMessageToDesignatedUsers(message: RCIMIWMessage, userIds: string[], callback: RCIMIWSendGroupMessageToDesignatedUsersCallback): Promise<number>;
     /**
      * 加载指定会话的消息总数。
      * @param type      会话类型
@@ -1152,7 +1322,9 @@ export default class RCIMIWEngine {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessageCountLoaded]
-     * @deprecated 用 {@link #getMessageCount(RCIMIWConversationType, String, String, IRCIMIWGetMessageCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getMessageCount(RCIMIWConversationType, String, String, IRCIMIWGetMessageCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadMessageCount(type: RCIMIWConversationType, targetId: string, channelId: string): Promise<number>;
     /**
@@ -1160,9 +1332,8 @@ export default class RCIMIWEngine {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onMessageCountLoaded]
      */
     getMessageCount(type: RCIMIWConversationType, targetId: string, channelId: string, callback: IRCIMIWGetMessageCountCallback): Promise<number>;
     /**
@@ -1171,24 +1342,27 @@ export default class RCIMIWEngine {
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onTopConversationsLoaded]
-     * @deprecated 用 {@link #getTopConversations(List, String, IRCIMIWGetTopConversationsCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getTopConversations(List, String, IRCIMIWGetTopConversationsCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
-    loadTopConversations(conversationTypes: Array<RCIMIWConversationType>, channelId: string): Promise<number>;
+    loadTopConversations(conversationTypes: RCIMIWConversationType[], channelId: string): Promise<number>;
     /**
      * 根据会话类型,获取置顶会话列表
      * @param conversationTypes 会话类型集合
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback          事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback          事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onTopConversationsLoaded]
      */
-    getTopConversations(conversationTypes: Array<RCIMIWConversationType>, channelId: string, callback: IRCIMIWGetTopConversationsCallback): Promise<number>;
+    getTopConversations(conversationTypes: RCIMIWConversationType[], channelId: string, callback: IRCIMIWGetTopConversationsCallback): Promise<number>;
     /**
      * 上报超级群的已读时间
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用。
      * @param timestamp 已读时间
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupReadStatusSynced]
      */
@@ -1199,23 +1373,26 @@ export default class RCIMIWEngine {
      * @param targetId 会话 ID
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationsLoadedForAllChannel]
-     * @deprecated 用 {@link #getConversationsForAllChannel(RCIMIWConversationType, String, IRCIMIWGetConversationsForAllChannelCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getConversationsForAllChannel(RCIMIWConversationType, String, IRCIMIWGetConversationsForAllChannelCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadConversationsForAllChannel(type: RCIMIWConversationType, targetId: string): Promise<number>;
     /**
      * 获取特定会话下所有频道的会话列表，只支持超级群
      * @param type     会话类型
      * @param targetId 会话 ID
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onConversationsLoadedForAllChannel]
      */
     getConversationsForAllChannel(type: RCIMIWConversationType, targetId: string, callback: IRCIMIWGetConversationsForAllChannelCallback): Promise<number>;
     /**
      * 修改超级群消息
      * @param messageUId 消息的 messageUid，可在消息对象中获取，且只有发送成功的消息才会有值
      * @param message    要修改的 message
-     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupMessageModified]
      */
@@ -1224,7 +1401,9 @@ export default class RCIMIWEngine {
      * 撤回超级群消息
      * @param message      需要撤回的消息
      * @param deleteRemote 是否删除远端消息
-     * @param callback     事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback     事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupMessageRecalled]
      */
@@ -1235,7 +1414,9 @@ export default class RCIMIWEngine {
      * @param channelId 频道 ID，仅支持超级群使用。
      * @param timestamp 时间戳
      * @param policy    清除策略
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupMessagesCleared]
      */
@@ -1245,7 +1426,9 @@ export default class RCIMIWEngine {
      * @param targetId     会话 ID
      * @param channelId    频道 ID，仅支持超级群使用。
      * @param typingStatus 输入状态
-     * @param callback     事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback     事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupTypingStatusSent]
      */
@@ -1254,7 +1437,9 @@ export default class RCIMIWEngine {
      * 删除超级群所有频道指定时间之前的消息
      * @param targetId  会话 ID
      * @param timestamp 时间戳
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupMessagesClearedForAllChannel]
      */
@@ -1264,37 +1449,41 @@ export default class RCIMIWEngine {
      * @param messages 获取的消息集合
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onBatchRemoteUltraGroupMessagesLoaded]
-     * @deprecated 用 {@link #getBatchRemoteUltraGroupMessages(List, IRCIMIWGetBatchRemoteUltraGroupMessagesCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getBatchRemoteUltraGroupMessages(List, IRCIMIWGetBatchRemoteUltraGroupMessagesCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
-    loadBatchRemoteUltraGroupMessages(messages: Array<RCIMIWMessage>): Promise<number>;
+    loadBatchRemoteUltraGroupMessages(messages: RCIMIWMessage[]): Promise<number>;
     /**
      * 从服务获取批量消息
      * @param messages 获取的消息集合
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onBatchRemoteUltraGroupMessagesLoaded]
      */
-    getBatchRemoteUltraGroupMessages(messages: Array<RCIMIWMessage>, callback: IRCIMIWGetBatchRemoteUltraGroupMessagesCallback): Promise<number>;
+    getBatchRemoteUltraGroupMessages(messages: RCIMIWMessage[], callback: IRCIMIWGetBatchRemoteUltraGroupMessagesCallback): Promise<number>;
     /**
      * 更新超级群消息扩展信息
      * @param messageUId 消息的 messageUid，可在消息对象中获取，且只有发送成功的消息才会有值
-     * @param expansion  更新的消息扩展信息键值对，类型是 HashMap；Key 支持大小写英文字母、数字、部分特殊符号 + = - _ 的组合方式，不支持汉字。Value 可以输入空格。
-     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param expansion  更新的消息扩展信息键值对，类型是 HashMap；Key 支持大小写英文字母、数字、部分特殊符号 + = - _
+     * 的组合方式，不支持汉字。Value 可以输入空格。
+     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupMessageExpansionUpdated]
      */
-    updateUltraGroupMessageExpansion(messageUId: string, expansion: {
-        [propName: string]: string;
-    }, callback: IRCIMIWUpdateUltraGroupMessageExpansionCallback): Promise<number>;
+    updateUltraGroupMessageExpansion(messageUId: string, expansion: Record<string, string>, callback: IRCIMIWUpdateUltraGroupMessageExpansionCallback): Promise<number>;
     /**
      * 删除超级群消息扩展信息中特定的键值对
      * @param messageUId 消息的 messageUid，可在消息对象中获取，且只有发送成功的消息才会有值
      * @param keys       消息扩展信息中待删除的 key 的列表，类型是 ArrayList
-     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupMessageExpansionForKeysRemoved]
      */
-    removeUltraGroupMessageExpansionForKeys(messageUId: string, keys: Array<string>, callback: IRCIMIWRemoveUltraGroupMessageExpansionForKeysCallback): Promise<number>;
+    removeUltraGroupMessageExpansionForKeys(messageUId: string, keys: string[], callback: IRCIMIWRemoveUltraGroupMessageExpansionForKeysCallback): Promise<number>;
     /**
      * 修改日志等级
      * @param level 日志级别
@@ -1302,10 +1491,74 @@ export default class RCIMIWEngine {
      */
     changeLogLevel(level: RCIMIWLogLevel): Promise<number>;
     /**
-     * 获取本地时间与服务器时间的时间差。消息发送成功后，SDK 与服务器同步时间，消息所在数据库中存储的时间就是服务器时间。 System.currentTimeMillis() - getDeltaTime() 可以获取服务器当前时间。
+     * 获取本地时间与服务器时间的时间差。消息发送成功后，SDK 与服务器同步时间，消息所在数据库中存储的时间就是服务器时间。
+     * System.currentTimeMillis() - getDeltaTime() 可以获取服务器当前时间。
      * @return 本地时间与服务器时间的差值
      */
     getDeltaTime(): Promise<number>;
+    /**
+     * 获取 AppKey 对应的配置。
+     * Get app settings for current AppKey.
+     */
+    getAppSettings(): Promise<RCIMIWAppSettings | number>;
+    /**
+     * 请求拉取流式消息
+     * @param params   请求参数
+     * @param callback 操作回调
+     * @return 调用状态码，0 表示发起成功
+     */
+    requestStreamMessageContent(params: RCIMIWStreamMessageRequestParams, callback: IRCIMIWOperationCallback): Promise<number>;
+    /**
+     * 发送某个会话中的消息已读回执（V5）。
+     * 消息 needReceipt 为 true 时，接收方调用本接口，通知消息发送方已读。
+     * 仅支持单聊和群聊会话类型。
+     * @param type        会话类型，仅支持单群聊
+     * @param targetId    会话目标 ID
+     * @param channelId   频道 ID
+     * @param messageUIds 消息 UID 列表，最多 100 条
+     * @param callback    结果回调
+     * @return 当次接口操作的状态码。0 代表调用成功，非 0 代表失败
+     */
+    sendReadReceiptResponseV5(type: RCIMIWConversationType, targetId: string, channelId: string, messageUIds: string[], callback: IRCIMIWSendReadReceiptResponseV5Callback): Promise<number>;
+    /**
+     * 批量获取消息已读信息（V5）。
+     * @param type        会话类型
+     * @param targetId    会话目标 ID
+     * @param channelId   频道 ID
+     * @param messageUIds 消息 UID 列表，最多 100 条
+     * @param callback    结果回调
+     * @return 当次接口操作的状态码。0 代表调用成功，非 0 代表失败
+     */
+    getMessageReadReceiptInfoV5(type: RCIMIWConversationType, targetId: string, channelId: string, messageUIds: string[], callback: IRCIMIWGetMessageReadReceiptInfoV5Callback): Promise<number>;
+    /**
+     * 批量获取消息已读信息（V5，按消息标识）。
+     * @param identifiers 消息标识列表，最多 100 条
+     * @param callback    结果回调
+     * @return 当次接口操作的状态码。0 代表调用成功，非 0 代表失败
+     */
+    getMessageReadReceiptInfoV5ByIdentifiers(identifiers: RCIMIWMessageIdentifier[], callback: IRCIMIWGetMessageReadReceiptInfoV5Callback): Promise<number>;
+    /**
+     * 分页获取消息已读成员列表（V5）。
+     * @param type       会话类型
+     * @param targetId   会话目标 ID
+     * @param channelId  频道 ID
+     * @param messageUId 消息 UID
+     * @param option     查询条件
+     * @param callback   结果回调
+     * @return 当次接口操作的状态码。0 代表调用成功，非 0 代表失败
+     */
+    getMessagesReadReceiptUsersByPageV5(type: RCIMIWConversationType, targetId: string, channelId: string, messageUId: string, option: RCIMIWReadReceiptUsersOption, callback: IRCIMIWGetMessagesReadReceiptUsersByPageV5Callback): Promise<number>;
+    /**
+     * 批量获取用户指定消息是否已读状态（V5）。
+     * @param type       会话类型
+     * @param targetId   会话目标 ID
+     * @param channelId  频道 ID
+     * @param messageUId 消息 UID
+     * @param userIds    用户 ID 列表，最多 100 个
+     * @param callback   结果回调
+     * @return 当次接口操作的状态码。0 代表调用成功，非 0 代表失败
+     */
+    getMessagesReadReceiptByUsersV5(type: RCIMIWConversationType, targetId: string, channelId: string, messageUId: string, userIds: string[], callback: IRCIMIWGetMessagesReadReceiptByUsersV5Callback): Promise<number>;
     /**
      * 收到消息的监听
      */
@@ -1446,7 +1699,6 @@ export default class RCIMIWEngine {
     /**
      *
      * 超级群列表同步完成的回调
-     *
      */
     setOnUltraGroupConversationsSyncedListener(callback?: (res: OnUltraGroupConversationsSyncedResult) => void): void;
     /**
@@ -1654,47 +1906,47 @@ export default class RCIMIWEngine {
      */
     setOnGroupReadReceiptResponseSentListener(callback?: (res: OnGroupReadReceiptResponseSentResult) => void): void;
     /**
-     * [changeNotificationQuietHours] 的接口回调
+     * [changeNotificationQuietHours] 的接口监听
      */
     setOnNotificationQuietHoursChangedListener(callback?: (res: OnNotificationQuietHoursChangedResult) => void): void;
     /**
-     * [removeNotificationQuietHours] 的接口回调
+     * [removeNotificationQuietHours] 的接口监听
      */
     setOnNotificationQuietHoursRemovedListener(callback?: (res: OnNotificationQuietHoursRemovedResult) => void): void;
     /**
-     * [loadNotificationQuietHours] 的接口回调
+     * [loadNotificationQuietHours] 的接口监听
      */
     setOnNotificationQuietHoursLoadedListener(callback?: (res: OnNotificationQuietHoursLoadedResult) => void): void;
     /**
-     * [changeConversationNotificationLevel] 的接口回调
+     * [changeConversationNotificationLevel] 的接口监听
      */
     setOnConversationNotificationLevelChangedListener(callback?: (res: OnConversationNotificationLevelChangedResult) => void): void;
     /**
-     * [loadConversationNotificationLevel] 的接口回调
+     * [loadConversationNotificationLevel] 的接口监听
      */
     setOnConversationNotificationLevelLoadedListener(callback?: (res: OnConversationNotificationLevelLoadedResult) => void): void;
     /**
-     * [changeConversationTypeNotificationLevel] 的接口回调
+     * [changeConversationTypeNotificationLevel] 的接口监听
      */
     setOnConversationTypeNotificationLevelChangedListener(callback?: (res: OnConversationTypeNotificationLevelChangedResult) => void): void;
     /**
-     * [loadConversationTypeNotificationLevel] 的接口回调
+     * [loadConversationTypeNotificationLevel] 的接口监听
      */
     setOnConversationTypeNotificationLevelLoadedListener(callback?: (res: OnConversationTypeNotificationLevelLoadedResult) => void): void;
     /**
-     * [changeUltraGroupDefaultNotificationLevel] 的接口回调
+     * [changeUltraGroupDefaultNotificationLevel] 的接口监听
      */
     setOnUltraGroupDefaultNotificationLevelChangedListener(callback?: (res: OnUltraGroupDefaultNotificationLevelChangedResult) => void): void;
     /**
-     * [loadUltraGroupDefaultNotificationLevel] 的接口回调
+     * [loadUltraGroupDefaultNotificationLevel] 的接口监听
      */
     setOnUltraGroupDefaultNotificationLevelLoadedListener(callback?: (res: OnUltraGroupDefaultNotificationLevelLoadedResult) => void): void;
     /**
-     * [changeUltraGroupChannelDefaultNotificationLevel] 的接口回调
+     * [changeUltraGroupChannelDefaultNotificationLevel] 的接口监听
      */
     setOnUltraGroupChannelDefaultNotificationLevelChangedListener(callback?: (res: OnUltraGroupChannelDefaultNotificationLevelChangedResult) => void): void;
     /**
-     * [loadUltraGroupChannelDefaultNotificationLevel] 的接口回调
+     * [loadUltraGroupChannelDefaultNotificationLevel] 的接口监听
      */
     setOnUltraGroupChannelDefaultNotificationLevelLoadedListener(callback?: (res: OnUltraGroupChannelDefaultNotificationLevelLoadedResult) => void): void;
     /**
@@ -1714,19 +1966,31 @@ export default class RCIMIWEngine {
      */
     setOnMessageCountLoadedListener(callback?: (res: OnMessageCountLoadedResult) => void): void;
     /**
-     *
+     * [loadTopConversations] 的接口监听
      */
     setOnTopConversationsLoadedListener(callback?: (res: OnTopConversationsLoadedResult) => void): void;
     /**
-     * [sendGroupMessageToDesignatedUsers] 的接口回调
+     * [sendGroupMessageToDesignatedUsers] 的接口监听
      * 消息存入数据库的回调
      */
     setOnGroupMessageToDesignatedUsersAttachedListener(callback?: (res: OnGroupMessageToDesignatedUsersAttachedResult) => void): void;
     /**
-     * [sendGroupMessageToDesignatedUsers] 的接口回调
+     * [sendGroupMessageToDesignatedUsers] 的接口监听
      * 消息发送完成的回调
      */
     setOnGroupMessageToDesignatedUsersSentListener(callback?: (res: OnGroupMessageToDesignatedUsersSentResult) => void): void;
+    /**
+     * 流式消息请求初始化回调
+     */
+    setOnStreamMessageRequestInitListener(callback?: (res: OnStreamMessageRequestInitResult) => void): void;
+    /**
+     * 流式消息增量数据回调
+     */
+    setOnStreamMessageRequestDataListener(callback?: (res: OnStreamMessageRequestDataResult) => void): void;
+    /**
+     * 流式消息请求结束回调
+     */
+    setOnStreamMessageRequestCompleteListener(callback?: (res: OnStreamMessageRequestCompleteResult) => void): void;
     /**
      * [syncUltraGroupReadStatus] 的接口监听
      */
@@ -1739,6 +2003,9 @@ export default class RCIMIWEngine {
      * [loadUltraGroupUnreadMentionedCount] 的接口监听
      */
     setOnUltraGroupUnreadMentionedCountLoadedListener(callback?: (res: OnUltraGroupUnreadMentionedCountLoadedResult) => void): void;
+    /**
+     * [loadUltraGroupUnreadCount] 的接口监听
+     */
     setOnUltraGroupUnreadCountLoadedListener(callback?: (res: OnUltraGroupUnreadCountLoadedResult) => void): void;
     /**
      * [modifyUltraGroupMessage] 的接口监听
@@ -1772,4 +2039,8 @@ export default class RCIMIWEngine {
      * [removeUltraGroupMessageExpansionForKeys] 的接口监听
      */
     setOnUltraGroupMessageExpansionForKeysRemovedListener(callback?: (res: OnUltraGroupMessageExpansionForKeysRemovedResult) => void): void;
+    /**
+     * 已读回执 V5 收到回调
+     */
+    setOnMessageReadReceiptV5ReceivedListener(callback?: (res: OnMessageReadReceiptV5ReceivedResult) => void): void;
 }

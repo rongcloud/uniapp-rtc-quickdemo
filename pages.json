@@ -33,6 +33,13 @@
 				"navigationBarTitleText": "音视频直播",
 				"navigationStyle": "custom"
 			}
+		},
+		{
+			"path" : "pages/message/customNativeMessage/customNativeMessage",
+			"style" : 
+			{
+				"navigationBarTitleText" : "原生自定义消息"
+			}
 		}
 	],
 	"globalStyle": {

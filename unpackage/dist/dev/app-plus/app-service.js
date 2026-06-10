@@ -151,27 +151,27 @@ if (uni.restoreGlobal) {
   }
   const appConfig = {
     // 融云AppKey - 请替换为您的实际AppKey
-    appKey: "p5tvi9dspl334",
+    appKey: "",
     // 测试用户列表 - 可以方便地添加更多用户
     testUsers: [
       {
-        id: "9991",
+        id: "",
         name: "测试用户1",
-        token: "wRRcc7tpneznfWJ8b8iAmJnIhp/u8YXKOn8cO1FsaNg=@sdkq.cn.rongnav.com;sdkq.cn.rongcfg.com",
+        token: "",
         avatar: "👤",
         description: "主要测试账户"
       },
       {
-        id: "9992",
+        id: "",
         name: "测试用户2",
-        token: "qYJ98NqYbwbnfWJ8b8iAmEbAJuTn6E8ryqmxM7wQQQs=@sdkq.cn.rongnav.com;sdkq.cn.rongcfg.com",
+        token: "",
         avatar: "👤",
         description: "备用测试账户"
       },
       {
-        id: "9993",
+        id: "",
         name: "测试用户3",
-        token: "3qPc8BJiV6jnfWJ8b8iAmI6cLFTpPUM9DjFo0WjC6Aw=@sdkq.cn.rongnav.com;sdkq.cn.rongcfg.com",
+        token: "",
         avatar: "👤",
         description: "备用测试账户"
       }
@@ -191,6 +191,14 @@ if (uni.restoreGlobal) {
     RCIMIWPushType2[RCIMIWPushType2["oppo"] = 9] = "oppo";
     RCIMIWPushType2[RCIMIWPushType2["honor"] = 10] = "honor";
   })(RCIMIWPushType || (RCIMIWPushType = {}));
+  var RCIMIWGroupReadReceiptVersion;
+  (function(RCIMIWGroupReadReceiptVersion2) {
+    RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["unknown"] = 0] = "unknown";
+    RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["version1"] = 1] = "version1";
+    RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["version2"] = 2] = "version2";
+    RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["version4"] = 3] = "version4";
+    RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["version5"] = 4] = "version5";
+  })(RCIMIWGroupReadReceiptVersion || (RCIMIWGroupReadReceiptVersion = {}));
   var RCIMIWImportanceHW;
   (function(RCIMIWImportanceHW2) {
     RCIMIWImportanceHW2[RCIMIWImportanceHW2["normal"] = 0] = "normal";
@@ -259,6 +267,11 @@ if (uni.restoreGlobal) {
     RCIMIWPushNotificationLevel2[RCIMIWPushNotificationLevel2["mentionAll"] = 4] = "mentionAll";
     RCIMIWPushNotificationLevel2[RCIMIWPushNotificationLevel2["blocked"] = 5] = "blocked";
   })(RCIMIWPushNotificationLevel || (RCIMIWPushNotificationLevel = {}));
+  var RCIMIWReadReceiptStatus;
+  (function(RCIMIWReadReceiptStatus2) {
+    RCIMIWReadReceiptStatus2[RCIMIWReadReceiptStatus2["read"] = 0] = "read";
+    RCIMIWReadReceiptStatus2[RCIMIWReadReceiptStatus2["unread"] = 1] = "unread";
+  })(RCIMIWReadReceiptStatus || (RCIMIWReadReceiptStatus = {}));
   var RCIMIWMessageType;
   (function(RCIMIWMessageType2) {
     RCIMIWMessageType2[RCIMIWMessageType2["unknown"] = 0] = "unknown";
@@ -276,7 +289,10 @@ if (uni.restoreGlobal) {
     RCIMIWMessageType2[RCIMIWMessageType2["location"] = 12] = "location";
     RCIMIWMessageType2[RCIMIWMessageType2["userCustom"] = 13] = "userCustom";
     RCIMIWMessageType2[RCIMIWMessageType2["nativeCustom"] = 14] = "nativeCustom";
-    RCIMIWMessageType2[RCIMIWMessageType2["nativeCustomMedia"] = 15] = "nativeCustomMedia";
+    RCIMIWMessageType2[RCIMIWMessageType2["stream"] = 15] = "stream";
+    RCIMIWMessageType2[RCIMIWMessageType2["nativeCustomMedia"] = 16] = "nativeCustomMedia";
+    RCIMIWMessageType2[RCIMIWMessageType2["groupNotification"] = 17] = "groupNotification";
+    RCIMIWMessageType2[RCIMIWMessageType2["combineV2"] = 18] = "combineV2";
   })(RCIMIWMessageType || (RCIMIWMessageType = {}));
   var RCIMIWMessageBlockType;
   (function(RCIMIWMessageBlockType2) {
@@ -285,6 +301,16 @@ if (uni.restoreGlobal) {
     RCIMIWMessageBlockType2[RCIMIWMessageBlockType2["custom"] = 2] = "custom";
     RCIMIWMessageBlockType2[RCIMIWMessageBlockType2["thirdParty"] = 3] = "thirdParty";
   })(RCIMIWMessageBlockType || (RCIMIWMessageBlockType = {}));
+  var RCIMIWMessageAuditType;
+  (function(RCIMIWMessageAuditType2) {
+    RCIMIWMessageAuditType2[RCIMIWMessageAuditType2["disallow"] = 0] = "disallow";
+    RCIMIWMessageAuditType2[RCIMIWMessageAuditType2["allow"] = 1] = "allow";
+  })(RCIMIWMessageAuditType || (RCIMIWMessageAuditType = {}));
+  var RCIMIWReadReceiptOrder;
+  (function(RCIMIWReadReceiptOrder2) {
+    RCIMIWReadReceiptOrder2[RCIMIWReadReceiptOrder2["descending"] = 0] = "descending";
+    RCIMIWReadReceiptOrder2[RCIMIWReadReceiptOrder2["ascending"] = 1] = "ascending";
+  })(RCIMIWReadReceiptOrder || (RCIMIWReadReceiptOrder = {}));
   var RCIMIWTimeOrder;
   (function(RCIMIWTimeOrder2) {
     RCIMIWTimeOrder2[RCIMIWTimeOrder2["before"] = 0] = "before";
@@ -543,6 +569,15 @@ if (uni.restoreGlobal) {
       }
       return this._invokeMethod("registerPushToken", null, { pushType, pushToken });
     }
+    /**
+     * 将 SDK 返回的本地文件拷贝到 uni _doc 目录下。一般 iOS 平台下需要调用此方法，Android 平台下不需要调用。
+     * @param filePath 文件本地路径
+     * @returns
+     */
+    async copyFileToUniDocPath(filePath) {
+      let result = await this._invokeMethod("copyFileToUniDocPath", null, { filePath });
+      return result;
+    }
     // /**
     //  * 根据消息 id 获取消息体（本地数据库索引唯一值）。
     //  * @param messageId 消息的 messageId，可在消息对象中获取
@@ -560,7 +595,7 @@ if (uni.restoreGlobal) {
     /**
      * 注册原生自定义普通消息
      * @param messageIdentifier 消息的唯一标识
-     * @param persistentFlag 消息的存储策略
+     * @param persistentFlag    消息的存储策略
      * @return 当次接口操作的状态码。0 代表调用成功，非 0 代表当前接口调用操作失败，详细错误参考错误码
      */
     registerNativeCustomMessage(messageIdentifier, persistentFlag) {
@@ -573,7 +608,7 @@ if (uni.restoreGlobal) {
     /**
      * 注册原生自定义媒体消息
      * @param messageIdentifier 消息的唯一标识
-     * @param persistentFlag 消息的存储策略
+     * @param persistentFlag    消息的存储策略
      * @return 当次接口操作的状态码。0 代表调用成功，非 0 代表当前接口调用操作失败，详细错误参考错误码
      */
     registerNativeCustomMediaMessage(messageIdentifier, persistentFlag) {
@@ -587,13 +622,17 @@ if (uni.restoreGlobal) {
       });
     }
     /**
-     * 连接融云服务器，在整个应用程序全局，只需要调用一次。调用此接口返回非业务错误码时，SDK 会启动重连机制进行重连；如果仍没有连接成功，会在设备网络状态变化时再次进行重连。
+     * 连接融云服务器，在整个应用程序全局，只需要调用一次。调用此接口返回非业务错误码时，SDK
+     * 会启动重连机制进行重连；如果仍没有连接成功，会在设备网络状态变化时再次进行重连。
      * @param token    调用 server api 获取到的 token
      * @param timeout  连接超时时间，单位：秒。
-     * timeLimit <= 0，则 IM 将一直连接，直到连接成功或者无法连接（如 token 非法）
-     * timeLimit > 0，则 IM 将最多连接 timeLimit 秒
-     * 如果在 timeLimit 秒内连接成功，后面再发生了网络变化或前后台切换，SDK 会自动重连； 如果在 timeLimit 秒无法连接成功则不再进行重连，通过 listener 告知连接超时，您需要再自行调用 connect 接口
-     * @param callback 链接事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * timeout ≤ 0，则 IM 将一直连接，直到连接成功或者无法连接（如 token 非法）
+     * timeout > 0，则 IM 将最多连接 timeout 秒
+     * 如果在 timeout 秒内连接成功，后面再发生了网络变化或前后台切换，SDK 会自动重连； 如果在 timeout
+     * 秒无法连接成功则不再进行重连，通过 listener 告知连接超时，您需要再自行调用 connect 接口
+     * @param callback 链接事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener 接口回调可以监听 [onConnected]
      */
@@ -796,11 +835,11 @@ if (uni.restoreGlobal) {
     }
     /**
      * 构建原生自定义普通消息
-     * @param type 会话类型
-     * @param targetId 会话 ID
-     * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
+     * @param type              会话类型
+     * @param targetId          会话 ID
+     * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param messageIdentifier 消息的标识符，需唯一
-     * @param fields 消息的内容键值对
+     * @param fields            消息的内容键值对
      * @return 原生自定义普通消息
      */
     createNativeCustomMessage(type, targetId, channelId, messageIdentifier, fields) {
@@ -818,12 +857,12 @@ if (uni.restoreGlobal) {
     }
     /**
      * 构建原生自定义媒体消息
-     * @param type 会话类型
-     * @param targetId 会话 ID
-     * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
+     * @param type              会话类型
+     * @param targetId          会话 ID
+     * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param messageIdentifier 消息的标识符，需唯一
-     * @param path 媒体文件的本地路径，必须为有效路径
-     * @param fields 消息的内容键值对
+     * @param path              媒体文件的本地路径，必须为有效路径
+     * @param fields            消息的内容键值对
      * @return 原生自定义媒体消息
      */
     createNativeCustomMediaMessage(type, targetId, channelId, messageIdentifier, path, fields) {
@@ -843,7 +882,9 @@ if (uni.restoreGlobal) {
     /**
      * 发送普通消息
      * @param message  发送的消息实体
-     * @param callback 发送消息的事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 发送消息的事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener 接口回调可以监听 [onMessageAttached],[onMessageSent]
      */
@@ -872,7 +913,8 @@ if (uni.restoreGlobal) {
      * @param message  发送的媒体消息实体
      * @param listener 发送媒体消息的事件监听
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener 接口回调可以监听 [onMediaMessageSending],[onMediaMessageAttached],[onMediaMessageSent]
+     * @listener 接口回调可以监听
+     * [onMediaMessageSending],[onMediaMessageAttached],[onMediaMessageSent]
      */
     sendMediaMessage(message, listener) {
       if (!validate("message", message, AssertRules.OBJECT, true)) {
@@ -905,7 +947,9 @@ if (uni.restoreGlobal) {
     /**
      * 取消发送媒体消息
      * @param message  需要取消发送的媒体消息实体
-     * @param callback 取消发送媒体消息的事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 取消发送媒体消息的事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener 接口回调可以监听 [onSendingMediaMessageCanceled]
      */
@@ -959,7 +1003,9 @@ if (uni.restoreGlobal) {
     /**
      * 取消下载媒体消息
      * @param message  需要取消下载的媒体消息实体
-     * @param callback 取消下载媒体消息的事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 取消下载媒体消息的事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onDownloadingMediaMessageCanceled]
      */
@@ -986,7 +1032,9 @@ if (uni.restoreGlobal) {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationLoaded]
-     * @deprecated 用 {@link #getConversation(RCIMIWConversationType, String, String, IRCIMIWGetConversationCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getConversation(RCIMIWConversationType, String, String, IRCIMIWGetConversationCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadConversation(type, targetId, channelId) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1000,9 +1048,8 @@ if (uni.restoreGlobal) {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可
-     * @param callback  获取会话事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  获取会话事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onConversationLoaded]
      */
     getConversation(type, targetId, channelId, callback) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1029,10 +1076,12 @@ if (uni.restoreGlobal) {
      * @param conversationTypes 会话类型
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可
      * @param startTime         时间戳（毫秒），获取小于此时间戳的会话，传 0 为查询最新数据
-     * @param count             查询的数量， 0 < count <= 50
+     * @param count             查询的数量， 0 < count ≤ 50
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationsLoaded]
-     * @deprecated 用 {@link #getConversations(List, String, long, int, IRCIMIWGetConversationsCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getConversations(List, String, long, int, IRCIMIWGetConversationsCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadConversations(conversationTypes, channelId, startTime, count) {
       if (!validate("conversationTypes", conversationTypes, AssertRules.NUMBER_ARRAY, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false) || !validate("startTime", startTime, AssertRules.NUMBER, true) || !validate("count", count, AssertRules.NUMBER, true)) {
@@ -1051,10 +1100,9 @@ if (uni.restoreGlobal) {
      * @param conversationTypes 会话类型
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可
      * @param startTime         时间戳（毫秒），获取小于此时间戳的会话，传 0 为查询最新数据
-     * @param count             查询的数量， 0 < count <= 50
-     * @param callback          获取会话列表事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param count             查询的数量， 0 < count ≤ 50
+     * @param callback          获取会话列表事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onConversationsLoaded]
      */
     getConversations(conversationTypes, channelId, startTime, count, callback) {
       if (!validate("conversationTypes", conversationTypes, AssertRules.NUMBER_ARRAY, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false) || !validate("startTime", startTime, AssertRules.NUMBER, true) || !validate("count", count, AssertRules.NUMBER, true)) {
@@ -1084,7 +1132,7 @@ if (uni.restoreGlobal) {
     /**
      * 获取指定类型的含有未读消息的会话列表
      * @param conversationTypes 支持单聊、群聊、系统会话
-     * @param callback 获取会话列表事件回调。
+     * @param callback          获取会话列表事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      */
     getUnreadConversations(conversationTypes, callback) {
@@ -1112,7 +1160,9 @@ if (uni.restoreGlobal) {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可
-     * @param callback  移除会话事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  移除会话事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationRemoved]
      */
@@ -1136,7 +1186,9 @@ if (uni.restoreGlobal) {
      * 根据会话类型移除会话
      * @param conversationTypes 会话类型集合
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback          移除会话列表事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback          移除会话列表事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback
+     * 参数，仅触发 callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationsRemoved]
      */
@@ -1164,7 +1216,9 @@ if (uni.restoreGlobal) {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUnreadCountLoaded]
-     * @deprecated 用 {@link #getUnreadCount(RCIMIWConversationType, String, String, IRCIMIWGetUnreadCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUnreadCount(RCIMIWConversationType, String, String, IRCIMIWGetUnreadCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUnreadCount(type, targetId, channelId) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1179,9 +1233,8 @@ if (uni.restoreGlobal) {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  获取会话未读数事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  获取会话未读数事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUnreadCountLoaded]
      */
     getUnreadCount(type, targetId, channelId, callback) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1208,7 +1261,9 @@ if (uni.restoreGlobal) {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onTotalUnreadCountLoaded]
-     * @deprecated 用 {@link #getTotalUnreadCount(String, IRCIMIWGetTotalUnreadCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getTotalUnreadCount(String, IRCIMIWGetTotalUnreadCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadTotalUnreadCount(channelId) {
       if (!validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1220,9 +1275,8 @@ if (uni.restoreGlobal) {
     /**
      * 获取所有未读数
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  获取所有未读数事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  获取所有未读数事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onTotalUnreadCountLoaded]
      */
     getTotalUnreadCount(channelId, callback) {
       if (!validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1252,7 +1306,9 @@ if (uni.restoreGlobal) {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUnreadMentionedCountLoaded]
-     * @deprecated 用 {@link #getUnreadMentionedCount(RCIMIWConversationType, String, String, IRCIMIWGetUnreadMentionedCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUnreadMentionedCount(RCIMIWConversationType, String, String, IRCIMIWGetUnreadMentionedCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUnreadMentionedCount(type, targetId, channelId) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1267,9 +1323,8 @@ if (uni.restoreGlobal) {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  获取会话中未读的 @ 消息数量事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  获取会话中未读的 @ 消息数量事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUnreadMentionedCountLoaded]
      */
     getUnreadMentionedCount(type, targetId, channelId, callback) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1295,7 +1350,9 @@ if (uni.restoreGlobal) {
      * 加载当前用户加入的所有超级群会话的未读消息数的总和。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupAllUnreadCountLoaded]
-     * @deprecated 用 {@link #getUltraGroupAllUnreadCount(IRCIMIWGetUltraGroupAllUnreadCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUltraGroupAllUnreadCount(IRCIMIWGetUltraGroupAllUnreadCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUltraGroupAllUnreadCount() {
       let resultCallback;
@@ -1303,9 +1360,8 @@ if (uni.restoreGlobal) {
     }
     /**
      * 获取当前用户加入的所有超级群会话的未读消息数的总和。
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUltraGroupAllUnreadCountLoaded]
      */
     getUltraGroupAllUnreadCount(callback) {
       let resultCallback;
@@ -1328,7 +1384,9 @@ if (uni.restoreGlobal) {
      * 加载当前用户加入的所有超级群会话中的未读 @ 消息数的总和。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupAllUnreadMentionedCountLoaded]
-     * @deprecated 用 {@link #getUltraGroupAllUnreadMentionedCount(IRCIMIWGetUltraGroupAllUnreadMentionedCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUltraGroupAllUnreadMentionedCount(IRCIMIWGetUltraGroupAllUnreadMentionedCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUltraGroupAllUnreadMentionedCount() {
       let resultCallback;
@@ -1336,9 +1394,8 @@ if (uni.restoreGlobal) {
     }
     /**
      * 获取当前用户加入的所有超级群会话中的未读 @ 消息数的总和。
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUltraGroupAllUnreadMentionedCountLoaded]
      */
     getUltraGroupAllUnreadMentionedCount(callback) {
       let resultCallback;
@@ -1362,7 +1419,9 @@ if (uni.restoreGlobal) {
      * @param targetId 会话 ID
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupUnreadCountLoaded]
-     * @deprecated 用 {@link #getUltraGroupUnreadCount(String, IRCIMIWGetUltraGroupUnreadCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUltraGroupUnreadCount(String, IRCIMIWGetUltraGroupUnreadCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUltraGroupUnreadCount(targetId) {
       if (!validate("targetId", targetId, AssertRules.STRING, true)) {
@@ -1374,9 +1433,8 @@ if (uni.restoreGlobal) {
     /**
      * 获取指定会话的未读消息数
      * @param targetId 会话 ID
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUltraGroupUnreadCountLoaded]
      */
     getUltraGroupUnreadCount(targetId, callback) {
       if (!validate("targetId", targetId, AssertRules.STRING, true)) {
@@ -1403,7 +1461,9 @@ if (uni.restoreGlobal) {
      * @param targetId 会话 ID
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupUnreadMentionedCountLoaded]
-     * @deprecated 用 {@link #getUltraGroupUnreadMentionedCount(String, IRCIMIWGetUltraGroupUnreadMentionedCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUltraGroupUnreadMentionedCount(String, IRCIMIWGetUltraGroupUnreadMentionedCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUltraGroupUnreadMentionedCount(targetId) {
       if (!validate("targetId", targetId, AssertRules.STRING, true)) {
@@ -1415,9 +1475,8 @@ if (uni.restoreGlobal) {
     /**
      * 获取超级群会话中被 @ 的消息数
      * @param targetId 会话 ID
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUltraGroupUnreadMentionedCountLoaded]
      */
     getUltraGroupUnreadMentionedCount(targetId, callback) {
       if (!validate("targetId", targetId, AssertRules.STRING, true)) {
@@ -1447,7 +1506,9 @@ if (uni.restoreGlobal) {
      * @param contain           是否包含免打扰消息的未读消息数。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUnreadCountByConversationTypesLoaded]
-     * @deprecated 用 {@link #getUnreadCountByConversationTypes(List, String, boolean, IRCIMIWGetUnreadCountByConversationTypesCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUnreadCountByConversationTypes(List, String, boolean, IRCIMIWGetUnreadCountByConversationTypesCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUnreadCountByConversationTypes(conversationTypes, channelId, contain) {
       if (!validate("conversationTypes", conversationTypes, AssertRules.NUMBER_ARRAY, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false) || !validate("contain", contain, AssertRules.BOOLEAN, true)) {
@@ -1466,9 +1527,8 @@ if (uni.restoreGlobal) {
      * @param conversationTypes 会话类型集合
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param contain           是否包含免打扰消息的未读消息数。
-     * @param callback          事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback          事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUnreadCountByConversationTypesLoaded]
      */
     getUnreadCountByConversationTypes(conversationTypes, channelId, contain, callback) {
       if (!validate("conversationTypes", conversationTypes, AssertRules.NUMBER_ARRAY, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false) || !validate("contain", contain, AssertRules.BOOLEAN, true)) {
@@ -1501,7 +1561,9 @@ if (uni.restoreGlobal) {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param timestamp 该会话已阅读的最后一条消息的发送时间戳，清除所有传入当前最新时间戳
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUnreadCountCleared]
      */
@@ -1527,7 +1589,9 @@ if (uni.restoreGlobal) {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param draft     草稿的文字内容。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onDraftMessageSaved]
      */
@@ -1554,7 +1618,9 @@ if (uni.restoreGlobal) {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onDraftMessageLoaded]
-     * @deprecated 用 {@link #getDraftMessage(RCIMIWConversationType, String, String, IRCIMIWGetDraftMessageCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getDraftMessage(RCIMIWConversationType, String, String, IRCIMIWGetDraftMessageCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadDraftMessage(type, targetId, channelId) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1568,9 +1634,8 @@ if (uni.restoreGlobal) {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onDraftMessageLoaded]
      */
     getDraftMessage(type, targetId, channelId, callback) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1597,7 +1662,9 @@ if (uni.restoreGlobal) {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onDraftMessageCleared]
      */
@@ -1623,7 +1690,9 @@ if (uni.restoreGlobal) {
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onBlockedConversationsLoaded]
-     * @deprecated 用 {@link #getBlockedConversations(List, String, IRCIMIWGetBlockedConversationsCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getBlockedConversations(List, String, IRCIMIWGetBlockedConversationsCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadBlockedConversations(conversationTypes, channelId) {
       if (!validate("conversationTypes", conversationTypes, AssertRules.NUMBER_ARRAY, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1636,9 +1705,8 @@ if (uni.restoreGlobal) {
      * 获取免打扰的会话列表。
      * @param conversationTypes 会话类型集合
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback          事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback          事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onBlockedConversationsLoaded]
      */
     getBlockedConversations(conversationTypes, channelId, callback) {
       if (!validate("conversationTypes", conversationTypes, AssertRules.NUMBER_ARRAY, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1666,7 +1734,9 @@ if (uni.restoreGlobal) {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param top       是否置顶
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationTopStatusChanged]
      */
@@ -1693,7 +1763,9 @@ if (uni.restoreGlobal) {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationTopStatusLoaded]
-     * @deprecated 用 {@link #getConversationTopStatus(RCIMIWConversationType, String, String, IRCIMIWGetConversationTopStatusCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getConversationTopStatus(RCIMIWConversationType, String, String, IRCIMIWGetConversationTopStatusCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadConversationTopStatus(type, targetId, channelId) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1707,9 +1779,8 @@ if (uni.restoreGlobal) {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onConversationTopStatusLoaded]
      */
     getConversationTopStatus(type, targetId, channelId, callback) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1737,7 +1808,9 @@ if (uni.restoreGlobal) {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param timestamp 会话中已读的最后一条消息的发送时间戳
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationReadStatusSynced]
      */
@@ -1783,12 +1856,15 @@ if (uni.restoreGlobal) {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param sentTime  当前消息时间戳
-     * @param order     获取消息的方向。BEFORE：获取 sentTime 之前的消息 （时间递减），AFTER：获取 sentTime 之后的消息 （时间递增）
+     * @param order     获取消息的方向。BEFORE：获取 sentTime 之前的消息 （时间递减），AFTER：获取 sentTime
+     * 之后的消息 （时间递增）
      * @param policy    消息的加载策略。LOCAL：只加载本地，REMOTE：只加载远端，LOCAL_REMOTE：本地远端都加载
-     * @param count     获取的消息数量，0 < count <= 20
+     * @param count     获取的消息数量，0 < count ≤ 20
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessagesLoaded]
-     * @deprecated 用 {@link #getMessages(RCIMIWConversationType, String, String, long, RCIMIWTimeOrder, RCIMIWMessageOperationPolicy, int, IRCIMIWGetMessagesCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getMessages(RCIMIWConversationType, String, String, long, RCIMIWTimeOrder, RCIMIWMessageOperationPolicy, int, IRCIMIWGetMessagesCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadMessages(type, targetId, channelId, sentTime, order, policy, count) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false) || !validate("sentTime", sentTime, AssertRules.NUMBER, true) || !validate("order", order, AssertRules.NUMBER, true) || !validate("policy", policy, AssertRules.NUMBER, true) || !validate("count", count, AssertRules.NUMBER, true)) {
@@ -1811,12 +1887,12 @@ if (uni.restoreGlobal) {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param sentTime  当前消息时间戳
-     * @param order     获取消息的方向。BEFORE：获取 sentTime 之前的消息 （时间递减），AFTER：获取 sentTime 之后的消息 （时间递增）
+     * @param order     获取消息的方向。BEFORE：获取 sentTime 之前的消息 （时间递减），AFTER：获取 sentTime
+     * 之后的消息 （时间递增）
      * @param policy    消息的加载策略。LOCAL：只加载本地，REMOTE：只加载远端，LOCAL_REMOTE：本地远端都加载
-     * @param count     获取的消息数量，0 < count <= 20
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param count     获取的消息数量，0 < count ≤ 20
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onMessagesLoaded]
      */
     getMessages(type, targetId, channelId, sentTime, order, policy, count, callback) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false) || !validate("sentTime", sentTime, AssertRules.NUMBER, true) || !validate("order", order, AssertRules.NUMBER, true) || !validate("policy", policy, AssertRules.NUMBER, true) || !validate("count", count, AssertRules.NUMBER, true)) {
@@ -1849,7 +1925,9 @@ if (uni.restoreGlobal) {
     /**
      * 根据消息 id 获取消息体（本地数据库索引唯一值）。
      * @param messageId 消息的 messageId，可在消息对象中获取
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      */
     getMessageById(messageId, callback) {
@@ -1875,7 +1953,9 @@ if (uni.restoreGlobal) {
     /**
      * 通过全局唯一 id 获取消息实体。
      * @param messageUId 消息的 messageUid，可在消息对象中获取，且只有发送成功的消息才会有值。
-     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      */
     getMessageByUId(messageUId, callback) {
@@ -1899,13 +1979,57 @@ if (uni.restoreGlobal) {
       return this._invokeMethod("getMessageByUId", resultCallback, { messageUId });
     }
     /**
+     * 获取会话中指定类型的消息。
+     * @param type         会话类型。
+     * @param targetId     会话 ID。
+     * @param channelId    消息所属会话的业务标识。
+     * @param messageTypes 消息类型列表。
+     * @param sentTime     消息发送时间戳，0 表示最新的消息
+     * @param order        获取消息的方向。BEFORE：获取 sentTime 之前的消息 （时间递减），AFTER：获取 sentTime
+     * 之后的消息 （时间递增）
+     * @param count        获取的消息数量
+     * @param callback     获取结果回调。
+     * @return 当次接口操作的状态码。0 代表调用成功 具体结果通过接口 callback 回调，非 0
+     * 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
+     */
+    getLocalMessagesByMessageTypes(type, targetId, channelId, messageTypes, sentTime, order, count, callback) {
+      if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false) || !validate("messageTypes", messageTypes, AssertRules.NUMBER_ARRAY, true) || !validate("sentTime", sentTime, AssertRules.NUMBER, true) || !validate("order", order, AssertRules.NUMBER, true) || !validate("count", count, AssertRules.NUMBER, true)) {
+        return paramErrorPromise;
+      }
+      let resultCallback;
+      if (callback) {
+        resultCallback = (res) => {
+          var _a, _b;
+          if (res.callbackName === "onSuccess") {
+            let { t } = res;
+            (_a = callback.onSuccess) == null ? void 0 : _a.call(callback, { t });
+          }
+          if (res.callbackName === "onError") {
+            let { code } = res;
+            (_b = callback.onError) == null ? void 0 : _b.call(callback, { code });
+          }
+        };
+      }
+      return this._invokeMethod("getLocalMessagesByMessageTypes", resultCallback, {
+        type,
+        targetId,
+        channelId,
+        messageTypes,
+        sentTime,
+        order,
+        count
+      });
+    }
+    /**
      * 加载第一条未读消息。
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onFirstUnreadMessageLoaded]
-     * @deprecated 用 {@link #getFirstUnreadMessage(RCIMIWConversationType, String, String, IRCIMIWGetFirstUnreadMessageCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getFirstUnreadMessage(RCIMIWConversationType, String, String, IRCIMIWGetFirstUnreadMessageCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadFirstUnreadMessage(type, targetId, channelId) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1919,9 +2043,8 @@ if (uni.restoreGlobal) {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onFirstUnreadMessageLoaded]
      */
     getFirstUnreadMessage(type, targetId, channelId, callback) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1950,7 +2073,9 @@ if (uni.restoreGlobal) {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUnreadMentionedMessagesLoaded]
-     * @deprecated 用 {@link #getUnreadMentionedMessages(RCIMIWConversationType, String, String, IRCIMIWGetUnreadMentionedMessagesCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUnreadMentionedMessages(RCIMIWConversationType, String, String, IRCIMIWGetUnreadMentionedMessagesCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUnreadMentionedMessages(type, targetId, channelId) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1964,9 +2089,8 @@ if (uni.restoreGlobal) {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUnreadMentionedMessagesLoaded]
      */
     getUnreadMentionedMessages(type, targetId, channelId, callback) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -1991,7 +2115,9 @@ if (uni.restoreGlobal) {
     /**
      * 插入一条消息
      * @param message  插入的消息
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessageInserted]
      */
@@ -2014,7 +2140,9 @@ if (uni.restoreGlobal) {
     /**
      * 插入多条消息，不支持超级群
      * @param messages 插入的消息集合
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessagesInserted]
      */
@@ -2039,9 +2167,12 @@ if (uni.restoreGlobal) {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param timestamp 清除消息截止时间戳，0 <= recordTime <= 当前会话最后一条消息的 sentTime, 0 清除所有消息，其他值清除小于等于 recordTime 的消息
+     * @param timestamp 清除消息截止时间戳，0 ≤ timestamp ≤ 当前会话最后一条消息的 sentTime, 0
+     * 清除所有消息，其他值清除小于等于 timestamp 的消息
      * @param policy    清除的策略
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessagesCleared]
      */
@@ -2064,7 +2195,9 @@ if (uni.restoreGlobal) {
     /**
      * 删除本地消息
      * @param messages 消息集合
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onLocalMessagesDeleted]
      */
@@ -2090,7 +2223,9 @@ if (uni.restoreGlobal) {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param messages  消息集合
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessagesDeleted]
      */
@@ -2113,7 +2248,9 @@ if (uni.restoreGlobal) {
     /**
      * 撤回消息
      * @param message  需要被撤回的消息
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessageRecalled]
      */
@@ -2138,7 +2275,9 @@ if (uni.restoreGlobal) {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param timestamp 该会话中已读的最后一条消息的发送时间戳
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onPrivateReadReceiptMessageSent]
      */
@@ -2161,7 +2300,9 @@ if (uni.restoreGlobal) {
     /**
      * 发起群聊消息已读回执请求
      * @param message  需要请求已读回执的消息
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onGroupReadReceiptRequestSent]
      */
@@ -2186,7 +2327,9 @@ if (uni.restoreGlobal) {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param messages  会话中需要发送已读回执的消息列表
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onGroupReadReceiptResponseSent]
      */
@@ -2210,8 +2353,11 @@ if (uni.restoreGlobal) {
      * 更新消息扩展信息
      * 每条消息携带扩展信息键值对最大值 300个，单次设置扩展信息键值对最大值 20个
      * @param messageUId 消息的 messageUid，可在消息对象中获取，且只有发送成功的消息才会有值
-     * @param expansion  要更新的消息扩展信息键值对，类型是 HashMap；Key 支持大小写英文字母、数字、部分特殊符号 + = - _ 的组合方式，不支持汉字。Value 可以输入空格
-     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param expansion  要更新的消息扩展信息键值对，类型是 HashMap；Key 支持大小写英文字母、数字、部分特殊符号 + = - _
+     * 的组合方式，不支持汉字。Value 可以输入空格
+     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessageExpansionUpdated]
      */
@@ -2235,7 +2381,9 @@ if (uni.restoreGlobal) {
      * 删除消息扩展信息中特定的键值对
      * @param messageUId 消息的 messageUid，可在消息对象中获取，且只有发送成功的消息才会有值
      * @param keys       消息扩展信息中待删除的 key 的列表，类型是 ArrayList
-     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessageExpansionForKeysRemoved]
      */
@@ -2259,7 +2407,9 @@ if (uni.restoreGlobal) {
      * 设置消息发送状态。
      * @param messageId  消息的 messageId，可在消息对象中获取
      * @param sentStatus 要修改的状态
-     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessageSentStatusChanged]
      */
@@ -2283,7 +2433,9 @@ if (uni.restoreGlobal) {
      * 设置消息接收状态。
      * @param messageId      消息的 messageId，可在消息对象中获取
      * @param receivedStatus 要修改的状态
-     * @param callback       事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback       事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback
+     * 参数，仅触发 callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessageReceiveStatusChanged]
      */
@@ -2308,7 +2460,9 @@ if (uni.restoreGlobal) {
      * @param targetId     聊天室会话 ID
      * @param messageCount 进入聊天室拉取消息数目，-1 时不拉取任何消息，0 时拉取 10 条消息，最多只能拉取 50
      * @param autoCreate   是否创建聊天室，TRUE 如果聊天室不存在，sdk 会创建聊天室并加入，如果已存在，则直接加入
-     * @param callback     事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback     事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomJoined]
      */
@@ -2331,7 +2485,9 @@ if (uni.restoreGlobal) {
     /**
      * 退出聊天室。
      * @param targetId 聊天室会话 ID
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomLeft]
      */
@@ -2357,10 +2513,12 @@ if (uni.restoreGlobal) {
      * @param targetId  聊天室会话 ID
      * @param timestamp 起始的消息发送时间戳
      * @param order     拉取顺序 0:倒序，1:正序
-     * @param count     要获取的消息数量，0 < count <= 50。
+     * @param count     要获取的消息数量，0 < count ≤ 50。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomMessagesLoaded]
-     * @deprecated 用 {@link #getChatRoomMessages(String, long, RCIMIWTimeOrder, int, IRCIMIWGetChatRoomMessagesCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getChatRoomMessages(String, long, RCIMIWTimeOrder, int, IRCIMIWGetChatRoomMessagesCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadChatRoomMessages(targetId, timestamp, order, count) {
       if (!validate("targetId", targetId, AssertRules.STRING, true) || !validate("timestamp", timestamp, AssertRules.NUMBER, true) || !validate("order", order, AssertRules.NUMBER, true) || !validate("count", count, AssertRules.NUMBER, true)) {
@@ -2375,10 +2533,9 @@ if (uni.restoreGlobal) {
      * @param targetId  聊天室会话 ID
      * @param timestamp 起始的消息发送时间戳
      * @param order     拉取顺序 0:倒序，1:正序
-     * @param count     要获取的消息数量，0 < count <= 50。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param count     要获取的消息数量，0 < count ≤ 50。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onChatRoomMessagesLoaded]
      */
     getChatRoomMessages(targetId, timestamp, order, count, callback) {
       if (!validate("targetId", targetId, AssertRules.STRING, true) || !validate("timestamp", timestamp, AssertRules.NUMBER, true) || !validate("order", order, AssertRules.NUMBER, true) || !validate("count", count, AssertRules.NUMBER, true)) {
@@ -2403,11 +2560,14 @@ if (uni.restoreGlobal) {
     /**
      * 设置聊天室自定义属性。
      * @param targetId       聊天室会话 ID
-     * @param key            聊天室属性名称，Key 支持大小写英文字母、数字、部分特殊符号 + = - _ 的组合方式，最大长度 128 个字符
+     * @param key            聊天室属性名称，Key 支持大小写英文字母、数字、部分特殊符号 + = - _ 的组合方式，最大长度 128
+     * 个字符
      * @param value          聊天室属性对应的值，最大长度 4096 个字符
      * @param deleteWhenLeft 用户掉线或退出时，是否自动删除该 Key、Value 值
      * @param overwrite      如果当前 key 存在，是否进行覆盖
-     * @param callback       事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback       事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback
+     * 参数，仅触发 callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomEntryAdded]
      */
@@ -2439,7 +2599,9 @@ if (uni.restoreGlobal) {
      * @param entries        聊天室属性
      * @param deleteWhenLeft 用户掉线或退出时，是否自动删除该 Key、Value 值
      * @param overwrite      是否强制覆盖
-     * @param callback       事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback       事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback
+     * 参数，仅触发 callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomEntriesAdded]
      */
@@ -2470,7 +2632,9 @@ if (uni.restoreGlobal) {
      * @param key      聊天室属性键值
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomEntryLoaded]
-     * @deprecated 用 {@link #getChatRoomEntry(String, String, IRCIMIWGetChatRoomEntryCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getChatRoomEntry(String, String, IRCIMIWGetChatRoomEntryCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadChatRoomEntry(targetId, key) {
       if (!validate("targetId", targetId, AssertRules.STRING, true) || !validate("key", key, AssertRules.STRING, true)) {
@@ -2483,9 +2647,8 @@ if (uni.restoreGlobal) {
      * 获取聊天室单个属性。
      * @param targetId 聊天室会话 ID
      * @param key      聊天室属性键值
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onChatRoomEntryLoaded]
      */
     getChatRoomEntry(targetId, key, callback) {
       if (!validate("targetId", targetId, AssertRules.STRING, true) || !validate("key", key, AssertRules.STRING, true)) {
@@ -2512,7 +2675,9 @@ if (uni.restoreGlobal) {
      * @param targetId 聊天室会话 ID
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomAllEntriesLoaded]
-     * @deprecated 用 {@link #getChatRoomAllEntries(String, IRCIMIWGetChatRoomAllEntriesCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getChatRoomAllEntries(String, IRCIMIWGetChatRoomAllEntriesCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadChatRoomAllEntries(targetId) {
       if (!validate("targetId", targetId, AssertRules.STRING, true)) {
@@ -2524,9 +2689,8 @@ if (uni.restoreGlobal) {
     /**
      * 获取聊天室所有属性。
      * @param targetId 聊天室会话 ID
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onChatRoomAllEntriesLoaded]
      */
     getChatRoomAllEntries(targetId, callback) {
       if (!validate("targetId", targetId, AssertRules.STRING, true)) {
@@ -2553,7 +2717,9 @@ if (uni.restoreGlobal) {
      * @param targetId 聊天室会话 ID
      * @param key      聊天室属性键值
      * @param force    是否强制删除
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomEntryRemoved]
      */
@@ -2578,7 +2744,9 @@ if (uni.restoreGlobal) {
      * @param targetId 聊天室会话 ID
      * @param keys     聊天室属性
      * @param force    是否强制覆盖
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onChatRoomEntriesRemoved]
      */
@@ -2602,7 +2770,9 @@ if (uni.restoreGlobal) {
      * 将某个用户加入黑名单。
      * 当你把对方加入黑名单后，对方再发消息时，就会提示“已被加入黑名单，消息发送失败”。 但你依然可以发消息个对方。
      * @param userId   用户 Id
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onBlacklistAdded]
      */
@@ -2625,7 +2795,9 @@ if (uni.restoreGlobal) {
     /**
      * 将某个用户从黑名单中移出。
      * @param userId   用户 Id
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onBlacklistRemoved]
      */
@@ -2650,7 +2822,9 @@ if (uni.restoreGlobal) {
      * @param userId 用户 Id
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onBlacklistStatusLoaded]
-     * @deprecated 用 {@link #getBlacklistStatus(String, IRCIMIWGetBlacklistStatusCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getBlacklistStatus(String, IRCIMIWGetBlacklistStatusCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadBlacklistStatus(userId) {
       if (!validate("userId", userId, AssertRules.STRING, true)) {
@@ -2662,9 +2836,8 @@ if (uni.restoreGlobal) {
     /**
      * 获取某用户是否在黑名单中。
      * @param userId   用户 Id
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onBlacklistStatusLoaded]
      */
     getBlacklistStatus(userId, callback) {
       if (!validate("userId", userId, AssertRules.STRING, true)) {
@@ -2690,7 +2863,8 @@ if (uni.restoreGlobal) {
      * 加载当前用户设置的黑名单列表。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onBlacklistLoaded]
-     * @deprecated 用 {@link #getBlacklist(IRCIMIWGetBlacklistCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用 {@link #getBlacklist(IRCIMIWGetBlacklistCallback)} 代替， 预计将在 6.x
+     * 版本删除此接口。
      */
     loadBlacklist() {
       let resultCallback;
@@ -2698,9 +2872,8 @@ if (uni.restoreGlobal) {
     }
     /**
      * 获取当前用户设置的黑名单列表。
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onBlacklistLoaded]
      */
     getBlacklist(callback) {
       let resultCallback;
@@ -2726,8 +2899,10 @@ if (uni.restoreGlobal) {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param keyword   搜索的关键字
      * @param startTime 查询 beginTime 之前的消息， 传 0 时从最新消息开始搜索，从该时间往前搜索。
-     * @param count     查询的数量，0 < count <= 50。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param count     查询的数量，0 < count ≤ 50。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessagesSearched]
      */
@@ -2767,8 +2942,10 @@ if (uni.restoreGlobal) {
      * @param startTime 开始时间
      * @param endTime   结束时间
      * @param offset    偏移量
-     * @param count     返回的搜索结果数量，0 < count <= 50。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param count     返回的搜索结果数量，0 < count ≤ 50。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessagesSearchedByTimeRange]
      */
@@ -2808,8 +2985,10 @@ if (uni.restoreGlobal) {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param startTime 查询记录的起始时间， 传 0 时从最新消息开始搜索，从该时间往前搜索。
-     * @param count     返回的搜索结果数量 0 < count <= 50。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param count     返回的搜索结果数量 0 < count ≤ 50。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessagesSearchedByUserId]
      */
@@ -2841,12 +3020,55 @@ if (uni.restoreGlobal) {
       });
     }
     /**
+     * 根据关键字搜索指定会话中，指定消息类型的本地历史消息。
+     * @param type         会话类型。
+     * @param targetId     会话 ID。
+     * @param channelId    消息所属的会话标识。
+     * @param messageTypes 消息类型集合。
+     * @param keyword      搜索的关键字，非空。
+     * @param startTime    查询 startTime 之前的消息（传 0 表示从最新消息开始搜索），单位：毫秒
+     * @param count        最大的查询数量，最大 100。
+     * @param callback     搜索结果的回调接口
+     * @return 当次接口操作的状态码。0 代表调用成功 具体结果通过接口 callback 回调，非 0
+     * 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
+     */
+    searchMessagesByMessageTypes(type, targetId, channelId, messageTypes, keyword, startTime, count, callback) {
+      if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false) || !validate("messageTypes", messageTypes, AssertRules.NUMBER_ARRAY, true) || !validate("keyword", keyword, AssertRules.STRING, true) || !validate("startTime", startTime, AssertRules.NUMBER, true) || !validate("count", count, AssertRules.NUMBER, true)) {
+        return paramErrorPromise;
+      }
+      let resultCallback;
+      if (callback) {
+        resultCallback = (res) => {
+          var _a, _b;
+          if (res.callbackName === "onSuccess") {
+            let { t } = res;
+            (_a = callback.onSuccess) == null ? void 0 : _a.call(callback, { t });
+          }
+          if (res.callbackName === "onError") {
+            let { code } = res;
+            (_b = callback.onError) == null ? void 0 : _b.call(callback, { code });
+          }
+        };
+      }
+      return this._invokeMethod("searchMessagesByMessageTypes", resultCallback, {
+        type,
+        targetId,
+        channelId,
+        messageTypes,
+        keyword,
+        startTime,
+        count
+      });
+    }
+    /**
      * 根据关键字搜索会话。
      * @param conversationTypes 会话类型集合
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @param messageTypes      搜索的消息类型
      * @param keyword           搜索的关键字。
-     * @param callback          事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback          事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback
+     * 参数，仅触发 callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationsSearched]
      */
@@ -2878,9 +3100,13 @@ if (uni.restoreGlobal) {
     /**
      * 屏蔽某个时间段的消息提醒
      * @param startTime   开始消息免打扰时间，格式为 HH:MM:SS
-     * @param spanMinutes 需要消息免打扰分钟数，0 < spanMinutes < 1440（ 比如，您设置的起始时间是 00：00， 结束时间为 01:00，则 spanMinutes 为 60 分钟。设置为 1439 代表全天免打扰 （23  60 + 59 = 1439 ））
+     * @param spanMinutes 需要消息免打扰分钟数，0 < spanMinutes < 1440（ 比如，您设置的起始时间是 00：00，
+     * 结束时间为 01:00，则 spanMinutes 为 60 分钟。设置为 1439 代表全天免打扰 （23
+     * 60 + 59 = 1439 ））
      * @param level       消息通知级别
-     * @param callback    事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback    事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onNotificationQuietHoursChanged]
      */
@@ -2902,7 +3128,9 @@ if (uni.restoreGlobal) {
     }
     /**
      * 删除已设置的全局时间段消息提醒屏蔽
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onNotificationQuietHoursRemoved]
      */
@@ -2923,7 +3151,9 @@ if (uni.restoreGlobal) {
      * 加载已设置的时间段消息提醒屏蔽
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onNotificationQuietHoursLoaded]
-     * @deprecated 用 {@link #getNotificationQuietHours(IRCIMIWGetNotificationQuietHoursCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getNotificationQuietHours(IRCIMIWGetNotificationQuietHoursCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadNotificationQuietHours() {
       let resultCallback;
@@ -2931,9 +3161,8 @@ if (uni.restoreGlobal) {
     }
     /**
      * 获取已设置的时间段消息提醒屏蔽
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onNotificationQuietHoursLoaded]
      */
     getNotificationQuietHours(callback) {
       let resultCallback;
@@ -2955,11 +3184,18 @@ if (uni.restoreGlobal) {
     /**
      * 设置会话的消息提醒状态
      * 注：超级群调用该接口，channelId 为空时，相当于设置了 channelId 为空的频道的免打扰，不会屏蔽整个超级群会话下所有频道的免打扰
-     * @param type      会话类型。请注意以下限制：<ul><li>*超级群会话类型*：如在 2022.09.01 之前开通超级群业务，默认不支持为单个超级群会话*所有消息*设置免打扰级别（“所有消息”指所有频道中的消息和不属于任何频道的消息）。该接口仅设置指定超级群会话（`targetId`）中*不属于任何频道的消息*的免打扰状态级别。如需修改请提交工单。</li><li>*聊天室会话类型*：不支持，因为聊天室消息默认不支持消息推送提醒。</li></ul>
+     * @param type      会话类型。请注意以下限制：*超级群会话类型*：如在 2022.09.01
+     * 之前开通超级群业务，默认不支持为单个超级群会话*所有消息*设置免打扰级别（“所有消息”指所有频道中的消息和不属于任何频道的消息）。该接口仅设置指定超级群会话（`targetId`）中*不属于任何频道的消息*的免打扰状态级别。如需修改请提交工单。*聊天室会话类型*：不支持，因为聊天室消息默认不支持消息推送提醒。
      * @param targetId  会话 ID
-     * @param channelId 超级群的会话频道 ID。其他类型传 null 即可。<ul><li>如果传入频道 ID，则针对该指定频道设置消息免打扰级别。如果不指定频道 ID，则对所有超级群消息生效。</li><li>*注意*：2022.09.01 之前开通超级群业务的客户，如果不指定频道 ID，则默认传 "" 空字符串，即仅针对指定超级群会话（`targetId`）中*不属于任何频道的消息*设置免打扰状态级别。如需修改请提交工单。</p></li></ul>
+     * @param channelId 超级群的会话频道 ID。其他类型传 null 即可。如果传入频道
+     * ID，则针对该指定频道设置消息免打扰级别。如果不指定频道
+     * ID，则对所有超级群消息生效。*注意*：2022.09.01 之前开通超级群业务的客户，如果不指定频道
+     * ID，则默认传 ""
+     * 空字符串，即仅针对指定超级群会话（`targetId`）中*不属于任何频道的消息*设置免打扰状态级别。如需修改请提交工单。
      * @param level     消息通知级别
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationNotificationLevelChanged]
      */
@@ -2991,7 +3227,9 @@ if (uni.restoreGlobal) {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationNotificationLevelLoaded]
-     * @deprecated 用 {@link #getConversationNotificationLevel(RCIMIWConversationType, String, String, IRCIMIWGetConversationNotificationLevelCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getConversationNotificationLevel(RCIMIWConversationType, String, String, IRCIMIWGetConversationNotificationLevelCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadConversationNotificationLevel(type, targetId, channelId) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -3002,12 +3240,16 @@ if (uni.restoreGlobal) {
     }
     /**
      * 获取会话的消息提醒状态
-     * @param type      会话类型。请注意以下限制：<ul><li>*超级群会话类型*：如在 2022.09.01 之前开通超级群业务，默认不支持为单个超级群会话*所有消息*设置免打扰级别（“所有消息”指所有频道中的消息和不属于任何频道的消息）。该接口仅设置指定超级群会话（`targetId`）中*不属于任何频道的消息*的免打扰状态级别。如需修改请提交工单。</li><li>*聊天室会话类型*：不支持，因为聊天室消息默认不支持消息推送提醒。</li></ul>
+     * @param type      会话类型。请注意以下限制：*超级群会话类型*：如在 2022.09.01
+     * 之前开通超级群业务，默认不支持为单个超级群会话*所有消息*设置免打扰级别（“所有消息”指所有频道中的消息和不属于任何频道的消息）。该接口仅设置指定超级群会话（`targetId`）中*不属于任何频道的消息*的免打扰状态级别。如需修改请提交工单。*聊天室会话类型*：不支持，因为聊天室消息默认不支持消息推送提醒。
      * @param targetId  会话 ID
-     * @param channelId 超级群的会话频道 ID。其他类型传 null 即可。<ul><li>如果传入频道 ID，则针对该指定频道设置消息免打扰级别。如果不指定频道 ID，则对所有超级群消息生效。</li><li>*注意*：2022.09.01 之前开通超级群业务的客户，如果不指定频道 ID，则默认传 "" 空字符串，即仅针对指定超级群会话（`targetId`）中*不属于任何频道的消息*设置免打扰状态级别。如需修改请提交工单。</p></li></ul>
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param channelId 超级群的会话频道 ID。其他类型传 null 即可。如果传入频道
+     * ID，则针对该指定频道设置消息免打扰级别。如果不指定频道
+     * ID，则对所有超级群消息生效。*注意*：2022.09.01 之前开通超级群业务的客户，如果不指定频道
+     * ID，则默认传 ""
+     * 空字符串，即仅针对指定超级群会话（`targetId`）中*不属于任何频道的消息*设置免打扰状态级别。如需修改请提交工单。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onConversationNotificationLevelLoaded]
      */
     getConversationNotificationLevel(type, targetId, channelId, callback) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -3034,7 +3276,9 @@ if (uni.restoreGlobal) {
      * 注：如要移除消息提醒状态，设置level为RCIMIWPushNotificationLevelDefault
      * @param type     会话类型
      * @param level    消息通知级别
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationTypeNotificationLevelChanged]
      */
@@ -3058,7 +3302,9 @@ if (uni.restoreGlobal) {
      * 获取会话类型的消息提醒状态
      * @param type 会话类型
      * @return [onConversationTypeNotificationLevelLoaded]
-     * @deprecated 用 {@link #getConversationTypeNotificationLevel(RCIMIWConversationType, IRCIMIWGetConversationTypeNotificationLevelCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getConversationTypeNotificationLevel(RCIMIWConversationType, IRCIMIWGetConversationTypeNotificationLevelCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadConversationTypeNotificationLevel(type) {
       if (!validate("type", type, AssertRules.NUMBER, true)) {
@@ -3070,8 +3316,10 @@ if (uni.restoreGlobal) {
     /**
      * 获取会话类型的消息提醒状态
      * @param type     会话类型
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
-     * @return [onConversationTypeNotificationLevelLoaded]
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
+     * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      */
     getConversationTypeNotificationLevel(type, callback) {
       if (!validate("type", type, AssertRules.NUMBER, true)) {
@@ -3098,7 +3346,9 @@ if (uni.restoreGlobal) {
      * 一般由管理员设置的接口，针对超级群的所有群成员生效，针对超级群下所有频道生效，优先级较低。如果群成员自己超级群的免打扰级别，那么以群成员自己设置的为准。
      * @param targetId 会话 ID
      * @param level    消息通知级别
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupDefaultNotificationLevelChanged]
      */
@@ -3123,7 +3373,9 @@ if (uni.restoreGlobal) {
      * @param targetId 会话 ID
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupDefaultNotificationLevelLoaded]
-     * @deprecated 用 {@link #getUltraGroupDefaultNotificationLevel(String, IRCIMIWGetUltraGroupDefaultNotificationLevelCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUltraGroupDefaultNotificationLevel(String, IRCIMIWGetUltraGroupDefaultNotificationLevelCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUltraGroupDefaultNotificationLevel(targetId) {
       if (!validate("targetId", targetId, AssertRules.STRING, true)) {
@@ -3135,9 +3387,8 @@ if (uni.restoreGlobal) {
     /**
      * 获取超级群的默认消息状态
      * @param targetId 会话 ID
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUltraGroupDefaultNotificationLevelLoaded]
      */
     getUltraGroupDefaultNotificationLevel(targetId, callback) {
       if (!validate("targetId", targetId, AssertRules.STRING, true)) {
@@ -3164,7 +3415,9 @@ if (uni.restoreGlobal) {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用。
      * @param level     消息通知级别
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupChannelDefaultNotificationLevelChanged]
      */
@@ -3194,7 +3447,9 @@ if (uni.restoreGlobal) {
      * @param channelId 频道 ID，仅支持超级群使用。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupChannelDefaultNotificationLevelLoaded]
-     * @deprecated 用 {@link #getUltraGroupChannelDefaultNotificationLevel(String, String, IRCIMIWGetUltraGroupChannelDefaultNotificationLevelCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getUltraGroupChannelDefaultNotificationLevel(String, String, IRCIMIWGetUltraGroupChannelDefaultNotificationLevelCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadUltraGroupChannelDefaultNotificationLevel(targetId, channelId) {
       if (!validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -3210,9 +3465,8 @@ if (uni.restoreGlobal) {
      * 获取超级群频道的默认消息状态
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onUltraGroupChannelDefaultNotificationLevelLoaded]
      */
     getUltraGroupChannelDefaultNotificationLevel(targetId, channelId, callback) {
       if (!validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -3240,7 +3494,9 @@ if (uni.restoreGlobal) {
     /**
      * 设置是否显示远程推送内容详情，此功能需要从服务端开启用户设置功能。
      * @param showContent 是否显示远程推送内容
-     * @param callback    事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback    事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onPushContentShowStatusChanged]
      */
@@ -3263,7 +3519,9 @@ if (uni.restoreGlobal) {
     /**
      * 设置推送语言
      * @param language 推送语言， 目前仅支持 en_us、zh_cn、ar_sa
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onPushLanguageChanged]
      */
@@ -3288,7 +3546,9 @@ if (uni.restoreGlobal) {
      * 前提：移动端未在线，Web 、MAC/PC 终端在线，移动端是否接收远程推送。
      * 此功能需要从服务端开启用户设置功能。
      * @param receive  是否接收
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onPushReceiveStatusChanged]
      */
@@ -3312,9 +3572,12 @@ if (uni.restoreGlobal) {
      * 给指定的群成员发送消息
      * @param message  要发送的消息
      * @param userIds  群成员集合
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onGroupMessageToDesignatedUsersAttached], [onGroupMessageToDesignatedUsersSent]
+     * @listener [onGroupMessageToDesignatedUsersAttached],
+     * [onGroupMessageToDesignatedUsersSent]
      */
     sendGroupMessageToDesignatedUsers(message, userIds, callback) {
       if (!validate("message", message, AssertRules.OBJECT, true) || !validate("userIds", userIds, AssertRules.ARRAY, true)) {
@@ -3343,7 +3606,9 @@ if (uni.restoreGlobal) {
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onMessageCountLoaded]
-     * @deprecated 用 {@link #getMessageCount(RCIMIWConversationType, String, String, IRCIMIWGetMessageCountCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getMessageCount(RCIMIWConversationType, String, String, IRCIMIWGetMessageCountCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadMessageCount(type, targetId, channelId) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -3357,9 +3622,8 @@ if (uni.restoreGlobal) {
      * @param type      会话类型
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onMessageCountLoaded]
      */
     getMessageCount(type, targetId, channelId, callback) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -3387,7 +3651,9 @@ if (uni.restoreGlobal) {
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onTopConversationsLoaded]
-     * @deprecated 用 {@link #getTopConversations(List, String, IRCIMIWGetTopConversationsCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getTopConversations(List, String, IRCIMIWGetTopConversationsCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadTopConversations(conversationTypes, channelId) {
       if (!validate("conversationTypes", conversationTypes, AssertRules.NUMBER_ARRAY, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -3400,9 +3666,8 @@ if (uni.restoreGlobal) {
      * 根据会话类型,获取置顶会话列表
      * @param conversationTypes 会话类型集合
      * @param channelId         频道 ID，仅支持超级群使用，其他会话类型传 null 即可。
-     * @param callback          事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback          事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onTopConversationsLoaded]
      */
     getTopConversations(conversationTypes, channelId, callback) {
       if (!validate("conversationTypes", conversationTypes, AssertRules.NUMBER_ARRAY, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false)) {
@@ -3429,7 +3694,9 @@ if (uni.restoreGlobal) {
      * @param targetId  会话 ID
      * @param channelId 频道 ID，仅支持超级群使用。
      * @param timestamp 已读时间
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupReadStatusSynced]
      */
@@ -3455,7 +3722,9 @@ if (uni.restoreGlobal) {
      * @param targetId 会话 ID
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onConversationsLoadedForAllChannel]
-     * @deprecated 用 {@link #getConversationsForAllChannel(RCIMIWConversationType, String, IRCIMIWGetConversationsForAllChannelCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getConversationsForAllChannel(RCIMIWConversationType, String, IRCIMIWGetConversationsForAllChannelCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadConversationsForAllChannel(type, targetId) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true)) {
@@ -3468,9 +3737,8 @@ if (uni.restoreGlobal) {
      * 获取特定会话下所有频道的会话列表，只支持超级群
      * @param type     会话类型
      * @param targetId 会话 ID
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onConversationsLoadedForAllChannel]
      */
     getConversationsForAllChannel(type, targetId, callback) {
       if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true)) {
@@ -3496,7 +3764,9 @@ if (uni.restoreGlobal) {
      * 修改超级群消息
      * @param messageUId 消息的 messageUid，可在消息对象中获取，且只有发送成功的消息才会有值
      * @param message    要修改的 message
-     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupMessageModified]
      */
@@ -3520,7 +3790,9 @@ if (uni.restoreGlobal) {
      * 撤回超级群消息
      * @param message      需要撤回的消息
      * @param deleteRemote 是否删除远端消息
-     * @param callback     事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback     事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupMessageRecalled]
      */
@@ -3546,7 +3818,9 @@ if (uni.restoreGlobal) {
      * @param channelId 频道 ID，仅支持超级群使用。
      * @param timestamp 时间戳
      * @param policy    清除策略
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupMessagesCleared]
      */
@@ -3576,7 +3850,9 @@ if (uni.restoreGlobal) {
      * @param targetId     会话 ID
      * @param channelId    频道 ID，仅支持超级群使用。
      * @param typingStatus 输入状态
-     * @param callback     事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback     事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupTypingStatusSent]
      */
@@ -3600,7 +3876,9 @@ if (uni.restoreGlobal) {
      * 删除超级群所有频道指定时间之前的消息
      * @param targetId  会话 ID
      * @param timestamp 时间戳
-     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback  事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupMessagesClearedForAllChannel]
      */
@@ -3625,7 +3903,9 @@ if (uni.restoreGlobal) {
      * @param messages 获取的消息集合
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onBatchRemoteUltraGroupMessagesLoaded]
-     * @deprecated 用 {@link #getBatchRemoteUltraGroupMessages(List, IRCIMIWGetBatchRemoteUltraGroupMessagesCallback)} 代替， 预计将在 6.x 版本删除此接口。
+     * @deprecated 用
+     * {@link #getBatchRemoteUltraGroupMessages(List, IRCIMIWGetBatchRemoteUltraGroupMessagesCallback)}
+     * 代替， 预计将在 6.x 版本删除此接口。
      */
     loadBatchRemoteUltraGroupMessages(messages) {
       if (!validate("messages", messages, AssertRules.ARRAY, true)) {
@@ -3637,9 +3917,8 @@ if (uni.restoreGlobal) {
     /**
      * 从服务获取批量消息
      * @param messages 获取的消息集合
-     * @param callback 事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback 事件回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
-     * @listener [onBatchRemoteUltraGroupMessagesLoaded]
      */
     getBatchRemoteUltraGroupMessages(messages, callback) {
       if (!validate("messages", messages, AssertRules.ARRAY, true)) {
@@ -3664,8 +3943,11 @@ if (uni.restoreGlobal) {
     /**
      * 更新超级群消息扩展信息
      * @param messageUId 消息的 messageUid，可在消息对象中获取，且只有发送成功的消息才会有值
-     * @param expansion  更新的消息扩展信息键值对，类型是 HashMap；Key 支持大小写英文字母、数字、部分特殊符号 + = - _ 的组合方式，不支持汉字。Value 可以输入空格。
-     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param expansion  更新的消息扩展信息键值对，类型是 HashMap；Key 支持大小写英文字母、数字、部分特殊符号 + = - _
+     * 的组合方式，不支持汉字。Value 可以输入空格。
+     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupMessageExpansionUpdated]
      */
@@ -3689,7 +3971,9 @@ if (uni.restoreGlobal) {
      * 删除超级群消息扩展信息中特定的键值对
      * @param messageUId 消息的 messageUid，可在消息对象中获取，且只有发送成功的消息才会有值
      * @param keys       消息扩展信息中待删除的 key 的列表，类型是 ArrayList
-     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发 callback 回调。
+     * @param callback   事件回调。SDK 从 5.3.1 版本开始支持 callback 方式回调。从 5.4.0
+     * 版本废弃该接口的其他回调方式，预计将在 6.x 版本删除此其他回调方式。如果传入了 callback 参数，仅触发
+     * callback 回调。
      * @return 当次接口操作的状态码。0 代表调用成功 具体结果需要实现接口回调，非 0 代表当前接口调用操作失败，不会触发接口回调，详细错误参考错误码
      * @listener [onUltraGroupMessageExpansionForKeysRemoved]
      */
@@ -3722,12 +4006,213 @@ if (uni.restoreGlobal) {
       return this._invokeMethod("changeLogLevel", resultCallback, { level });
     }
     /**
-     * 获取本地时间与服务器时间的时间差。消息发送成功后，SDK 与服务器同步时间，消息所在数据库中存储的时间就是服务器时间。 System.currentTimeMillis() - getDeltaTime() 可以获取服务器当前时间。
+     * 获取本地时间与服务器时间的时间差。消息发送成功后，SDK 与服务器同步时间，消息所在数据库中存储的时间就是服务器时间。
+     * System.currentTimeMillis() - getDeltaTime() 可以获取服务器当前时间。
      * @return 本地时间与服务器时间的差值
      */
     getDeltaTime() {
       let resultCallback;
       return this._invokeMethod("getDeltaTime", resultCallback, {});
+    }
+    /**
+     * 获取 AppKey 对应的配置。
+     * Get app settings for current AppKey.
+     */
+    getAppSettings() {
+      let resultCallback;
+      return this._invokeMethod("getAppSettings", resultCallback, {});
+    }
+    /**
+     * 请求拉取流式消息
+     * @param params   请求参数
+     * @param callback 操作回调
+     * @return 调用状态码，0 表示发起成功
+     */
+    requestStreamMessageContent(params, callback) {
+      if (!validate("params", params, AssertRules.OBJECT, true)) {
+        return paramErrorPromise;
+      }
+      let resultCallback;
+      if (callback) {
+        resultCallback = (res) => {
+          var _a, _b;
+          if (res.callbackName === "onSuccess") {
+            (_a = callback.onSuccess) == null ? void 0 : _a.call(callback, {});
+          }
+          if (res.callbackName === "onError") {
+            let { code } = res;
+            (_b = callback.onError) == null ? void 0 : _b.call(callback, { code });
+          }
+        };
+      }
+      return this._invokeMethod("requestStreamMessageContent", resultCallback, { params });
+    }
+    /**
+     * 发送某个会话中的消息已读回执（V5）。
+     * 消息 needReceipt 为 true 时，接收方调用本接口，通知消息发送方已读。
+     * 仅支持单聊和群聊会话类型。
+     * @param type        会话类型，仅支持单群聊
+     * @param targetId    会话目标 ID
+     * @param channelId   频道 ID
+     * @param messageUIds 消息 UID 列表，最多 100 条
+     * @param callback    结果回调
+     * @return 当次接口操作的状态码。0 代表调用成功，非 0 代表失败
+     */
+    sendReadReceiptResponseV5(type, targetId, channelId, messageUIds, callback) {
+      if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false) || !validate("messageUIds", messageUIds, AssertRules.ARRAY, true)) {
+        return paramErrorPromise;
+      }
+      let resultCallback;
+      if (callback) {
+        resultCallback = (res) => {
+          var _a, _b;
+          if (res.callbackName === "onSuccess") {
+            (_a = callback.onSuccess) == null ? void 0 : _a.call(callback, {});
+          }
+          if (res.callbackName === "onError") {
+            let { code } = res;
+            (_b = callback.onError) == null ? void 0 : _b.call(callback, { code });
+          }
+        };
+      }
+      return this._invokeMethod("sendReadReceiptResponseV5", resultCallback, {
+        type,
+        targetId,
+        channelId,
+        messageUIds
+      });
+    }
+    /**
+     * 批量获取消息已读信息（V5）。
+     * @param type        会话类型
+     * @param targetId    会话目标 ID
+     * @param channelId   频道 ID
+     * @param messageUIds 消息 UID 列表，最多 100 条
+     * @param callback    结果回调
+     * @return 当次接口操作的状态码。0 代表调用成功，非 0 代表失败
+     */
+    getMessageReadReceiptInfoV5(type, targetId, channelId, messageUIds, callback) {
+      if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false) || !validate("messageUIds", messageUIds, AssertRules.ARRAY, true)) {
+        return paramErrorPromise;
+      }
+      let resultCallback;
+      if (callback) {
+        resultCallback = (res) => {
+          var _a, _b;
+          if (res.callbackName === "onSuccess") {
+            let { t } = res;
+            (_a = callback.onSuccess) == null ? void 0 : _a.call(callback, { t });
+          }
+          if (res.callbackName === "onError") {
+            let { code } = res;
+            (_b = callback.onError) == null ? void 0 : _b.call(callback, { code });
+          }
+        };
+      }
+      return this._invokeMethod("getMessageReadReceiptInfoV5", resultCallback, {
+        type,
+        targetId,
+        channelId,
+        messageUIds
+      });
+    }
+    /**
+     * 批量获取消息已读信息（V5，按消息标识）。
+     * @param identifiers 消息标识列表，最多 100 条
+     * @param callback    结果回调
+     * @return 当次接口操作的状态码。0 代表调用成功，非 0 代表失败
+     */
+    getMessageReadReceiptInfoV5ByIdentifiers(identifiers, callback) {
+      if (!validate("identifiers", identifiers, AssertRules.ARRAY, true)) {
+        return paramErrorPromise;
+      }
+      let resultCallback;
+      if (callback) {
+        resultCallback = (res) => {
+          var _a, _b;
+          if (res.callbackName === "onSuccess") {
+            let { t } = res;
+            (_a = callback.onSuccess) == null ? void 0 : _a.call(callback, { t });
+          }
+          if (res.callbackName === "onError") {
+            let { code } = res;
+            (_b = callback.onError) == null ? void 0 : _b.call(callback, { code });
+          }
+        };
+      }
+      return this._invokeMethod("getMessageReadReceiptInfoV5ByIdentifiers", resultCallback, { identifiers });
+    }
+    /**
+     * 分页获取消息已读成员列表（V5）。
+     * @param type       会话类型
+     * @param targetId   会话目标 ID
+     * @param channelId  频道 ID
+     * @param messageUId 消息 UID
+     * @param option     查询条件
+     * @param callback   结果回调
+     * @return 当次接口操作的状态码。0 代表调用成功，非 0 代表失败
+     */
+    getMessagesReadReceiptUsersByPageV5(type, targetId, channelId, messageUId, option, callback) {
+      if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false) || !validate("messageUId", messageUId, AssertRules.STRING, true) || !validate("option", option, AssertRules.OBJECT, true)) {
+        return paramErrorPromise;
+      }
+      let resultCallback;
+      if (callback) {
+        resultCallback = (res) => {
+          var _a, _b;
+          if (res.callbackName === "onSuccess") {
+            let { t } = res;
+            (_a = callback.onSuccess) == null ? void 0 : _a.call(callback, { t });
+          }
+          if (res.callbackName === "onError") {
+            let { code } = res;
+            (_b = callback.onError) == null ? void 0 : _b.call(callback, { code });
+          }
+        };
+      }
+      return this._invokeMethod("getMessagesReadReceiptUsersByPageV5", resultCallback, {
+        type,
+        targetId,
+        channelId,
+        messageUId,
+        option
+      });
+    }
+    /**
+     * 批量获取用户指定消息是否已读状态（V5）。
+     * @param type       会话类型
+     * @param targetId   会话目标 ID
+     * @param channelId  频道 ID
+     * @param messageUId 消息 UID
+     * @param userIds    用户 ID 列表，最多 100 个
+     * @param callback   结果回调
+     * @return 当次接口操作的状态码。0 代表调用成功，非 0 代表失败
+     */
+    getMessagesReadReceiptByUsersV5(type, targetId, channelId, messageUId, userIds, callback) {
+      if (!validate("type", type, AssertRules.NUMBER, true) || !validate("targetId", targetId, AssertRules.STRING, true) || !validate("channelId", channelId, AssertRules.ONLY_STRING, false) || !validate("messageUId", messageUId, AssertRules.STRING, true) || !validate("userIds", userIds, AssertRules.ARRAY, true)) {
+        return paramErrorPromise;
+      }
+      let resultCallback;
+      if (callback) {
+        resultCallback = (res) => {
+          var _a, _b;
+          if (res.callbackName === "onSuccess") {
+            let { t } = res;
+            (_a = callback.onSuccess) == null ? void 0 : _a.call(callback, { t });
+          }
+          if (res.callbackName === "onError") {
+            let { code } = res;
+            (_b = callback.onError) == null ? void 0 : _b.call(callback, { code });
+          }
+        };
+      }
+      return this._invokeMethod("getMessagesReadReceiptByUsersV5", resultCallback, {
+        type,
+        targetId,
+        channelId,
+        messageUId,
+        userIds
+      });
     }
     /**
      * 收到消息的监听
@@ -3971,7 +4456,6 @@ if (uni.restoreGlobal) {
     /**
      *
      * 超级群列表同步完成的回调
-     *
      */
     setOnUltraGroupConversationsSyncedListener(callback) {
       const eventName = "IRCIMIWListener:onUltraGroupConversationsSynced";
@@ -4335,77 +4819,77 @@ if (uni.restoreGlobal) {
       this._setListener(eventName, callback);
     }
     /**
-     * [changeNotificationQuietHours] 的接口回调
+     * [changeNotificationQuietHours] 的接口监听
      */
     setOnNotificationQuietHoursChangedListener(callback) {
       const eventName = "IRCIMIWListener:onNotificationQuietHoursChanged";
       this._setListener(eventName, callback);
     }
     /**
-     * [removeNotificationQuietHours] 的接口回调
+     * [removeNotificationQuietHours] 的接口监听
      */
     setOnNotificationQuietHoursRemovedListener(callback) {
       const eventName = "IRCIMIWListener:onNotificationQuietHoursRemoved";
       this._setListener(eventName, callback);
     }
     /**
-     * [loadNotificationQuietHours] 的接口回调
+     * [loadNotificationQuietHours] 的接口监听
      */
     setOnNotificationQuietHoursLoadedListener(callback) {
       const eventName = "IRCIMIWListener:onNotificationQuietHoursLoaded";
       this._setListener(eventName, callback);
     }
     /**
-     * [changeConversationNotificationLevel] 的接口回调
+     * [changeConversationNotificationLevel] 的接口监听
      */
     setOnConversationNotificationLevelChangedListener(callback) {
       const eventName = "IRCIMIWListener:onConversationNotificationLevelChanged";
       this._setListener(eventName, callback);
     }
     /**
-     * [loadConversationNotificationLevel] 的接口回调
+     * [loadConversationNotificationLevel] 的接口监听
      */
     setOnConversationNotificationLevelLoadedListener(callback) {
       const eventName = "IRCIMIWListener:onConversationNotificationLevelLoaded";
       this._setListener(eventName, callback);
     }
     /**
-     * [changeConversationTypeNotificationLevel] 的接口回调
+     * [changeConversationTypeNotificationLevel] 的接口监听
      */
     setOnConversationTypeNotificationLevelChangedListener(callback) {
       const eventName = "IRCIMIWListener:onConversationTypeNotificationLevelChanged";
       this._setListener(eventName, callback);
     }
     /**
-     * [loadConversationTypeNotificationLevel] 的接口回调
+     * [loadConversationTypeNotificationLevel] 的接口监听
      */
     setOnConversationTypeNotificationLevelLoadedListener(callback) {
       const eventName = "IRCIMIWListener:onConversationTypeNotificationLevelLoaded";
       this._setListener(eventName, callback);
     }
     /**
-     * [changeUltraGroupDefaultNotificationLevel] 的接口回调
+     * [changeUltraGroupDefaultNotificationLevel] 的接口监听
      */
     setOnUltraGroupDefaultNotificationLevelChangedListener(callback) {
       const eventName = "IRCIMIWListener:onUltraGroupDefaultNotificationLevelChanged";
       this._setListener(eventName, callback);
     }
     /**
-     * [loadUltraGroupDefaultNotificationLevel] 的接口回调
+     * [loadUltraGroupDefaultNotificationLevel] 的接口监听
      */
     setOnUltraGroupDefaultNotificationLevelLoadedListener(callback) {
       const eventName = "IRCIMIWListener:onUltraGroupDefaultNotificationLevelLoaded";
       this._setListener(eventName, callback);
     }
     /**
-     * [changeUltraGroupChannelDefaultNotificationLevel] 的接口回调
+     * [changeUltraGroupChannelDefaultNotificationLevel] 的接口监听
      */
     setOnUltraGroupChannelDefaultNotificationLevelChangedListener(callback) {
       const eventName = "IRCIMIWListener:onUltraGroupChannelDefaultNotificationLevelChanged";
       this._setListener(eventName, callback);
     }
     /**
-     * [loadUltraGroupChannelDefaultNotificationLevel] 的接口回调
+     * [loadUltraGroupChannelDefaultNotificationLevel] 的接口监听
      */
     setOnUltraGroupChannelDefaultNotificationLevelLoadedListener(callback) {
       const eventName = "IRCIMIWListener:onUltraGroupChannelDefaultNotificationLevelLoaded";
@@ -4440,14 +4924,14 @@ if (uni.restoreGlobal) {
       this._setListener(eventName, callback);
     }
     /**
-     *
+     * [loadTopConversations] 的接口监听
      */
     setOnTopConversationsLoadedListener(callback) {
       const eventName = "IRCIMIWListener:onTopConversationsLoaded";
       this._setListener(eventName, callback);
     }
     /**
-     * [sendGroupMessageToDesignatedUsers] 的接口回调
+     * [sendGroupMessageToDesignatedUsers] 的接口监听
      * 消息存入数据库的回调
      */
     setOnGroupMessageToDesignatedUsersAttachedListener(callback) {
@@ -4455,11 +4939,32 @@ if (uni.restoreGlobal) {
       this._setListener(eventName, callback);
     }
     /**
-     * [sendGroupMessageToDesignatedUsers] 的接口回调
+     * [sendGroupMessageToDesignatedUsers] 的接口监听
      * 消息发送完成的回调
      */
     setOnGroupMessageToDesignatedUsersSentListener(callback) {
       const eventName = "IRCIMIWListener:onGroupMessageToDesignatedUsersSent";
+      this._setListener(eventName, callback);
+    }
+    /**
+     * 流式消息请求初始化回调
+     */
+    setOnStreamMessageRequestInitListener(callback) {
+      const eventName = "IRCIMIWListener:onStreamMessageRequestInit";
+      this._setListener(eventName, callback);
+    }
+    /**
+     * 流式消息增量数据回调
+     */
+    setOnStreamMessageRequestDataListener(callback) {
+      const eventName = "IRCIMIWListener:onStreamMessageRequestData";
+      this._setListener(eventName, callback);
+    }
+    /**
+     * 流式消息请求结束回调
+     */
+    setOnStreamMessageRequestCompleteListener(callback) {
+      const eventName = "IRCIMIWListener:onStreamMessageRequestComplete";
       this._setListener(eventName, callback);
     }
     /**
@@ -4483,6 +4988,9 @@ if (uni.restoreGlobal) {
       const eventName = "IRCIMIWListener:onUltraGroupUnreadMentionedCountLoaded";
       this._setListener(eventName, callback);
     }
+    /**
+     * [loadUltraGroupUnreadCount] 的接口监听
+     */
     setOnUltraGroupUnreadCountLoadedListener(callback) {
       const eventName = "IRCIMIWListener:onUltraGroupUnreadCountLoaded";
       this._setListener(eventName, callback);
@@ -4541,6 +5049,13 @@ if (uni.restoreGlobal) {
      */
     setOnUltraGroupMessageExpansionForKeysRemovedListener(callback) {
       const eventName = "IRCIMIWListener:onUltraGroupMessageExpansionForKeysRemoved";
+      this._setListener(eventName, callback);
+    }
+    /**
+     * 已读回执 V5 收到回调
+     */
+    setOnMessageReadReceiptV5ReceivedListener(callback) {
+      const eventName = "IRCIMIWListener:onMessageReadReceiptV5Received";
       this._setListener(eventName, callback);
     }
   }
@@ -4657,7 +5172,7 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const _sfc_main$2 = {
+  const _sfc_main$3 = {
     data() {
       return {
         currentUserId: "",
@@ -4761,7 +5276,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "content" }, [
       vue.createElementVNode("view", { class: "header" }, [
         vue.createElementVNode("text", { class: "title" }, "融云RTC演示")
@@ -4808,8 +5323,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__file", "/Users/yongqiming/developer/android/project/rongcloud/uniapp-rtc-quickdemo/pages/index/index.vue"]]);
-  const _sfc_main$1 = {
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["__file", "/Users/yongqiming/developer/android/project/rongcloud/uniapp-rtc-quickdemo/pages/index/index.vue"]]);
+  const _sfc_main$2 = {
     data() {
       return {
         selectedUserIndex: 0,
@@ -4875,7 +5390,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "login-container" }, [
       vue.createElementVNode("view", { class: "login-box" }, [
         vue.createElementVNode("view", { class: "logo-area" }, [
@@ -4924,7 +5439,6 @@ if (uni.restoreGlobal) {
                   /* CLASS */
                 )
               ]),
-              vue.createCommentVNode(" 下拉选项 "),
               $data.isDropdownOpen ? (vue.openBlock(), vue.createElementBlock("view", {
                 key: 0,
                 class: "dropdown-options"
@@ -4987,9 +5501,74 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__scopeId", "data-v-e4e4508d"], ["__file", "/Users/yongqiming/developer/android/project/rongcloud/uniapp-rtc-quickdemo/pages/login/login.vue"]]);
+  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__scopeId", "data-v-e4e4508d"], ["__file", "/Users/yongqiming/developer/android/project/rongcloud/uniapp-rtc-quickdemo/pages/login/login.vue"]]);
+  const _sfc_main$1 = {
+    data() {
+      return {
+        imEnging: null
+      };
+    },
+    async onLoad() {
+      this.imEngine = await globalState.getIMEngine();
+      formatAppLog("log", "at pages/message/customNativeMessage/customNativeMessage.vue:19", "imEngine 初始化完成:", this.imEngine);
+      const code = await this.imEngine.registerNativeCustomMessage(
+        "XL:exclusiveing",
+        1
+      );
+      formatAppLog("log", "at pages/message/customNativeMessage/customNativeMessage.vue:23", "自定义消息注册" + code);
+    },
+    methods: {
+      async sendExclusiveMessage() {
+        const messageIdentifier = "XL:exclusiveing";
+        const targetId = "9996";
+        const channelId = "";
+        const fields = {
+          customContent: {
+            user: "user1",
+            burnDuration: 10,
+            extra: "extra",
+            mentionedInfo: "@all",
+            audit: "pending",
+            otherKey: "otherValue"
+          }
+        };
+        const customMessage = await this.imEngine.createNativeCustomMessage(
+          1,
+          // 会话类型，1 = PRIVATE 等，按你文档来
+          targetId,
+          channelId,
+          messageIdentifier,
+          fields
+        );
+        customMessage.expansion = {
+          "customKey": "customValue"
+        };
+        formatAppLog("log", "at pages/message/customNativeMessage/customNativeMessage.vue:56", "code111 自定义消息 =", customMessage);
+        formatAppLog("log", "at pages/message/customNativeMessage/customNativeMessage.vue:58", " code111", customMessage);
+        let callback = {
+          onMessageSaved: (res) => {
+            formatAppLog("log", "at pages/message/customNativeMessage/customNativeMessage.vue:61", "onSuccess", res);
+          },
+          onMessageSent: (res) => {
+            formatAppLog("log", "at pages/message/customNativeMessage/customNativeMessage.vue:66", "onMessageSent", res);
+          }
+        };
+        let code = await this.imEngine.sendMessage(customMessage, callback);
+        formatAppLog("log", "at pages/message/customNativeMessage/customNativeMessage.vue:72", code, "code999999999999999999");
+      }
+    }
+  };
+  function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", null, [
+      vue.createElementVNode("button", {
+        onClick: _cache[0] || (_cache[0] = (...args) => $options.sendExclusiveMessage && $options.sendExclusiveMessage(...args))
+      }, "发送自定义消息")
+    ]);
+  }
+  const PagesMessageCustomNativeMessageCustomNativeMessage = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "/Users/yongqiming/developer/android/project/rongcloud/uniapp-rtc-quickdemo/pages/message/customNativeMessage/customNativeMessage.vue"]]);
   __definePage("pages/index/index", PagesIndexIndex);
   __definePage("pages/login/login", PagesLoginLogin);
+  __definePage("pages/message/customNativeMessage/customNativeMessage", PagesMessageCustomNativeMessageCustomNativeMessage);
   const _sfc_main = {
     globalData: {
       imEngine: null,

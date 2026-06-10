@@ -364,6 +364,14 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
     RCIMIWPushType2[RCIMIWPushType2["oppo"] = 9] = "oppo";
     RCIMIWPushType2[RCIMIWPushType2["honor"] = 10] = "honor";
   })(RCIMIWPushType || (RCIMIWPushType = {}));
+  var RCIMIWGroupReadReceiptVersion;
+  (function(RCIMIWGroupReadReceiptVersion2) {
+    RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["unknown"] = 0] = "unknown";
+    RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["version1"] = 1] = "version1";
+    RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["version2"] = 2] = "version2";
+    RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["version4"] = 3] = "version4";
+    RCIMIWGroupReadReceiptVersion2[RCIMIWGroupReadReceiptVersion2["version5"] = 4] = "version5";
+  })(RCIMIWGroupReadReceiptVersion || (RCIMIWGroupReadReceiptVersion = {}));
   var RCIMIWImportanceHW;
   (function(RCIMIWImportanceHW2) {
     RCIMIWImportanceHW2[RCIMIWImportanceHW2["normal"] = 0] = "normal";
@@ -432,6 +440,11 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
     RCIMIWPushNotificationLevel2[RCIMIWPushNotificationLevel2["mentionAll"] = 4] = "mentionAll";
     RCIMIWPushNotificationLevel2[RCIMIWPushNotificationLevel2["blocked"] = 5] = "blocked";
   })(RCIMIWPushNotificationLevel || (RCIMIWPushNotificationLevel = {}));
+  var RCIMIWReadReceiptStatus;
+  (function(RCIMIWReadReceiptStatus2) {
+    RCIMIWReadReceiptStatus2[RCIMIWReadReceiptStatus2["read"] = 0] = "read";
+    RCIMIWReadReceiptStatus2[RCIMIWReadReceiptStatus2["unread"] = 1] = "unread";
+  })(RCIMIWReadReceiptStatus || (RCIMIWReadReceiptStatus = {}));
   var RCIMIWMessageType;
   (function(RCIMIWMessageType2) {
     RCIMIWMessageType2[RCIMIWMessageType2["unknown"] = 0] = "unknown";
@@ -449,7 +462,10 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
     RCIMIWMessageType2[RCIMIWMessageType2["location"] = 12] = "location";
     RCIMIWMessageType2[RCIMIWMessageType2["userCustom"] = 13] = "userCustom";
     RCIMIWMessageType2[RCIMIWMessageType2["nativeCustom"] = 14] = "nativeCustom";
-    RCIMIWMessageType2[RCIMIWMessageType2["nativeCustomMedia"] = 15] = "nativeCustomMedia";
+    RCIMIWMessageType2[RCIMIWMessageType2["stream"] = 15] = "stream";
+    RCIMIWMessageType2[RCIMIWMessageType2["nativeCustomMedia"] = 16] = "nativeCustomMedia";
+    RCIMIWMessageType2[RCIMIWMessageType2["groupNotification"] = 17] = "groupNotification";
+    RCIMIWMessageType2[RCIMIWMessageType2["combineV2"] = 18] = "combineV2";
   })(RCIMIWMessageType || (RCIMIWMessageType = {}));
   var RCIMIWMessageBlockType;
   (function(RCIMIWMessageBlockType2) {
@@ -458,6 +474,16 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
     RCIMIWMessageBlockType2[RCIMIWMessageBlockType2["custom"] = 2] = "custom";
     RCIMIWMessageBlockType2[RCIMIWMessageBlockType2["thirdParty"] = 3] = "thirdParty";
   })(RCIMIWMessageBlockType || (RCIMIWMessageBlockType = {}));
+  var RCIMIWMessageAuditType;
+  (function(RCIMIWMessageAuditType2) {
+    RCIMIWMessageAuditType2[RCIMIWMessageAuditType2["disallow"] = 0] = "disallow";
+    RCIMIWMessageAuditType2[RCIMIWMessageAuditType2["allow"] = 1] = "allow";
+  })(RCIMIWMessageAuditType || (RCIMIWMessageAuditType = {}));
+  var RCIMIWReadReceiptOrder;
+  (function(RCIMIWReadReceiptOrder2) {
+    RCIMIWReadReceiptOrder2[RCIMIWReadReceiptOrder2["descending"] = 0] = "descending";
+    RCIMIWReadReceiptOrder2[RCIMIWReadReceiptOrder2["ascending"] = 1] = "ascending";
+  })(RCIMIWReadReceiptOrder || (RCIMIWReadReceiptOrder = {}));
   var RCIMIWTimeOrder;
   (function(RCIMIWTimeOrder2) {
     RCIMIWTimeOrder2[RCIMIWTimeOrder2["before"] = 0] = "before";
@@ -1876,14 +1902,12 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
       style: { flexDirection: "column" }
     }, [
       (0, import_vue2.createElementVNode)("view", { class: "rtc-container" }, [
-        (0, import_vue2.createCommentVNode)(" \u72B6\u6001\u680F\u5360\u4F4D "),
         (0, import_vue2.createElementVNode)("view", { class: "status-bar-placeholder" }),
         (0, import_vue2.createElementVNode)("view", { class: "header" }, [
           (0, import_vue2.createElementVNode)("view", { class: "title-row" }, [
             (0, import_vue2.createElementVNode)("u-text", { class: "nav-title" }, "\u97F3\u89C6\u9891\u76F4\u64AD")
           ])
         ]),
-        (0, import_vue2.createCommentVNode)(" \u8FD4\u56DE\u6309\u94AE - \u6839\u636E\u5E73\u53F0\u663E\u793A "),
         (0, import_vue2.createElementVNode)("view", { class: "back-button-container" }, [
           (0, import_vue2.createElementVNode)("view", {
             class: "nav-left-btn",
@@ -1912,7 +1936,6 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
               (0, import_vue2.createElementVNode)("u-text", { class: "card-title" }, "\u89C6\u56FE\u6E32\u67D3")
             ]),
             (0, import_vue2.createElementVNode)("view", { class: "video-row" }, [
-              (0, import_vue2.createCommentVNode)(" \u672C\u5730\u89C6\u9891 "),
               (0, import_vue2.createElementVNode)("view", { class: "video-item" }, [
                 (0, import_vue2.createElementVNode)("view", { class: "video-content" }, [
                   !$data.isLocalVideoReady ? ((0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("view", {
@@ -1935,7 +1958,6 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
                   ))
                 ])
               ]),
-              (0, import_vue2.createCommentVNode)(" \u8FDC\u7AEF\u89C6\u9891 "),
               (0, import_vue2.createElementVNode)("view", { class: "video-item" }, [
                 (0, import_vue2.createElementVNode)("view", { class: "video-content" }, [
                   !$data.isRemoteVideoReady ? ((0, import_vue2.openBlock)(), (0, import_vue2.createElementBlock)("view", {
@@ -1972,7 +1994,6 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
               maxlength: "10"
             }, null, 40, ["modelValue"])
           ]),
-          (0, import_vue2.createCommentVNode)(" \u52A0\u5165/\u79BB\u5F00\u623F\u95F4 "),
           (0, import_vue2.createElementVNode)("view", { class: "button-row" }, [
             (0, import_vue2.createElementVNode)(
               "view",
@@ -2005,7 +2026,6 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
               /* CLASS */
             )
           ]),
-          (0, import_vue2.createCommentVNode)(" \u53D1\u5E03\u8D44\u6E90\u63A7\u5236 "),
           (0, import_vue2.createElementVNode)("view", { class: "button-row" }, [
             (0, import_vue2.createElementVNode)("view", {
               class: "control-btn rtc-btn",
@@ -2020,7 +2040,6 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
               (0, import_vue2.createElementVNode)("u-text", { class: "btn-text" }, "\u53D6\u6D88\u53D1\u5E03\u8D44\u6E90")
             ])
           ]),
-          (0, import_vue2.createCommentVNode)(" \u8BA2\u9605\u8D44\u6E90\u63A7\u5236 "),
           (0, import_vue2.createElementVNode)("view", { class: "button-row" }, [
             (0, import_vue2.createElementVNode)("view", {
               class: "control-btn rtc-btn",
@@ -2035,7 +2054,6 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
               (0, import_vue2.createElementVNode)("u-text", { class: "btn-text" }, "\u53D6\u6D88\u8BA2\u9605\u8D44\u6E90")
             ])
           ]),
-          (0, import_vue2.createCommentVNode)(" \u6444\u50CF\u5934\u63A7\u5236 "),
           (0, import_vue2.createElementVNode)("view", { class: "button-row" }, [
             (0, import_vue2.createElementVNode)("view", {
               class: "control-btn rtc-btn",
@@ -2050,7 +2068,6 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
               (0, import_vue2.createElementVNode)("u-text", { class: "btn-text" }, "\u5173\u95ED\u6444\u50CF\u5934")
             ])
           ]),
-          (0, import_vue2.createCommentVNode)(" \u9EA6\u514B\u98CE\u63A7\u5236 "),
           (0, import_vue2.createElementVNode)("view", { class: "button-row" }, [
             (0, import_vue2.createElementVNode)("view", {
               class: "control-btn rtc-btn",
@@ -2065,7 +2082,6 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
               (0, import_vue2.createElementVNode)("u-text", { class: "btn-text" }, "\u5173\u95ED\u9EA6\u514B\u98CE")
             ])
           ]),
-          (0, import_vue2.createCommentVNode)(" \u626C\u58F0\u5668\u63A7\u5236 "),
           (0, import_vue2.createElementVNode)("view", { class: "button-row" }, [
             (0, import_vue2.createElementVNode)("view", {
               class: "control-btn rtc-btn",

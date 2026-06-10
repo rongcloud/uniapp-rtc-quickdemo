@@ -1,7 +1,7 @@
 {
   "id": "RongCloud-IMWrapper-V2",
   "displayName": "RongCloud-IMWrapper-V2",
-  "version": "5.12.1",
+  "version": "5.30.0-2",
   "description": "融云IM原生插件包装层",
   "keywords": [
     "RongCloud",
@@ -37,7 +37,8 @@
     "platforms": {
       "cloud": {
         "tcb": "y",
-        "aliyun": "y"
+        "aliyun": "y",
+        "alipay": "n"
       },
       "client": {
         "Vue": {
@@ -45,8 +46,10 @@
           "vue3": "y"
         },
         "App": {
-          "app-vue": "y",
-          "app-nvue": "y"
+            "app-vue": "y",
+            "app-nvue": "y",
+            "app-harmony": "u",
+            "app-uvue": "u"
         },
         "H5-mobile": {
           "Safari": "n",
