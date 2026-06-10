@@ -151,12 +151,12 @@ if (uni.restoreGlobal) {
   }
   const appConfig = {
     // 融云AppKey - 请替换为您的实际AppKey
-    appKey: "",
+    appKey: "p5tvi9dspl334",
     // 测试用户列表 - 可以方便地添加更多用户
     testUsers: [
       {
         id: "",
-        name: "测试用户1",
+        name: "",
         token: "",
         avatar: "👤",
         description: "主要测试账户"
@@ -5367,19 +5367,48 @@ if (uni.restoreGlobal) {
       async handleLogin() {
         await this.connectIM();
       },
+      showConfigMissingTips(missingFields) {
+        uni.showModal({
+          title: "配置缺失",
+          content: `请先在 config/RCConfig.js 中配置 ${missingFields.join("、")} 后再登录。`,
+          showCancel: false,
+          confirmText: "知道了"
+        });
+      },
+      isBlankConfigValue(value) {
+        return value === void 0 || value === null || String(value).trim() === "";
+      },
+      getMissingConfigFields(selectedUser) {
+        const missingFields = [];
+        if (this.isBlankConfigValue(appConfig.appKey)) {
+          missingFields.push("appKey");
+        }
+        if (!selectedUser || this.isBlankConfigValue(selectedUser.userId)) {
+          missingFields.push("userId");
+        }
+        if (!selectedUser || this.isBlankConfigValue(selectedUser.token)) {
+          missingFields.push("token");
+        }
+        return missingFields;
+      },
       //连接IM
       async connectIM() {
         try {
           const selectedUser = this.userOptions[this.selectedUserIndex];
+          const missingFields = this.getMissingConfigFields(selectedUser);
+          if (missingFields.length > 0) {
+            this.showConfigMissingTips(missingFields);
+            return;
+          }
           const token = selectedUser.token;
           const userId = selectedUser.userId;
-          formatAppLog("log", "at pages/login/login.vue:122", "选择的用户信息:", selectedUser);
-          formatAppLog("log", "at pages/login/login.vue:123", "使用的Token:", token);
-          formatAppLog("log", "at pages/login/login.vue:124", "用户ID:", userId);
+          formatAppLog("log", "at pages/login/login.vue:159", "选择的用户信息:", selectedUser);
+          formatAppLog("log", "at pages/login/login.vue:160", "使用的Token:", token);
+          formatAppLog("log", "at pages/login/login.vue:161", "用户ID:", userId);
           this.isLoading = true;
           await globalState.connectIM(token, userId);
         } catch (error) {
-          formatAppLog("error", "at pages/login/login.vue:132", "连接IM时发生错误:", error);
+          formatAppLog("error", "at pages/login/login.vue:169", "连接IM时发生错误:", error);
           uni.showToast({
             title: "连接失败: " + error.message,
             icon: "error"

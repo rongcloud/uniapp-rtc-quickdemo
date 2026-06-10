@@ -5,13 +5,13 @@
 
 export default {
 	// 融云AppKey - 请替换为您的实际AppKey
-	appKey: '',
+	appKey: 'p5tvi9dspl334',
 	
 	// 测试用户列表 - 可以方便地添加更多用户
 	testUsers: [
 		{
 			id: '',
-			name: '测试用户1',
+			name: '',
 			token: '',
 			avatar: '👤',
 			description: '主要测试账户'

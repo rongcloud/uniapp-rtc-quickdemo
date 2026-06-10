@@ -1024,7 +1024,7 @@
 
 	.nav-left-btn {
 		background-color: transparent;
-		border: none;
+		border-width: 0;
 		padding: 0;
 		margin: 0;
 		display: flex;

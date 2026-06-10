@@ -111,11 +111,48 @@ export default {
 		async handleLogin() {
 			await this.connectIM()
 		},
+
+		showConfigMissingTips(missingFields) {
+			uni.showModal({
+				title: '配置缺失',
+				content: `请先在 config/RCConfig.js 中配置 ${missingFields.join('、')} 后再登录。`,
+				showCancel: false,
+				confirmText: '知道了'
+			});
+		},
+
+		isBlankConfigValue(value) {
+			return value === undefined || value === null || String(value).trim() === '';
+		},
+
+		getMissingConfigFields(selectedUser) {
+			const missingFields = [];
+
+			if (this.isBlankConfigValue(appConfig.appKey)) {
+				missingFields.push('appKey');
+			}
+
+			if (!selectedUser || this.isBlankConfigValue(selectedUser.userId)) {
+				missingFields.push('userId');
+			}
+
+			if (!selectedUser || this.isBlankConfigValue(selectedUser.token)) {
+				missingFields.push('token');
+			}
+
+			return missingFields;
+		},
 		
 		//连接IM
 		async connectIM(){
 			try {
 				const selectedUser = this.userOptions[this.selectedUserIndex];
+				const missingFields = this.getMissingConfigFields(selectedUser);
+				if (missingFields.length > 0) {
+					this.showConfigMissingTips(missingFields);
+					return;
+				}
+
 				const token = selectedUser.token;
 				const userId = selectedUser.userId;
 				
